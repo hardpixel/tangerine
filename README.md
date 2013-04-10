@@ -1,2 +1,2 @@
-tangerine-framework
-===================
+Tangerine Framework for Wordpress
+=================================
