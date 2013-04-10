@@ -1,0 +1,320 @@
+// Global Foundation Settings
+@import "settings";
+@import "tangerine-settings";
+
+// Comment out this import if you are customizing you imports below
+@import "foundation";
+@import "compass/css3";
+@import "compass/utilities";
+@import "recipes/shape";
+
+// Import specific parts of Foundation by commenting the import "foundation"
+// and uncommenting what you want below. You must uncomment the following if customizing
+
+// @import "foundation/foundation-global"; // *always required
+// @import "foundation/components/global"; // *always required
+// @import "foundation/components/grid";
+// @import "foundation/components/visibility";
+// @import "foundation/components/block-grid";
+// @import "foundation/components/type";
+// @import "foundation/components/buttons";
+// @import "foundation/components/forms"; // *requires components/buttons
+// @import "foundation/components/custom-forms"; // *requires components/buttons, components/forms
+// @import "foundation/components/button-groups"; // *requires components/buttons
+// @import "foundation/components/dropdown-buttons"; // *requires components/buttons
+// @import "foundation/components/split-buttons"; // *requires components/buttons
+// @import "foundation/components/flex-video";
+// @import "foundation/components/section";
+// @import "foundation/components/top-bar";  // *requires components/grid
+// @import "foundation/components/orbit";
+// @import "foundation/components/reveal";
+// @import "foundation/components/joyride";
+// @import "foundation/components/clearing";
+// @import "foundation/components/alert-boxes";
+// @import "foundation/components/breadcrumbs";
+// @import "foundation/components/keystrokes";
+// @import "foundation/components/labels";
+// @import "foundation/components/inline-lists";
+// @import "foundation/components/pagination";
+// @import "foundation/components/panels";
+// @import "foundation/components/pricing-tables";
+// @import "foundation/components/progress-bars";
+// @import "foundation/components/side-nav";
+// @import "foundation/components/sub-nav";
+// @import "foundation/components/switch";
+// @import "foundation/components/magellan";
+// @import "foundation/components/tables";
+// @import "foundation/components/thumbs";
+// @import "foundation/components/tooltips";
+// @import "foundation/components/dropdown";
+
+#top-area, #main-area, #main, #footer-area, #footer-menu, #credits {
+	@include grid-column(12);
+	padding: 0;
+}
+
+#header, #main-menu, #main-slider {
+	@include grid-column(12);
+}
+
+#top-area, #main-area, #footer-area {
+	display: table;
+}
+
+#header, #main-slider, #main, #footer-area {
+	margin-top: 20px;
+}
+
+#wrapper {
+
+	&.full-width {
+		min-width: 100%;
+	}
+
+	&.hybrid-width {
+		min-width: 100%;
+
+		#main-area {
+			max-width: $row-width;
+			margin-left: auto;
+			margin-right: auto;
+			float: none;
+		}
+	}
+
+	&.narrow-content {
+		min-width: 100%;
+
+		.top-bar, #main-area, #footer-widgets, .footer-menu-inner, .credits-inner {
+			max-width: $row-width;
+			margin-left: auto;
+			margin-right: auto;
+			float: none;
+		}
+	}
+
+	&.narrow-footer {
+		min-width: 100%;
+
+		.top-bar, #main-area, #footer-area {
+			max-width: $row-width;
+			margin-left: auto;
+			margin-right: auto;
+			float: none;
+		}
+	}
+}
+
+#top-area {
+	background: $top-area-bg;
+}
+
+.top-bar {
+	background: none;
+}
+
+.main-bar {
+	@extend .top-bar;
+	background: $main-menu-bg;
+}
+
+.main-bar-section {
+	@extend .top-bar-section;
+}
+
+#heading h1 {
+	line-height: 1;
+}
+
+#orbit-slider {
+
+	&.no-buttons {
+
+		.orbit-prev, .orbit-next {
+			display: none;
+		}
+	}
+
+	&.no-timer {
+
+		.orbit-timer {
+			display: none;
+		}
+	}
+
+	&.no-numbers {
+
+		.orbit-slide-number {
+			display: none;
+		}
+	}
+
+	.slide-thumbnail {
+		width: 100%;
+	}
+
+	.orbit-bullets {
+		margin: 0 auto;
+
+		li {
+			background: $orbit-bullets-bg;
+			border: none;
+			@include border-radius(50%);
+			@include box-shadow(inset 0 -1px 1px rgba(black,.1), 0 1px rgba(white,.5));
+			height: 14px;
+			width: 14px;
+
+			&.active {
+				background: $orbit-bullets-active-bg;
+			}
+		}
+	}
+}
+
+.widgets {
+	list-style-type: none;
+
+	.widget {
+		margin-bottom: 20px;
+
+		ul {
+			list-style-type: square;
+		}
+
+	}
+
+	.widgettitle {
+
+	}
+}
+
+.widget_latest_posts_slider {
+
+	.orbit-container {
+
+		.orbit-timer, .orbit-slide-number {
+			display: none;
+		}
+
+		.orbit-prev, .orbit-next {
+			bottom: 0;
+			top: auto;
+			background: #111;
+			width: 30px;
+			height: 42px;
+
+			span {
+				margin-top: -11px;
+				border-width: 12px;
+				margin-left: -4px;
+			}
+		}
+
+		.orbit-prev {
+			left: 0;
+		}
+
+		.orbit-next {
+			right: 0;
+		}
+
+		.orbit-caption {
+			padding: 5px 0;
+
+			h5 {
+				line-height: emCalc(26px);
+			}
+		}
+	}
+}
+
+#footer-area {
+	background: $footer-area-bg;
+	@include box-shadow(0 1px 4px -2px rgba(black,.2) inset);
+	color: $footer-area-color;
+
+	.widgets {
+		padding: 0 $column-gutter/2;
+		margin: 0;
+	}
+
+	.widget {
+		margin: $column-gutter/2 0;
+	}
+
+	.widgettitle {
+		color: $widgettitle-color;
+	}
+}
+
+#footer-menu {
+	background: $footer-menu-bg;
+}
+
+.footer-bar-section {
+
+	ul {
+		list-style-type: none;
+		margin: 0;
+
+		li {
+			float: left;
+
+			&.active {
+				font-weight: bold;
+			}
+
+			a {
+				padding: 7px 15px;
+				font-size: emCalc(14px);
+				display: inline-block;
+				color: $footer-menu-color;
+			}
+		}
+	}
+}
+
+#credits {
+	background: $credits-bg;
+	font-size: emCalc(12px);
+	line-height: emCalc(50px);
+}
+
+.credits-inner {
+	padding: 0 $column-gutter/2;
+}
+
+#copyright, #design-by {
+	text-align: center;
+}
+
+// Components
+
+.gallery {
+
+	ul li {
+		position: relative;
+
+		a:hover + .caption, .caption:hover {
+			display: block;
+		}
+	}
+
+	.attachment-thumbnail {
+		width: 100%;
+		display: list-item;
+	}
+
+	.caption {
+		position: absolute;
+		display: none;
+		background: rgba(black, .5);
+		color: #fff;
+		bottom: 20px;
+		left: 14px;
+		line-height: 24px;
+		padding: 0 10px;
+		position: absolute;
+		right: 14px;
+	}
+}
