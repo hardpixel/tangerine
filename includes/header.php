@@ -2,7 +2,7 @@
 
 	function tangerine_header(){
 	?>
-		<?php if( get_theme_mod( 'header_image' ) != '' || get_theme_mod('header_title') == '1' ); ?>
+		<?php if( get_theme_mod( 'header_image' ) != '' || get_theme_mod('header_title') == '1' ): ?>
 			<div id="header">
 
 				<div class="header-inner">
