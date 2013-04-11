@@ -13,7 +13,7 @@
 				</ul>
 			</div>
 
-			<?php get_template_part( 'includes/nav/footer', 'menu' ); ?>
+			<?php footer_menu(); ?>
 
 			<div id="credits">
 				<div class="credits-inner">

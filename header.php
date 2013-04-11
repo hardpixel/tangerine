@@ -20,7 +20,7 @@
 	<!-- BEGIN #wrapper -->
 	<div id="wrapper" class="row <?php echo get_theme_mod('tangerine_page_width'); ?> <?php echo get_theme_mod('tangerine_sidebar'); ?>">
 
-		<?php get_template_part( 'includes/nav/top', 'menu' ); ?>
+		<?php top_menu(); ?>
 
 		<!-- BEGIN #main-area -->
 		<div id="main-area">
@@ -39,7 +39,7 @@
 
 			</div>
 
-			<?php get_template_part( 'includes/nav/main', 'menu' ); ?>
+			<?php main_menu(); ?>
 
 			<?php if( is_home() ) get_template_part( 'includes/slider' ); ?>
 
