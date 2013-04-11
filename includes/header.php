@@ -7,7 +7,7 @@
 
 				<div class="header-inner">
 					<?php if( get_theme_mod('header_image') != '' ): ?>
-						<img src="<?php echo get_theme_mod('header_image'); ?>" alt="" />
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo"><img src="<?php echo get_theme_mod('header_image'); ?>" alt="" /></a>
 					<?php endif; ?>
 
 					<?php if( get_theme_mod('header_title') == '1' ): ?>

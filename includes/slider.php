@@ -11,7 +11,7 @@
 				<?php if( get_theme_mod('tangerine_orbit_timer') == '' ) { echo 'no-timer'; } ?>
 				<?php if( get_theme_mod('tangerine_orbit_numbers') == '' ) { echo 'no-numbers'; } ?>">
 
-				<div data-orbit data-options="timer_speed:<?php echo get_theme_mod('tangerine_orbit_timerspeed'); ?>;
+				<ul data-orbit data-options="timer_speed:<?php echo get_theme_mod('tangerine_orbit_timerspeed'); ?>;
 					animation_speed:<?php echo get_theme_mod('tangerine_orbit_animationspeed'); ?>;
 					bullets:<?php if( get_theme_mod('tangerine_orbit_bullets') == '1' ) { echo 'true'; } else { echo 'false'; } ?>;">
 
@@ -20,7 +20,7 @@
 					if ( $slides->have_posts() ) : ?>
 
 						<?php while ( $slides->have_posts() ) : $slides->the_post(); ?>
-							<div data-orbit-slide="slide-<?php the_ID(); ?>" class="slide">
+							<li class="slide">
 
 								<?php global $post; ?>
 
@@ -58,7 +58,7 @@
 									<?php if( get_theme_mod('tangerine_orbit_caption') == '1') : ?>
 										<div id="caption-<?php the_ID(); ?>" class="orbit-caption show-for-small">
 											<h5><a href="<?php echo get_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h5>
-											<p><?php echo get_post_meta( $post->ID, "_slide_caption", true ); ?></p>
+											<p><?php the_excerpt(); ?></p>
 										</div>
 									<?php endif; ?>
 
@@ -69,12 +69,12 @@
 
 								<?php endif; ?>
 
-							</div>
+							</li>
 						<?php endwhile; ?>
 
 					<?php endif; ?>
 
-				</div>
+				</ul>
 			</div>
 		</div>
 

@@ -48,6 +48,19 @@
 // @import "foundation/components/tooltips";
 // @import "foundation/components/dropdown";
 
+// FOUNDATION FIXES
+
+.top-bar-section .has-dropdown .dropdown li.has-dropdown > a:after, .main-bar-section .has-dropdown .dropdown li.has-dropdown > a:after {
+	margin-top: -15px;
+}
+
+.top-bar-section .dropdown li a, .main-bar-section .dropdown li a {
+	line-height: 30px;
+}
+
+#orbit-slider .slide-thumbnail {
+	width: 100%;
+}
 
 // BASE
 
@@ -67,6 +80,10 @@
 
 #header, #main-slider, #main, #footer-area {
 	margin-top: 20px;
+}
+
+p[style*="justify"] {
+	@include hyphenation;
 }
 
 // LAYOUT
@@ -112,15 +129,15 @@
 
 	&.full-slider {
 
-		.home-slider {
+		.home-slider, .header-inner {
 			max-width: $row-width;
 			margin-left: auto;
 			margin-right: auto;
-			margin-bottom: 30px;
+			float: none;
 		}
 
-		.header-inner, .home-slider {
-			float: none;
+		.home-slider {
+			margin-bottom: 30px;
 		}
 	}
 }
@@ -260,10 +277,6 @@
 		.orbit-slide-number {
 			display: none;
 		}
-	}
-
-	.slide-thumbnail {
-		width: 100%;
 	}
 
 	.orbit-bullets {

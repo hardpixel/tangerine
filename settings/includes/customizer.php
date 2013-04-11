@@ -468,12 +468,12 @@ class Tangerine_Customizer
 				'priority'	=> 1
 		) );
 
-		$customize->add_control( new WP_Customize_Multiselect_Control( $customize, 'tangerine_slider_category', array(
+		$customize->add_control( new WP_Customize_Select_Control( $customize, 'tangerine_slider_category', array(
 				'label'   => 'Get slides from:',
-				'description'	=> __( 'Use Ctrl + Click for multiple selection.', TANGERINE_TEXTDOMAIN ),
+				'description'	=> __( 'Post type for slides content.', TANGERINE_TEXTDOMAIN ),
 				'section' => 'tangerine_slider',
 				'settings'   => 'tangerine_slider_category',
-				'type'	=> 'multiple-select',
+				'type'	=> 'option',
 				'choices'  => get_post_types(array( 'publicly_queryable' => true, 'capability_type' => 'post' )),
 				'priority'	=> 1
 		) ) );
