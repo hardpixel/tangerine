@@ -205,9 +205,9 @@
 
 		// Body & heading fonts
 		if ( $body_font == 'Ubuntu' || $heading_font == 'Ubuntu' || $title_font == 'Ubuntu' ) { echo '<link href="http://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" />'; }
-		if ( $body_font == 'Open Sans' || $heading_font == 'Open Sans' || $title_font == 'Ubuntu' ) { echo '<link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />'; }
-		if ( $body_font == 'Autour One' || $heading_font == 'Autour One' || $title_font == 'Ubuntu' ) { echo '<link href="http://fonts.googleapis.com/css?family=Autour+One" rel="stylesheet" />'; }
-		if ( $body_font == 'Dosis' || $heading_font == 'Dosis' || $title_font == 'Ubuntu' ) { echo '<link href="http://fonts.googleapis.com/css?family=Dosis" rel="stylesheet" />'; }
+		if ( $body_font == 'Open Sans' || $heading_font == 'Open Sans' || $title_font == 'Open Sans' ) { echo '<link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />'; }
+		if ( $body_font == 'Autour One' || $heading_font == 'Autour One' || $title_font == 'Autour One' ) { echo '<link href="http://fonts.googleapis.com/css?family=Autour+One" rel="stylesheet" />'; }
+		if ( $body_font == 'Dosis' || $heading_font == 'Dosis' || $title_font == 'Dosis' ) { echo '<link href="http://fonts.googleapis.com/css?family=Dosis" rel="stylesheet" />'; }
 
 		// Heading & title fonts
 		if ( $title_font == 'Caesar Dressing' || $heading_font == 'Caesar Dressing' ) { echo '<link href="http://fonts.googleapis.com/css?family=Caesar+Dressing" rel="stylesheet />"'; }

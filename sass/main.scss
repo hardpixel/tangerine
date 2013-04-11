@@ -48,13 +48,17 @@
 // @import "foundation/components/tooltips";
 // @import "foundation/components/dropdown";
 
+
+// BASE
+
 #top-area, #header, #main-slider, #main-area, #main, #footer-area, #footer-menu, #credits {
 	@include grid-column(12);
 	padding: 0;
 }
 
-#header, #main-menu, #main-slider {
+#main-menu, .home-slider {
 	@include grid-column(12);
+	padding: 0;
 }
 
 #top-area, #main-area, #footer-area {
@@ -64,6 +68,8 @@
 #header, #main-slider, #main, #footer-area {
 	margin-top: 20px;
 }
+
+// LAYOUT
 
 #wrapper {
 
@@ -91,18 +97,12 @@
 			margin-right: auto;
 			float: none;
 		}
-
-		.header-inner, .home-slider {
-			max-width: $row-width;
-			margin-left: auto;
-			margin-right: auto;
-		}
 	}
 
 	&.narrow-footer {
 		min-width: 100%;
 
-		.top-bar, #main-area, #footer-area {
+		.top-bar, #main-area, #footer-area, .header-inner {
 			max-width: $row-width;
 			margin-left: auto;
 			margin-right: auto;
@@ -113,17 +113,19 @@
 	&.full-slider {
 
 		.home-slider {
+			max-width: $row-width;
+			margin-left: auto;
+			margin-right: auto;
 			margin-bottom: 30px;
 		}
-	}
 
-	&.auto-slider {
-
-		.home-slider {
-			padding: 0;
+		.header-inner, .home-slider {
+			float: none;
 		}
 	}
 }
+
+// TOP BAR
 
 #top-area {
 	background: $top-area-bg;
@@ -132,6 +134,12 @@
 .top-bar {
 	background: none;
 }
+
+.top-bar-section ul {
+	background: none;
+}
+
+// MAIN MENU
 
 .main-bar {
 	@extend .top-bar;
@@ -142,58 +150,11 @@
 	@extend .top-bar-section;
 }
 
-#heading h1 {
-	line-height: 1;
+.main-bar-section ul {
+	background: none;
 }
 
-.header-inner, .home-slider {
-	padding: 0 $column-gutter/2;
-}
-
-#orbit-slider {
-
-	&.no-buttons {
-
-		.orbit-prev, .orbit-next {
-			display: none;
-		}
-	}
-
-	&.no-timer {
-
-		.orbit-timer {
-			display: none;
-		}
-	}
-
-	&.no-numbers {
-
-		.orbit-slide-number {
-			display: none;
-		}
-	}
-
-	.slide-thumbnail {
-		width: 100%;
-	}
-
-	.orbit-bullets {
-		margin: 0 auto;
-
-		li {
-			background: $orbit-bullets-bg;
-			border: none;
-			@include border-radius(50%);
-			@include box-shadow(inset 0 -1px 1px rgba(black,.1), 0 1px rgba(white,.5));
-			height: 14px;
-			width: 14px;
-
-			&.active {
-				background: $orbit-bullets-active-bg;
-			}
-		}
-	}
-}
+// WIDGETS
 
 .widgets {
 	list-style-type: none;
@@ -212,45 +173,7 @@
 	}
 }
 
-.widget_latest_posts_slider {
-
-	.orbit-container {
-
-		.orbit-timer, .orbit-slide-number {
-			display: none;
-		}
-
-		.orbit-prev, .orbit-next {
-			bottom: 0;
-			top: auto;
-			background: #111;
-			width: 30px;
-			height: 42px;
-
-			span {
-				margin-top: -11px;
-				border-width: 12px;
-				margin-left: -4px;
-			}
-		}
-
-		.orbit-prev {
-			left: 0;
-		}
-
-		.orbit-next {
-			right: 0;
-		}
-
-		.orbit-caption {
-			padding: 5px 0;
-
-			h5 {
-				line-height: emCalc(26px);
-			}
-		}
-	}
-}
+// FOOTER
 
 #footer-area {
 	background: $footer-area-bg;
@@ -298,6 +221,8 @@
 	}
 }
 
+// CREDITS
+
 #credits {
 	background: $credits-bg;
 	font-size: emCalc(12px);
@@ -312,7 +237,54 @@
 	text-align: center;
 }
 
-// Components
+// ORBIT SLIDER
+
+#orbit-slider {
+
+	&.no-buttons {
+
+		.orbit-prev, .orbit-next {
+			display: none;
+		}
+	}
+
+	&.no-timer {
+
+		.orbit-timer {
+			display: none;
+		}
+	}
+
+	&.no-numbers {
+
+		.orbit-slide-number {
+			display: none;
+		}
+	}
+
+	.slide-thumbnail {
+		width: 100%;
+	}
+
+	.orbit-bullets {
+		margin: 0 auto;
+
+		li {
+			background: $orbit-bullets-bg;
+			border: none;
+			@include border-radius(50%);
+			@include box-shadow(inset 0 -1px 1px rgba(black,.1), 0 1px rgba(white,.5));
+			height: 14px;
+			width: 14px;
+
+			&.active {
+				background: $orbit-bullets-active-bg;
+			}
+		}
+	}
+}
+
+// GALLERY
 
 .gallery {
 
@@ -340,5 +312,47 @@
 		padding: 0 10px;
 		position: absolute;
 		right: 14px;
+	}
+}
+
+// LATEST POSTS WIDGET
+
+.widget_latest_posts_slider {
+
+	.orbit-container {
+
+		.orbit-timer, .orbit-slide-number {
+			display: none;
+		}
+
+		.orbit-prev, .orbit-next {
+			bottom: 0;
+			top: auto;
+			background: #111;
+			width: 30px;
+			height: 42px;
+
+			span {
+				margin-top: -11px;
+				border-width: 12px;
+				margin-left: -4px;
+			}
+		}
+
+		.orbit-prev {
+			left: 0;
+		}
+
+		.orbit-next {
+			right: 0;
+		}
+
+		.orbit-caption {
+			padding: 5px 0;
+
+			h5 {
+				line-height: emCalc(26px);
+			}
+		}
 	}
 }
