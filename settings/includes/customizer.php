@@ -148,6 +148,10 @@ class Tangerine_Customizer
 		) );
 
 		// Slider
+		$customize->add_setting( 'show_home_slider', array(
+			'default'		=> '1'
+		) );
+
 		$customize->add_setting( 'tangerine_slider_category', array(
 			'default'		=> 'slider'
 		) );
@@ -440,6 +444,14 @@ class Tangerine_Customizer
 		) ) );
 
 		// Slider
+		$customize->add_control( 'show_home_slider', array(
+				'label'   => 'Show slider on home page',
+				'section' => 'tangerine_slider',
+				'settings'   => 'show_home_slider',
+				'type'	=> 'checkbox',
+				'priority'	=> 1
+		) );
+
 		$customize->add_control( new WP_Customize_Multiselect_Control( $customize, 'tangerine_slider_category', array(
 				'label'   => 'Get slides from:',
 				'description'	=> __( 'Use Ctrl + Click for multiple selection.', TANGERINE_TEXTDOMAIN ),

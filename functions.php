@@ -10,6 +10,7 @@
 	include( 'includes/cleanup.php' );
 
 	include( 'includes/navigation.php' );
+	include( 'includes/slider.php' );
 
 	include( 'includes/widgets/postslide-widget.php' );
 	include( 'includes/walkers/menu_walker.php' );

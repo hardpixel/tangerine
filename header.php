@@ -41,7 +41,7 @@
 
 			<?php main_menu(); ?>
 
-			<?php if( is_home() ) get_template_part( 'includes/slider' ); ?>
+			<?php if( is_home() ) home_slider(); ?>
 
 			<!-- BEGIN #main -->
 			<div id="main">
