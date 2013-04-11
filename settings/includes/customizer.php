@@ -59,6 +59,14 @@ class Tangerine_Customizer
 		// Site title
 		$customize->add_setting( 'header_image' );
 
+		$customize->add_setting( 'header_title', array(
+			'default'		=> '1'
+		) );
+
+		$customize->add_setting( 'top_bar_title', array(
+			'default'		=> '1'
+		) );
+
 		// Navigation
 		$customize->add_setting( 'show_top_menu', array(
 			'default'		=> '1'
@@ -185,23 +193,15 @@ class Tangerine_Customizer
 			'default'		=> '1'
 		) );
 
-		$customize->add_setting( 'tangerine_orbit_pauseonhover', array(
-			'default'		=> ''
-		) );
+		$customize->add_setting( 'tangerine_orbit_pauseonhover' );
 
-		$customize->add_setting( 'tangerine_orbit_keynav', array(
-			'default'		=> ''
-		) );
+		$customize->add_setting( 'tangerine_orbit_keynav' );
 
 		// Advanced Settings
-		$customize->add_setting( 'tangerine_custom_css', array(
-			'default'		=> ''
-		) );
+		$customize->add_setting( 'tangerine_custom_css' );
 
 		// Various Tweaks
-		$customize->add_setting( 'powered_by', array(
-			'default'		=> ''
-		) );
+		$customize->add_setting( 'powered_by' );
 	}
 
 	function add_controls( $customize )
@@ -213,6 +213,22 @@ class Tangerine_Customizer
 			'label'			=> __( 'Site logo', TANGERINE_TEXTDOMAIN ),
 			'priority'		=> 5
 		) ) );
+
+		$customize->add_control( 'header_title', array(
+			'section'		=> 'title_tagline',
+			'type'			=> 'checkbox',
+			'settings'		=> 'header_title',
+			'label'			=> __( 'Header Title', TANGERINE_TEXTDOMAIN ),
+			'priority'		=> 15
+		) );
+
+		$customize->add_control( 'top_bar_title', array(
+			'section'		=> 'title_tagline',
+			'type'			=> 'checkbox',
+			'settings'		=> 'top_bar_title',
+			'label'			=> __( 'Top Bar Title', TANGERINE_TEXTDOMAIN ),
+			'priority'		=> 16
+		) );
 
 		// Navigation
 		$customize->add_control( 'show_top_menu', array(
@@ -248,9 +264,7 @@ class Tangerine_Customizer
 		) );
 
 		// Layout
-		$customize->add_control(
-		new WP_Customize_Select_Control(
-			$customize, 'tangerine_page_width', array(
+		$customize->add_control( new WP_Customize_Select_Control( $customize, 'tangerine_page_width', array(
 				'section'		=> 'tangerine_layout',
 				'settings'		=> 'tangerine_page_width',
 				'label'			=> __( 'Page', TANGERINE_TEXTDOMAIN ),
@@ -263,12 +277,9 @@ class Tangerine_Customizer
 					'narrow-content'		=> __( 'Narrow Content', TANGERINE_TEXTDOMAIN ),
 					'narrow-footer'		=> __( 'Narrow Footer', TANGERINE_TEXTDOMAIN )
 				)
-			)
-		) );
+		) ) );
 
-		$customize->add_control(
-			new WP_Customize_Select_Control(
-			$customize, 'tangerine_sidebar', array(
+		$customize->add_control( new WP_Customize_Select_Control( $customize, 'tangerine_sidebar', array(
 				'section'		=> 'tangerine_layout',
 				'settings'		=> 'tangerine_sidebar',
 				'label'			=> __( 'Sidebar', TANGERINE_TEXTDOMAIN ),
@@ -279,12 +290,9 @@ class Tangerine_Customizer
 					'sidebar-left'		=> __( 'Sidebar Left', TANGERINE_TEXTDOMAIN ),
 					'sidebar-none'		=> __( 'No Sidebar', TANGERINE_TEXTDOMAIN )
 				)
-			)
-		) );
+		) ) );
 
-		$customize->add_control(
-			new WP_Customize_Select_Control(
-			$customize, 'tangerine_footer_widgets', array(
+		$customize->add_control( new WP_Customize_Select_Control( $customize, 'tangerine_footer_widgets', array(
 				'section'		=> 'tangerine_layout',
 				'settings'		=> 'tangerine_footer_widgets',
 				'label'			=> __( 'Footer', TANGERINE_TEXTDOMAIN ),
@@ -298,13 +306,10 @@ class Tangerine_Customizer
 					'block-grid-5'		=> '5',
 					'block-grid-6'		=> '6'
 				)
-			)
-		) );
+		) ) );
 
 		// Typography
-		$customize->add_control(
-			new WP_Customize_Select_Control(
-			$customize, 'tangerine_body_font', array(
+		$customize->add_control( new WP_Customize_Select_Control( $customize, 'tangerine_body_font', array(
 				'section'		=> 'tangerine_typography',
 				'settings'		=> 'tangerine_body_font',
 				'label'			=> __( 'Main font', TANGERINE_TEXTDOMAIN ),
@@ -317,12 +322,9 @@ class Tangerine_Customizer
 					'Autour One' => 'Autour One',
 					'Dosis'		=> 'Dosis'
 				)
-			)
-		) );
+		) ) );
 
-		$customize->add_control(
-			new WP_Customize_Text_Control(
-			$customize, 'tangerine_body_font_size', array(
+		$customize->add_control( new WP_Customize_Text_Control( $customize, 'tangerine_body_font_size', array(
 				'section'		=> 'tangerine_typography',
 				'settings'		=> 'tangerine_body_font_size',
 				'label'			=> __( 'Base font size', TANGERINE_TEXTDOMAIN ),
@@ -330,13 +332,10 @@ class Tangerine_Customizer
 				'extra'			=> 'em',
 				'type'			=> 'text',
 				'priority'		=> 2
-			)
-		) );
+		) ) );
 
 
-		$customize->add_control(
-			new WP_Customize_Select_Control(
-			$customize, 'tangerine_heading_font', array(
+		$customize->add_control( new WP_Customize_Select_Control( $customize, 'tangerine_heading_font', array(
 				'section'		=> 'tangerine_typography',
 				'settings'		=> 'tangerine_heading_font',
 				'label'			=> __( 'Headings', TANGERINE_TEXTDOMAIN ),
@@ -352,12 +351,9 @@ class Tangerine_Customizer
 					'Codystar' => 'Codystar',
 					'Dosis'		=> 'Dosis'
 				)
-			)
-		) );
+		) ) );
 
-		$customize->add_control(
-			new WP_Customize_Select_Control(
-			$customize, 'tangerine_heading_font_weight', array(
+		$customize->add_control( new WP_Customize_Select_Control( $customize, 'tangerine_heading_font_weight', array(
 				'section'		=> 'tangerine_typography',
 				'settings'		=> 'tangerine_heading_font_weight',
 				'label'			=> __( 'Headings font weight', TANGERINE_TEXTDOMAIN ),
@@ -368,12 +364,9 @@ class Tangerine_Customizer
 					'400'	=> 'Normal',
 					'600' 		=> 'Bold'
 				)
-			)
-		) );
+		) ) );
 
-		$customize->add_control(
-			new WP_Customize_Select_Control(
-			$customize, 'tangerine_title_font', array(
+		$customize->add_control( new WP_Customize_Select_Control( $customize, 'tangerine_title_font', array(
 				'section'		=> 'tangerine_typography',
 				'settings'		=> 'tangerine_title_font',
 				'label'			=> __( 'Blog title', TANGERINE_TEXTDOMAIN ),
@@ -389,12 +382,9 @@ class Tangerine_Customizer
 					'Codystar' => 'Codystar',
 					'Dosis'		=> 'Dosis'
 				)
-			)
-		) );
+		) ) );
 
-		$customize->add_control(
-			new WP_Customize_Select_Control(
-			$customize, 'tangerine_title_font_weight', array(
+		$customize->add_control( new WP_Customize_Select_Control( $customize, 'tangerine_title_font_weight', array(
 				'section'		=> 'tangerine_typography',
 				'settings'		=> 'tangerine_title_font_weight',
 				'label'			=> __( 'Blog title font weight', TANGERINE_TEXTDOMAIN ),
@@ -405,12 +395,9 @@ class Tangerine_Customizer
 					'400'		=> 'Normal',
 					'600'		=> 'Bold'
 				)
-			)
-		) );
+		) ) );
 
-		$customize->add_control(
-			new WP_Customize_Text_Control(
-			$customize, 'tangerine_title_font_size', array(
+		$customize->add_control( new WP_Customize_Text_Control( $customize, 'tangerine_title_font_size', array(
 				'section'		=> 'tangerine_typography',
 				'settings'		=> 'tangerine_title_font_size',
 				'label'			=> __( 'Blog title font size', TANGERINE_TEXTDOMAIN ),
@@ -418,59 +405,42 @@ class Tangerine_Customizer
 				'extra'			=> 'em',
 				'type'			=> 'text',
 				'priority'		=> 8
-			)
-		) );
+		) ) );
 
 		// Colors
-		$customize->add_control(
-			new WP_Customize_Color_Control(
-			$customize, 'tangerine_wrapper_bg', array(
+		$customize->add_control( new WP_Customize_Color_Control( $customize, 'tangerine_wrapper_bg', array(
 				'label'      => __( 'Background Color', TANGERINE_TEXTDOMAIN ),
 				'section'    => 'tangerine_colors',
 				'settings'   => 'tangerine_wrapper_bg'
-			)
-		) );
+		) ) );
 
-		$customize->add_control(
-			new WP_Customize_Color_Control(
+		$customize->add_control( new WP_Customize_Color_Control(
 			$customize, 'tangerine_top_bar_bg', array(
 				'label'      => __( 'Top Bar Background', TANGERINE_TEXTDOMAIN ),
 				'section'    => 'tangerine_colors',
 				'settings'   => 'tangerine_top_bar_bg'
-			)
-		) );
+		) ) );
 
-		$customize->add_control(
-			new WP_Customize_Color_Control(
-			$customize, 'tangerine_footer_bg', array(
+		$customize->add_control( new WP_Customize_Color_Control( $customize, 'tangerine_footer_bg', array(
 				'label'      => __( 'Footer Background', TANGERINE_TEXTDOMAIN ),
 				'section'    => 'tangerine_colors',
 				'settings'   => 'tangerine_footer_bg'
-			)
-		) );
+		) ) );
 
-		$customize->add_control(
-			new WP_Customize_Color_Control(
-			$customize, 'tangerine_footer_menu_bg', array(
+		$customize->add_control( new WP_Customize_Color_Control( $customize, 'tangerine_footer_menu_bg', array(
 				'label'      => __( 'Footer Menu Background', TANGERINE_TEXTDOMAIN ),
 				'section'    => 'tangerine_colors',
 				'settings'   => 'tangerine_footer_menu_bg'
-			)
-		) );
+		) ) );
 
-		$customize->add_control(
-			new WP_Customize_Color_Control(
-			$customize, 'tangerine_credits_bg', array(
+		$customize->add_control( new WP_Customize_Color_Control( $customize, 'tangerine_credits_bg', array(
 				'label'      => __( 'Credits Background', TANGERINE_TEXTDOMAIN ),
 				'section'    => 'tangerine_colors',
 				'settings'   => 'tangerine_credits_bg'
-			)
-		) );
+		) ) );
 
 		// Slider
-		$customize->add_control(
-			new WP_Customize_Multiselect_Control(
-			$customize, 'tangerine_slider_category', array(
+		$customize->add_control( new WP_Customize_Multiselect_Control( $customize, 'tangerine_slider_category', array(
 				'label'   => 'Get slides from:',
 				'description'	=> __( 'Use Ctrl + Click for multiple selection.', TANGERINE_TEXTDOMAIN ),
 				'section' => 'tangerine_slider',
@@ -478,8 +448,7 @@ class Tangerine_Customizer
 				'type'	=> 'multiple-select',
 				'choices'  => get_post_types(array( 'publicly_queryable' => true, 'capability_type' => 'post' )),
 				'priority'	=> 1
-			)
-		) );
+		) ) );
 
 		$customize->add_control(
 			new WP_Customize_Text_Control(
@@ -493,9 +462,7 @@ class Tangerine_Customizer
 			)
 		) );
 
-		$customize->add_control(
-			new WP_Customize_Text_Control(
-			$customize, 'tangerine_slider_width', array(
+		$customize->add_control( new WP_Customize_Text_Control( $customize, 'tangerine_slider_width', array(
 				'label'   => 'Slide width:',
 				'description'	=> __( 'Set before creating any slides. Else you have to regenerate thumbnails.', TANGERINE_TEXTDOMAIN ),
 				'extra'	=> 'px',
@@ -503,12 +470,9 @@ class Tangerine_Customizer
 				'settings'   => 'tangerine_slider_width',
 				'type'	=> 'text',
 				'priority'	=> 3
-			)
-		) );
+		) ) );
 
-		$customize->add_control(
-			new WP_Customize_Text_Control(
-			$customize, 'tangerine_slider_height', array(
+		$customize->add_control( new WP_Customize_Text_Control( $customize, 'tangerine_slider_height', array(
 				'label'   => 'Slide height:',
 				'description'	=> __( 'Set before creating any slides. Else you have to regenerate thumbnails.', TANGERINE_TEXTDOMAIN ),
 				'extra'	=> 'px',
@@ -516,12 +480,10 @@ class Tangerine_Customizer
 				'settings'   => 'tangerine_slider_height',
 				'type'	=> 'text',
 				'priority'	=> 4
-			)
-		) );
+		) ) );
 
 		// Orbit Slider
-		$customize->add_control(
-			new WP_Customize_Text_Control(
+		$customize->add_control( new WP_Customize_Text_Control(
 			$customize, 'tangerine_orbit_timerspeed', array(
 				'section'		=> 'tangerine_orbit_slider',
 				'settings' => 'tangerine_orbit_timerspeed',
@@ -530,12 +492,9 @@ class Tangerine_Customizer
 				'extra'    => __( 'ms', TANGERINE_TEXTDOMAIN ),
 				'type'     => 'text',
 				'priority'	=> 1
-			)
-		) );
+		) ) );
 
-		$customize->add_control(
-			new WP_Customize_Text_Control(
-			$customize, 'tangerine_orbit_animationspeed', array(
+		$customize->add_control( new WP_Customize_Text_Control( $customize, 'tangerine_orbit_animationspeed', array(
 				'section'		=> 'tangerine_orbit_slider',
 				'settings' => 'tangerine_orbit_animationspeed',
 				'label'    => __( 'Transition Speed', TANGERINE_TEXTDOMAIN ),
@@ -543,8 +502,7 @@ class Tangerine_Customizer
 				'extra'    => __( 'ms', TANGERINE_TEXTDOMAIN ),
 				'type'     => 'text',
 				'priority'	=> 2
-			)
-		) );
+		) ) );
 
 		$customize->add_control( 'tangerine_orbit_bullets', array(
 			'section'		=> 'tangerine_orbit_slider',
@@ -603,26 +561,20 @@ class Tangerine_Customizer
 		) );
 
 		// Various Tweaks
-		$customize->add_control(
-			new WP_Customize_Text_Control(
-			$customize, 'powered_by', array(
+		$customize->add_control( new WP_Customize_Text_Control( $customize, 'powered_by', array(
 				'label'   => 'Powered by',
 				'description'	=> __( 'Change default credits.', TANGERINE_TEXTDOMAIN ),
 				'section' => 'tangerine_tweaks',
 				'settings'   => 'powered_by'
-			)
-		) );
+		) ) );
 
 		// Advanced Settings
-		$customize->add_control(
-			new WP_Customize_Textarea_Control(
-			$customize, 'tangerine_custom_css', array(
+		$customize->add_control( new WP_Customize_Textarea_Control(	$customize, 'tangerine_custom_css', array(
 				'label'   => 'Custom CSS',
 				'description'	=> __( 'Add custom styles to your theme.', TANGERINE_TEXTDOMAIN ),
 				'section' => 'tangerine_advanced',
 				'settings'   => 'tangerine_custom_css'
-			)
-		) );
+		) ) );
 
 	}
 }
