@@ -4,7 +4,9 @@
 			<ul class="title-area">
 				<!-- Title Area -->
 				<li class="name">
-					<h1 id="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+					<?php if( get_theme_mod('top_bar_title') == '1' ): ?>
+						<h1 id="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+					<?php endif; ?>
 				</li>
 				<!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
 				<li class="toggle-topbar menu-icon">
