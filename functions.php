@@ -11,6 +11,7 @@
 
 	include( 'includes/navigation.php' );
 	include( 'includes/slider.php' );
+	include( 'settings/includes/style.php' );
 
 	include( 'includes/widgets/postslide-widget.php' );
 	include( 'includes/walkers/menu_walker.php' );
@@ -63,6 +64,7 @@
 		add_action( 'wp_enqueue_scripts', 'register_styles' );
 		add_action( 'wp_enqueue_scripts', 'enqueue_styles' );
 		add_action( 'wp_head', 'webfont_styles' );
+		add_action( 'wp_head', 'dynamic_styles' );
 
 		// Scripts
 		add_action( 'wp_enqueue_scripts', 'deregister_scripts' );

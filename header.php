@@ -12,7 +12,6 @@
 	<title><?php tangerine_title(); ?></title>
 
 	<?php wp_head(); ?>
-	<?php get_template_part( 'settings/includes/style' ); ?>
 </head>
 
 <body <?php body_class(); ?>>

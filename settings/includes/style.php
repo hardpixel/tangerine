@@ -1,4 +1,4 @@
-<style type="text/css">
+<?php function dynamic_styles(){ echo '<style type="text/css">'; ?>
 
 body {
 	background: <?php echo get_theme_mod('tangerine_wrapper_bg'); ?>;
@@ -35,4 +35,4 @@ h1, h2, h3, h4, h5, h6 {
 
 <?php echo get_theme_mod('tangerine_custom_css'); ?>
 
-</style>
+<?php echo '</style>'; } ?>
