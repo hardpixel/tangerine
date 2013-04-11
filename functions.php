@@ -204,17 +204,17 @@
 		$title_font = get_theme_mod('tangerine_title_font');
 
 		// Body & heading fonts
-		if ( $body_font == 'Ubuntu' || $heading_font == 'Ubuntu' || $title_font == 'Ubuntu' ) { echo '<link href="http://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">'; }
-		if ( $body_font == 'Open Sans' || $heading_font == 'Open Sans' || $title_font == 'Ubuntu' ) { echo '<link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">'; }
-		if ( $body_font == 'Autour One' || $heading_font == 'Autour One' || $title_font == 'Ubuntu' ) { echo '<link href="http://fonts.googleapis.com/css?family=Autour+One" rel="stylesheet">'; }
-		if ( $body_font == 'Dosis' || $heading_font == 'Dosis' || $title_font == 'Ubuntu' ) { echo '<link href="http://fonts.googleapis.com/css?family=Dosis" rel="stylesheet"'; }
+		if ( $body_font == 'Ubuntu' || $heading_font == 'Ubuntu' || $title_font == 'Ubuntu' ) { echo '<link href="http://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" />'; }
+		if ( $body_font == 'Open Sans' || $heading_font == 'Open Sans' || $title_font == 'Ubuntu' ) { echo '<link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />'; }
+		if ( $body_font == 'Autour One' || $heading_font == 'Autour One' || $title_font == 'Ubuntu' ) { echo '<link href="http://fonts.googleapis.com/css?family=Autour+One" rel="stylesheet" />'; }
+		if ( $body_font == 'Dosis' || $heading_font == 'Dosis' || $title_font == 'Ubuntu' ) { echo '<link href="http://fonts.googleapis.com/css?family=Dosis" rel="stylesheet" />'; }
 
 		// Heading & title fonts
-		if ( $title_font == 'Caesar Dressing' || $heading_font == 'Caesar Dressing' ) { echo '<link href="http://fonts.googleapis.com/css?family=Caesar+Dressing" rel="stylesheet"'; }
-		if ( $title_font == 'Oleo Script' || $heading_font == 'Oleo Script' ) { echo '<link href="http://fonts.googleapis.com/css?family=Oleo+Script" rel="stylesheet"'; }
-		if ( $title_font == 'Codystar' || $heading_font == 'Codystar' ) { echo '<link href="http://fonts.googleapis.com/css?family=Codystar" rel="stylesheet">'; }
-		if ( $title_font == 'Dosis' || $heading_font == 'Dosis' ) { echo '<link href="http://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">'; }
-		if ( $title_font == 'Autour One' || $heading_font == 'Autour One' ) { echo '<link href="http://fonts.googleapis.com/css?family=Autour+One" rel="stylesheet">'; }
+		if ( $title_font == 'Caesar Dressing' || $heading_font == 'Caesar Dressing' ) { echo '<link href="http://fonts.googleapis.com/css?family=Caesar+Dressing" rel="stylesheet />"'; }
+		if ( $title_font == 'Oleo Script' || $heading_font == 'Oleo Script' ) { echo '<link href="http://fonts.googleapis.com/css?family=Oleo+Script" rel="stylesheet" />'; }
+		if ( $title_font == 'Codystar' || $heading_font == 'Codystar' ) { echo '<link href="http://fonts.googleapis.com/css?family=Codystar" rel="stylesheet" />'; }
+		if ( $title_font == 'Dosis' || $heading_font == 'Dosis' ) { echo '<link href="http://fonts.googleapis.com/css?family=Dosis" rel="stylesheet" />'; }
+		if ( $title_font == 'Autour One' || $heading_font == 'Autour One' ) { echo '<link href="http://fonts.googleapis.com/css?family=Autour+One" rel="stylesheet" />'; }
 	}
 
 
