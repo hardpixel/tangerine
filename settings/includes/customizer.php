@@ -41,6 +41,12 @@ class Tangerine_Customizer
 			'priority'		=> 134
 		) );
 
+		// Various Tweaks
+		$customize->add_section( 'tangerine_tweaks', array(
+			'title'			=> __( 'Various Tweaks', TANGERINE_TEXTDOMAIN ),
+			'priority'		=> 149
+		) );
+
 		// Advanced Settings
 		$customize->add_section( 'tangerine_advanced', array(
 			'title'			=> __( 'Advanced Settings', TANGERINE_TEXTDOMAIN ),
@@ -189,6 +195,11 @@ class Tangerine_Customizer
 
 		// Advanced Settings
 		$customize->add_setting( 'tangerine_custom_css', array(
+			'default'		=> ''
+		) );
+
+		// Various Tweaks
+		$customize->add_setting( 'powered_by', array(
 			'default'		=> ''
 		) );
 	}
@@ -589,6 +600,17 @@ class Tangerine_Customizer
 			'label'    => __( 'Keyboard navigation', TANGERINE_TEXTDOMAIN ),
 			'type'     => 'checkbox',
 			'priority'	=> 9
+		) );
+
+		// Various Tweaks
+		$customize->add_control(
+			new WP_Customize_Text_Control(
+			$customize, 'powered_by', array(
+				'label'   => 'Powered by',
+				'description'	=> __( 'Change default credits.', TANGERINE_TEXTDOMAIN ),
+				'section' => 'tangerine_tweaks',
+				'settings'   => 'powered_by'
+			)
 		) );
 
 		// Advanced Settings
