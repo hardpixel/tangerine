@@ -48,7 +48,7 @@
 // @import "foundation/components/tooltips";
 // @import "foundation/components/dropdown";
 
-#top-area, #main-area, #main, #footer-area, #footer-menu, #credits {
+#top-area, #header, #main-slider, #main-area, #main, #footer-area, #footer-menu, #credits {
 	@include grid-column(12);
 	padding: 0;
 }
@@ -91,6 +91,12 @@
 			margin-right: auto;
 			float: none;
 		}
+
+		.header-inner, .home-slider {
+			max-width: $row-width;
+			margin-left: auto;
+			margin-right: auto;
+		}
 	}
 
 	&.narrow-footer {
@@ -101,6 +107,20 @@
 			margin-left: auto;
 			margin-right: auto;
 			float: none;
+		}
+	}
+
+	&.full-slider {
+
+		.home-slider {
+			margin-bottom: 30px;
+		}
+	}
+
+	&.auto-slider {
+
+		.home-slider {
+			padding: 0;
 		}
 	}
 }
@@ -124,6 +144,10 @@
 
 #heading h1 {
 	line-height: 1;
+}
+
+.header-inner, .home-slider {
+	padding: 0 $column-gutter/2;
 }
 
 #orbit-slider {

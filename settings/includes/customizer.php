@@ -122,6 +122,10 @@ class Tangerine_Customizer
 			'default'		=> 'sidebar-right'
 		) );
 
+		$customize->add_setting( 'tangerine_slider_mode', array(
+			'default'		=> 'auto-slider'
+		) );
+
 		$customize->add_setting( 'tangerine_footer_widgets', array(
 			'default'		=> 'block-grid-3'
 		) );
@@ -293,6 +297,18 @@ class Tangerine_Customizer
 					'sidebar-right'		=> __( 'Sidebar Right', TANGERINE_TEXTDOMAIN ),
 					'sidebar-left'		=> __( 'Sidebar Left', TANGERINE_TEXTDOMAIN ),
 					'sidebar-none'		=> __( 'No Sidebar', TANGERINE_TEXTDOMAIN )
+				)
+		) ) );
+
+		$customize->add_control( new WP_Customize_Select_Control( $customize, 'tangerine_slider_mode', array(
+				'section'		=> 'tangerine_layout',
+				'settings'		=> 'tangerine_slider_mode',
+				'label'			=> __( 'Home Slider Mode', TANGERINE_TEXTDOMAIN ),
+				'description'	=> __( 'Select slider mode.', TANGERINE_TEXTDOMAIN ),
+				'type'			=> 'select',
+				'choices'		=> array(
+					'auto-slider'	=> __( 'Auto', TANGERINE_TEXTDOMAIN ),
+					'full-slider'	=> __( 'Full Width', TANGERINE_TEXTDOMAIN )
 				)
 		) ) );
 

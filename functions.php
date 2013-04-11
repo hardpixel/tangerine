@@ -7,11 +7,12 @@
 	define( 'TANGERINE_TEXTDOMAIN', 'tangerine' );
 
 	include( 'settings/settings.php' );
-	include( 'includes/cleanup.php' );
+	include( 'settings/includes/style.php' );
 
+	include( 'includes/cleanup.php' );
+	include( 'includes/header.php' );
 	include( 'includes/navigation.php' );
 	include( 'includes/slider.php' );
-	include( 'settings/includes/style.php' );
 
 	include( 'includes/widgets/postslide-widget.php' );
 	include( 'includes/walkers/menu_walker.php' );

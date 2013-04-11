@@ -5,7 +5,7 @@
 
 		<div id="main-slider">
 
-			<div id="orbit-slider" class="<?php if( get_theme_mod('tangerine_orbit_pauseonhover') == '1' ) { echo 'pauseonhover'; } ?>
+			<div id="orbit-slider" class="home-slider <?php if( get_theme_mod('tangerine_orbit_pauseonhover') == '1' ) { echo 'pauseonhover'; } ?>
 				<?php if( get_theme_mod('tangerine_orbit_keynav') == '1' ) { echo 'keynav'; } ?>
 				<?php if( get_theme_mod('tangerine_orbit_navbuttons') == '' ) { echo 'no-buttons'; } ?>
 				<?php if( get_theme_mod('tangerine_orbit_timer') == '' ) { echo 'no-timer'; } ?>

@@ -17,30 +17,20 @@
 <body <?php body_class(); ?>>
 
 	<!-- BEGIN #wrapper -->
-	<div id="wrapper" class="row <?php echo get_theme_mod('tangerine_page_width'); ?> <?php echo get_theme_mod('tangerine_sidebar'); ?>">
+	<div id="wrapper" class="row <?php echo get_theme_mod('tangerine_page_width'); ?> <?php echo get_theme_mod('tangerine_sidebar'); ?> <?php echo get_theme_mod( 'tangerine_slider_mode' ); ?>">
 
 		<?php top_menu(); ?>
+
+		<?php if( is_front_page() && get_theme_mod( 'tangerine_slider_mode' ) == 'full-slider' ) { tangerine_header(); home_slider(); } ?>
 
 		<!-- BEGIN #main-area -->
 		<div id="main-area">
 
-			<div id="header">
+			<?php if( !is_front_page() ) { tangerine_header(); main_menu(); } ?>
 
-				<div class="small-12">
-					<?php if( get_theme_mod('header_image') != '' ): ?>
-						<img src="<?php echo get_theme_mod('header_image'); ?>" alt="" />
-					<?php endif; ?>
+			<?php if( is_front_page() && get_theme_mod( 'tangerine_slider_mode' ) == 'full-slider' ) { main_menu(); } ?>
 
-					<?php if( get_theme_mod('header_title') == '1' ): ?>
-						<h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="name"><?php bloginfo( 'name' ); ?></a> <small class="description"><?php bloginfo( 'description' ); ?></small></h1>
-					<?php endif; ?>
-				</div>
-
-			</div>
-
-			<?php main_menu(); ?>
-
-			<?php if( is_home() ) home_slider(); ?>
+			<?php if( is_front_page() && get_theme_mod( 'tangerine_slider_mode' ) == 'auto-slider' ) { tangerine_header(); main_menu(); home_slider(); } ?>
 
 			<!-- BEGIN #main -->
 			<div id="main">
