@@ -19,10 +19,10 @@
 				<div class="credits-inner">
 					<span id="copyright" class="left">&copy; <?php the_date( 'Y' ); ?> <?php bloginfo( 'name' ); ?>. <?php _e( 'All rights reserved.', TANGERINE_TEXTDOMAIN ); ?></span>
 
-					<?php if( get_theme_mod( 'design_by' ) == '' ): ?>
-						<span id="design-by"class="right"><?php _e( 'Powered by', TANGERINE_TEXTDOMAIN ); ?> <a href="<?php echo wp_get_theme()->get( 'ThemeURI' ); ?>" target="_blank"><?php echo wp_get_theme()->Name; ?></a></span>
+					<?php if( get_theme_mod( 'powered_by' ) == '' ): ?>
+						<span id="powered-by"class="right"><?php _e( 'Powered by', TANGERINE_TEXTDOMAIN ); ?> <a href="<?php echo wp_get_theme()->get( 'ThemeURI' ); ?>" target="_blank"><?php echo wp_get_theme()->Name; ?></a></span>
 					<?php else: ?>
-						<span id="design-by"class="right"><?php echo get_theme_mod( 'design_by' ); ?></span>
+						<span id="powered-by"class="right"><?php echo get_theme_mod( 'powered_by' ); ?></span>
 					<?php endif; ?>
 				</div>
 			</div>
