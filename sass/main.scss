@@ -108,7 +108,7 @@ p[style*="justify"] {
 	&.narrow-content {
 		min-width: 100%;
 
-		.top-bar, #main-area, #footer-widgets, .footer-menu-inner, .credits-inner {
+		.top-bar, .header-inner, #main-area, #footer-widgets, .footer-menu-inner, .credits-inner {
 			max-width: $row-width;
 			margin-left: auto;
 			margin-right: auto;

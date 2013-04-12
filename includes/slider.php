@@ -1,19 +1,15 @@
 <?php
 
-	function home_slider() {
+if( !function_exists( 'tangerine_home_slider' )) {
+
+	function tangerine_home_slider() {
 	if( get_theme_mod( 'show_home_slider' ) == '1' ) { ?>
 
 		<div id="main-slider">
 
-			<div id="orbit-slider" class="home-slider <?php if( get_theme_mod('tangerine_orbit_pauseonhover') == '1' ) { echo 'pauseonhover'; } ?>
-				<?php if( get_theme_mod('tangerine_orbit_keynav') == '1' ) { echo 'keynav'; } ?>
-				<?php if( get_theme_mod('tangerine_orbit_navbuttons') == '' ) { echo 'no-buttons'; } ?>
-				<?php if( get_theme_mod('tangerine_orbit_timer') == '' ) { echo 'no-timer'; } ?>
-				<?php if( get_theme_mod('tangerine_orbit_numbers') == '' ) { echo 'no-numbers'; } ?>">
+			<div id="orbit-slider" class="home-slider <?php if( get_theme_mod('tangerine_orbit_pauseonhover') == '1' ) { echo 'pauseonhover'; } ?> <?php if( get_theme_mod('tangerine_orbit_keynav') == '1' ) { echo 'keynav'; } ?> <?php if( get_theme_mod('tangerine_orbit_navbuttons') == '' ) { echo 'no-buttons'; } ?> <?php if( get_theme_mod('tangerine_orbit_timer') == '' ) { echo 'no-timer'; } ?> <?php if( get_theme_mod('tangerine_orbit_numbers') == '' ) { echo 'no-numbers'; } ?>">
 
-				<ul data-orbit data-options="timer_speed:<?php echo get_theme_mod('tangerine_orbit_timerspeed'); ?>;
-					animation_speed:<?php echo get_theme_mod('tangerine_orbit_animationspeed'); ?>;
-					bullets:<?php if( get_theme_mod('tangerine_orbit_bullets') == '1' ) { echo 'true'; } else { echo 'false'; } ?>;">
+				<ul data-orbit data-options="timer_speed:<?php echo get_theme_mod('tangerine_orbit_timerspeed'); ?>; animation_speed:<?php echo get_theme_mod('tangerine_orbit_animationspeed'); ?>; bullets:<?php if( get_theme_mod('tangerine_orbit_bullets') == '1' ) { echo 'true'; } else { echo 'false'; } ?>;">
 
 					<?php $slides = new WP_Query( array( 'showposts' => get_theme_mod('tangerine_slider_slides'), 'post_type' => get_theme_mod('tangerine_slider_category'), 'order' => 'DESC', 'orderby' => 'date' ) );
 
@@ -79,5 +75,8 @@
 		</div>
 
 	<?php }
+	}
 
-} ?>
+}
+
+?>

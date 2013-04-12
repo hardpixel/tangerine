@@ -19,22 +19,7 @@
 	<!-- BEGIN #wrapper -->
 	<div id="wrapper" class="row <?php echo get_theme_mod('tangerine_page_width'); ?> <?php echo get_theme_mod('tangerine_sidebar'); ?> <?php echo get_theme_mod( 'tangerine_slider_mode' ); ?>">
 
-		<?php top_menu(); ?>
-
-		<?php if( is_front_page() && get_theme_mod( 'tangerine_slider_mode' ) == 'full-slider' ) { tangerine_header(); home_slider(); } ?>
-
-		<?php if( !is_front_page() && get_theme_mod( 'tangerine_slider_mode' ) == 'full-slider' ) { tangerine_header(); } ?>
-
-		<!-- BEGIN #main-area -->
-		<div id="main-area">
-
-			<?php if( !is_front_page() && get_theme_mod( 'tangerine_slider_mode' ) == 'auto-slider' ) { tangerine_header(); } ?>
-
-			<?php if( !is_front_page() ) { main_menu(); } ?>
-
-			<?php if( is_front_page() && get_theme_mod( 'tangerine_slider_mode' ) == 'full-slider' ) { main_menu(); } ?>
-
-			<?php if( is_front_page() && get_theme_mod( 'tangerine_slider_mode' ) == 'auto-slider' ) { tangerine_header(); main_menu(); home_slider(); } ?>
+		<?php get_tangerine_header(); ?>
 
 			<!-- BEGIN #main -->
 			<div id="main">

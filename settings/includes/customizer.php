@@ -1,16 +1,13 @@
 <?php
 
-class Tangerine_Customizer
-{
-	function __construct( $customize )
-	{
+class Tangerine_Customizer {
+	function __construct( $customize ) {
 		$this->add_sections( $customize );
 		$this->add_settings( $customize );
 		$this->add_controls( $customize );
 	}
 
-	function add_sections( $customize )
-	{
+	function add_sections( $customize ) {
 		// Layout
 		$customize->add_section( 'tangerine_layout', array(
 			'title'			=> __( 'Layout', TANGERINE_TEXTDOMAIN ),
@@ -54,8 +51,7 @@ class Tangerine_Customizer
 		) );
 	}
 
-	function add_settings( $customize )
-	{
+	function add_settings( $customize )	{
 		// Site title
 		$customize->add_setting( 'header_image' );
 
@@ -212,8 +208,7 @@ class Tangerine_Customizer
 		$customize->add_setting( 'powered_by' );
 	}
 
-	function add_controls( $customize )
-	{
+	function add_controls( $customize ) {
 		// Site title
 		$customize->add_control( new WP_Customize_Image_Control( $customize, 'header_image', array(
 			'section'		=> 'title_tagline',
@@ -241,26 +236,26 @@ class Tangerine_Customizer
 		// Navigation
 		$customize->add_control( 'show_top_menu', array(
 			'section'		=> 'nav',
-			'settings' => 'show_top_menu',
-			'label'    => __( 'Show Top Menu', TANGERINE_TEXTDOMAIN ),
-			'type'     => 'checkbox',
-			'priority' => 16
+			'settings' 		=> 'show_top_menu',
+			'label'    		=> __( 'Show Top Menu', TANGERINE_TEXTDOMAIN ),
+			'type'     		=> 'checkbox',
+			'priority' 		=> 16
 		) );
 
 		$customize->add_control( 'show_main_menu', array(
 			'section'		=> 'nav',
-			'settings' => 'show_main_menu',
-			'label'    => __( 'Show Main Menu', TANGERINE_TEXTDOMAIN ),
-			'type'     => 'checkbox',
-			'priority' => 15
+			'settings' 		=> 'show_main_menu',
+			'label'    		=> __( 'Show Main Menu', TANGERINE_TEXTDOMAIN ),
+			'type'     		=> 'checkbox',
+			'priority' 		=> 15
 		) );
 
 		$customize->add_control( 'show_footer_menu', array(
 			'section'		=> 'nav',
-			'settings' => 'show_footer_menu',
-			'label'    => __( 'Show Footer Menu', TANGERINE_TEXTDOMAIN ),
-			'type'     => 'checkbox',
-			'priority' => 17
+			'settings' 		=> 'show_footer_menu',
+			'label'    		=> __( 'Show Footer Menu', TANGERINE_TEXTDOMAIN ),
+			'type'     		=> 'checkbox',
+			'priority' 		=> 17
 		) );
 
 		$customize->add_control( 'show_breadcrumbs', array(
@@ -282,7 +277,7 @@ class Tangerine_Customizer
 					'full-width'		=> __( 'Full Width', TANGERINE_TEXTDOMAIN ),
 					'normal-width'		=> __( 'Normal', TANGERINE_TEXTDOMAIN ),
 					'hybrid-width'		=> __( 'Hybrid', TANGERINE_TEXTDOMAIN ),
-					'narrow-content'		=> __( 'Narrow Content', TANGERINE_TEXTDOMAIN ),
+					'narrow-content'	=> __( 'Narrow Content', TANGERINE_TEXTDOMAIN ),
 					'narrow-footer'		=> __( 'Narrow Footer', TANGERINE_TEXTDOMAIN )
 				)
 		) ) );
@@ -316,7 +311,7 @@ class Tangerine_Customizer
 				'section'		=> 'tangerine_layout',
 				'settings'		=> 'tangerine_footer_widgets',
 				'label'			=> __( 'Footer', TANGERINE_TEXTDOMAIN ),
-				'description'			=> __( 'Number of widgets per row.', TANGERINE_TEXTDOMAIN ),
+				'description'	=> __( 'Number of widgets per row.', TANGERINE_TEXTDOMAIN ),
 				'type'			=> 'select',
 				'choices'		=> array(
 					'block-grid-1'		=> '1',
@@ -339,8 +334,8 @@ class Tangerine_Customizer
 				'choices'		=> array(
 					'Ubuntu'		=> 'Ubuntu',
 					'Open Sans'		=> 'Open Sans',
-					'Autour One' => 'Autour One',
-					'Dosis'		=> 'Dosis'
+					'Autour One' 	=> 'Autour One',
+					'Dosis'			=> 'Dosis'
 				)
 		) ) );
 
@@ -363,13 +358,13 @@ class Tangerine_Customizer
 				'type'			=> 'select',
 				'priority'		=> 3,
 				'choices'		=> array(
-					'Ubuntu'		=> 'Ubuntu',
-					'Open Sans'		=> 'Open Sans',
-					'Caesar Dressing' => 'Caesar Dressing',
-					'Autour One' => 'Autour One',
-					'Oleo Script' => 'Oleo Script',
-					'Codystar' => 'Codystar',
-					'Dosis'		=> 'Dosis'
+					'Ubuntu'			=> 'Ubuntu',
+					'Open Sans'			=> 'Open Sans',
+					'Caesar Dressing' 	=> 'Caesar Dressing',
+					'Autour One' 		=> 'Autour One',
+					'Oleo Script' 		=> 'Oleo Script',
+					'Codystar' 			=> 'Codystar',
+					'Dosis'				=> 'Dosis'
 				)
 		) ) );
 
@@ -381,7 +376,7 @@ class Tangerine_Customizer
 				'type'			=> 'select',
 				'priority'		=> 4,
 				'choices'		=> array(
-					'400'	=> 'Normal',
+					'400'		=> 'Normal',
 					'600' 		=> 'Bold'
 				)
 		) ) );
@@ -394,13 +389,13 @@ class Tangerine_Customizer
 				'type'			=> 'select',
 				'priority'		=> 6,
 				'choices'		=> array(
-					'Ubuntu'		=> 'Ubuntu',
-					'Open Sans'		=> 'Open Sans',
-					'Caesar Dressing' => 'Caesar Dressing',
-					'Autour One' => 'Autour One',
-					'Oleo Script' => 'Oleo Script',
-					'Codystar' => 'Codystar',
-					'Dosis'		=> 'Dosis'
+					'Ubuntu'			=> 'Ubuntu',
+					'Open Sans'			=> 'Open Sans',
+					'Caesar Dressing' 	=> 'Caesar Dressing',
+					'Autour One' 		=> 'Autour One',
+					'Oleo Script' 		=> 'Oleo Script',
+					'Codystar' 			=> 'Codystar',
+					'Dosis'				=> 'Dosis'
 				)
 		) ) );
 
@@ -461,147 +456,147 @@ class Tangerine_Customizer
 
 		// Slider
 		$customize->add_control( 'show_home_slider', array(
-				'label'   => 'Show slider on home page',
-				'section' => 'tangerine_slider',
+				'label'   	 => 'Show slider on home page',
+				'section' 	 => 'tangerine_slider',
 				'settings'   => 'show_home_slider',
-				'type'	=> 'checkbox',
-				'priority'	=> 1
+				'type'		 => 'checkbox',
+				'priority'	 => 1
 		) );
 
 		$customize->add_control( new WP_Customize_Select_Control( $customize, 'tangerine_slider_category', array(
-				'label'   => 'Get slides from:',
+				'label'   		=> 'Get slides from:',
 				'description'	=> __( 'Post type for slides content.', TANGERINE_TEXTDOMAIN ),
-				'section' => 'tangerine_slider',
-				'settings'   => 'tangerine_slider_category',
-				'type'	=> 'option',
-				'choices'  => get_post_types(array( 'publicly_queryable' => true, 'capability_type' => 'post' )),
-				'priority'	=> 1
+				'section' 		=> 'tangerine_slider',
+				'settings'   	=> 'tangerine_slider_category',
+				'type'			=> 'option',
+				'choices'  		=> get_post_types(array( 'publicly_queryable' => true, 'capability_type' => 'post' )),
+				'priority'		=> 1
 		) ) );
 
 		$customize->add_control(
 			new WP_Customize_Text_Control(
 			$customize, 'tangerine_slider_slides', array(
 				'section'		=> 'tangerine_slider',
-				'settings' => 'tangerine_slider_slides',
-				'label'    => __( 'Number of slides', TANGERINE_TEXTDOMAIN ),
+				'settings' 		=> 'tangerine_slider_slides',
+				'label'    		=> __( 'Number of slides', TANGERINE_TEXTDOMAIN ),
 				'description'	=> __( 'Use 0 for unlimited slides.', TANGERINE_TEXTDOMAIN ),
-				'type'     => 'text',
-				'priority'	=> 2
+				'type'     		=> 'text',
+				'priority'		=> 2
 			)
 		) );
 
 		$customize->add_control( new WP_Customize_Text_Control( $customize, 'tangerine_slider_width', array(
-				'label'   => 'Slide width:',
+				'label'   		=> 'Slide width:',
 				'description'	=> __( 'Set before creating any slides. Else you have to regenerate thumbnails.', TANGERINE_TEXTDOMAIN ),
-				'extra'	=> 'px',
-				'section' => 'tangerine_slider',
-				'settings'   => 'tangerine_slider_width',
-				'type'	=> 'text',
-				'priority'	=> 3
+				'extra'			=> 'px',
+				'section' 		=> 'tangerine_slider',
+				'settings'   	=> 'tangerine_slider_width',
+				'type'			=> 'text',
+				'priority'		=> 3
 		) ) );
 
 		$customize->add_control( new WP_Customize_Text_Control( $customize, 'tangerine_slider_height', array(
-				'label'   => 'Slide height:',
+				'label'   		=> 'Slide height:',
 				'description'	=> __( 'Set before creating any slides. Else you have to regenerate thumbnails.', TANGERINE_TEXTDOMAIN ),
-				'extra'	=> 'px',
-				'section' => 'tangerine_slider',
-				'settings'   => 'tangerine_slider_height',
-				'type'	=> 'text',
-				'priority'	=> 4
+				'extra'			=> 'px',
+				'section' 		=> 'tangerine_slider',
+				'settings'   	=> 'tangerine_slider_height',
+				'type'			=> 'text',
+				'priority'		=> 4
 		) ) );
 
 		// Orbit Slider
 		$customize->add_control( new WP_Customize_Text_Control(
 			$customize, 'tangerine_orbit_timerspeed', array(
 				'section'		=> 'tangerine_orbit_slider',
-				'settings' => 'tangerine_orbit_timerspeed',
-				'label'    => __( 'Animation Speed', TANGERINE_TEXTDOMAIN ),
-				'description'    => __( 'Time for slide to be shown.', TANGERINE_TEXTDOMAIN ),
-				'extra'    => __( 'ms', TANGERINE_TEXTDOMAIN ),
-				'type'     => 'text',
-				'priority'	=> 1
+				'settings' 		=> 'tangerine_orbit_timerspeed',
+				'label'    		=> __( 'Animation Speed', TANGERINE_TEXTDOMAIN ),
+				'description'   => __( 'Time for slide to be shown.', TANGERINE_TEXTDOMAIN ),
+				'extra'    		=> __( 'ms', TANGERINE_TEXTDOMAIN ),
+				'type'     		=> 'text',
+				'priority'		=> 1
 		) ) );
 
 		$customize->add_control( new WP_Customize_Text_Control( $customize, 'tangerine_orbit_animationspeed', array(
 				'section'		=> 'tangerine_orbit_slider',
-				'settings' => 'tangerine_orbit_animationspeed',
-				'label'    => __( 'Transition Speed', TANGERINE_TEXTDOMAIN ),
-				'description'    => __( 'Time for slide effect.', TANGERINE_TEXTDOMAIN ),
-				'extra'    => __( 'ms', TANGERINE_TEXTDOMAIN ),
-				'type'     => 'text',
-				'priority'	=> 2
+				'settings' 		=> 'tangerine_orbit_animationspeed',
+				'label'    		=> __( 'Transition Speed', TANGERINE_TEXTDOMAIN ),
+				'description'   => __( 'Time for slide effect.', TANGERINE_TEXTDOMAIN ),
+				'extra'    		=> __( 'ms', TANGERINE_TEXTDOMAIN ),
+				'type'     		=> 'text',
+				'priority'		=> 2
 		) ) );
 
 		$customize->add_control( 'tangerine_orbit_bullets', array(
 			'section'		=> 'tangerine_orbit_slider',
-			'settings' => 'tangerine_orbit_bullets',
-			'label'    => __( 'Show bullets', TANGERINE_TEXTDOMAIN ),
-			'type'     => 'checkbox',
-			'priority'	=> 3
+			'settings' 		=> 'tangerine_orbit_bullets',
+			'label'    		=> __( 'Show bullets', TANGERINE_TEXTDOMAIN ),
+			'type'     		=> 'checkbox',
+			'priority'		=> 3
 		) );
 
 		$customize->add_control( 'tangerine_orbit_caption', array(
 			'section'		=> 'tangerine_orbit_slider',
-			'settings' => 'tangerine_orbit_caption',
-			'label'    => __( 'Show caption', TANGERINE_TEXTDOMAIN ),
-			'type'     => 'checkbox',
-			'priority'	=> 4
+			'settings' 		=> 'tangerine_orbit_caption',
+			'label'    		=> __( 'Show caption', TANGERINE_TEXTDOMAIN ),
+			'type'     		=> 'checkbox',
+			'priority'		=> 4
 		) );
 
 		$customize->add_control( 'tangerine_orbit_navbuttons', array(
 			'section'		=> 'tangerine_orbit_slider',
-			'settings' => 'tangerine_orbit_navbuttons',
-			'label'    => __( 'Show navigation buttons', TANGERINE_TEXTDOMAIN ),
-			'type'     => 'checkbox',
-			'priority'	=> 5
+			'settings' 		=> 'tangerine_orbit_navbuttons',
+			'label'    		=> __( 'Show navigation buttons', TANGERINE_TEXTDOMAIN ),
+			'type'     		=> 'checkbox',
+			'priority'		=> 5
 		) );
 
 		$customize->add_control( 'tangerine_orbit_timer', array(
 			'section'		=> 'tangerine_orbit_slider',
-			'settings' => 'tangerine_orbit_timer',
-			'label'    => __( 'Show timer', TANGERINE_TEXTDOMAIN ),
-			'type'     => 'checkbox',
-			'priority'	=> 6
+			'settings' 		=> 'tangerine_orbit_timer',
+			'label'    		=> __( 'Show timer', TANGERINE_TEXTDOMAIN ),
+			'type'     		=> 'checkbox',
+			'priority'		=> 6
 		) );
 
 		$customize->add_control( 'tangerine_orbit_numbers', array(
 			'section'		=> 'tangerine_orbit_slider',
-			'settings' => 'tangerine_orbit_numbers',
-			'label'    => __( 'Show numbering', TANGERINE_TEXTDOMAIN ),
-			'type'     => 'checkbox',
-			'priority'	=> 7
+			'settings' 		=> 'tangerine_orbit_numbers',
+			'label'    		=> __( 'Show numbering', TANGERINE_TEXTDOMAIN ),
+			'type'     		=> 'checkbox',
+			'priority'		=> 7
 		) );
 
 		$customize->add_control( 'tangerine_orbit_pauseonhover', array(
 			'section'		=> 'tangerine_orbit_slider',
-			'settings' => 'tangerine_orbit_pauseonhover',
-			'label'    => __( 'Pause on hover', TANGERINE_TEXTDOMAIN ),
-			'type'     => 'checkbox',
-			'priority'	=> 8
+			'settings' 		=> 'tangerine_orbit_pauseonhover',
+			'label'    		=> __( 'Pause on hover', TANGERINE_TEXTDOMAIN ),
+			'type'     		=> 'checkbox',
+			'priority'		=> 8
 		) );
 
 		$customize->add_control( 'tangerine_orbit_keynav', array(
 			'section'		=> 'tangerine_orbit_slider',
-			'settings' => 'tangerine_orbit_keynav',
-			'label'    => __( 'Keyboard navigation', TANGERINE_TEXTDOMAIN ),
-			'type'     => 'checkbox',
-			'priority'	=> 9
+			'settings' 		=> 'tangerine_orbit_keynav',
+			'label'    		=> __( 'Keyboard navigation', TANGERINE_TEXTDOMAIN ),
+			'type'     		=> 'checkbox',
+			'priority'		=> 9
 		) );
 
 		// Various Tweaks
 		$customize->add_control( new WP_Customize_Text_Control( $customize, 'powered_by', array(
-				'label'   => 'Powered by',
+				'label'   		=> 'Powered by',
 				'description'	=> __( 'Change default credits.', TANGERINE_TEXTDOMAIN ),
-				'section' => 'tangerine_tweaks',
-				'settings'   => 'powered_by'
+				'section' 		=> 'tangerine_tweaks',
+				'settings'   	=> 'powered_by'
 		) ) );
 
 		// Advanced Settings
 		$customize->add_control( new WP_Customize_Textarea_Control(	$customize, 'tangerine_custom_css', array(
-				'label'   => 'Custom CSS',
+				'label'   		=> 'Custom CSS',
 				'description'	=> __( 'Add custom styles to your theme.', TANGERINE_TEXTDOMAIN ),
-				'section' => 'tangerine_advanced',
-				'settings'   => 'tangerine_custom_css'
+				'section' 		=> 'tangerine_advanced',
+				'settings'   	=> 'tangerine_custom_css'
 		) ) );
 
 	}

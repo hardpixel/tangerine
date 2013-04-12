@@ -13,6 +13,7 @@
 	include( 'includes/header.php' );
 	include( 'includes/navigation.php' );
 	include( 'includes/slider.php' );
+	include( 'includes/footer.php' );
 
 	include( 'includes/widgets/postslide-widget.php' );
 	include( 'includes/walkers/menu_walker.php' );
@@ -53,8 +54,7 @@
 /* Actions
 /*==================================================*/
 
-	if( ! is_admin() )
-	{
+	if( ! is_admin() ) {
 		// Headers, footers, body
 		add_filter( 'the_generator', 'remove_wp_version' );
 		add_filter( 'body_class','browser_body_class' );
@@ -82,8 +82,7 @@
 		// Menu
 		add_filter( 'wp_nav_menu_objects', 'add_extra_menu_classes' );
 	}
-	else
-	{
+	else {
 		// Styles
 		add_action( 'admin_init', 'register_admin_styles' );
 		add_action( 'admin_print_styles', 'enqueue_admin_styles' );
@@ -115,39 +114,34 @@
 /* Headers, footers, body
 /*==================================================*/
 
-	function remove_wp_version()
-	{
+	function remove_wp_version() {
 		return '';
 	}
 
 	// Browser name in body class
-	function browser_body_class( $classes )
-	{
-	    global $is_gecko, $is_IE, $is_opera, $is_safari, $is_chrome;
+	function browser_body_class( $classes )	{
+		global $is_gecko, $is_IE, $is_opera, $is_safari, $is_chrome;
 
-	    if( $is_gecko )      	$classes[] = 'gecko';
-	    elseif( $is_opera )  	$classes[] = 'opera';
-	    elseif( $is_safari )	$classes[] = 'safari';
-	    elseif( $is_chrome )	$classes[] = 'chrome';
-	    elseif( $is_IE )		$classes[] = 'ie';
-	    else               		$classes[] = 'unknown';
+		if( $is_gecko )      	$classes[] = 'gecko';
+		elseif( $is_opera )  	$classes[] = 'opera';
+		elseif( $is_safari )	$classes[] = 'safari';
+		elseif( $is_chrome )	$classes[] = 'chrome';
+		elseif( $is_IE )		$classes[] = 'ie';
+		else               		$classes[] = 'unknown';
 
-	    return $classes;
+		return $classes;
 	}
 
 	// Post category name in body class
-	function post_categories_body_class( $classes )
-	{
-	    if( is_single() )
-		{
-	        global $post;
-	        foreach( ( get_the_category( $post->ID ) ) as $category )
-			{
-	            $classes[] = 'term-' . $category->category_nicename;
-	        }
-	    }
+	function post_categories_body_class( $classes )	{
+		if( is_single() ) {
+			global $post;
+			foreach( ( get_the_category( $post->ID ) ) as $category ) {
+				$classes[] = 'term-' . $category->category_nicename;
+			}
+		}
 
-	    return $classes;
+		return $classes;
 	}
 
 
@@ -157,48 +151,41 @@
 /*==================================================*/
 
 	// Register styles
-	function register_styles()
-	{
+	function register_styles() {
 		wp_register_style( 'normalize', get_template_directory_uri() . '/stylesheets/normalize.css', '', '', 'screen' );
 		wp_register_style( 'main', get_template_directory_uri() . '/stylesheets/main.css', '', '', 'screen' );
 		wp_register_style( 'style', get_template_directory_uri() . '/style.css', '', '', 'screen' );
 	}
 
 	// Deregister styles
-	function deregister_styles()
-	{
+	function deregister_styles() {
 		//wp_deregister_style();
 	}
 
 	// Enqueue styles
-	function enqueue_styles()
-	{
+	function enqueue_styles() {
 		wp_enqueue_style( 'normalize' );
 		wp_enqueue_style( 'main' );
 		wp_enqueue_style( 'style' );
 	}
 
 	// Login screen styles
-	function register_login_styles()
-	{
+	function register_login_styles() {
 		echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo( 'template_url' ) . '/stylesheets/login.css">';
 	}
 
 	// Register admin styles
-	function register_admin_styles()
-	{
+	function register_admin_styles() {
 		wp_register_style( 'admin-style', get_template_directory_uri() . '/stylesheets/admin.css', '', '', 'screen' );
 	}
 
 	// Enqueue / Print admin styles
-	function enqueue_admin_styles()
-	{
+	function enqueue_admin_styles() {
 		wp_enqueue_style( 'admin-style' );
 	}
 
 	// Add specific styles
-	function webfont_styles()
-	{
+	function webfont_styles() {
 		$body_font = get_theme_mod('tangerine_body_font');
 		$heading_font = get_theme_mod('tangerine_heading_font');
 		$title_font = get_theme_mod('tangerine_title_font');
@@ -223,15 +210,13 @@
 /*==================================================*/
 
 	// Deregister scripts
-	function deregister_scripts()
-	{
+	function deregister_scripts() {
 		//wp_deregister_script( 'jquery' );
 		//wp_deregister_script( 'jquery-ui-core' );
 	}
 
 	// Register scripts
-	function register_scripts()
-	{
+	function register_scripts()	{
 		wp_register_script( 'modernizr', get_template_directory_uri() . '/javascripts/extras/custom.modernizr.js', array( 'jquery' ), '', false );
 		wp_register_script( 'foundation', get_template_directory_uri() . '/javascripts/foundation/foundation.js', array( 'jquery' ), '', true );
 		wp_register_script( 'clearing', get_template_directory_uri() . '/javascripts/foundation/foundation.clearing.js', array( 'jquery' ), '', true );
@@ -250,8 +235,7 @@
 	}
 
 	// Enqueue scripts
-	function enqueue_scripts()
-	{
+	function enqueue_scripts() {
 		wp_enqueue_script( 'modernizr' );
 		wp_enqueue_script( 'foundation' );
 		wp_enqueue_script( 'clearing' );
@@ -269,14 +253,12 @@
 		wp_enqueue_script( 'functions' );
 	}
 
-	function register_admin_scripts()
-	{
+	function register_admin_scripts() {
 		wp_register_script( 'snippet', get_template_directory_uri() . '/javascripts/extras/jquery.snippet.min.js' );
 		wp_register_script( 'admin', get_template_directory_uri() . '/javascripts/admin.js' );
 	}
 
-	function enqueue_admin_scripts()
-	{
+	function enqueue_admin_scripts() {
 		wp_enqueue_script( 'snippet' );
 		wp_enqueue_script( 'admin-functions' );
 	}
@@ -287,8 +269,7 @@
 /*==================================================*/
 
 	// Remove unnecessary pages
-	function remove_menu_pages()
-	{
+	function remove_menu_pages() {
 		remove_menu_page('link-manager.php');
 	}
 
@@ -297,8 +278,7 @@
 /*  Menu
 /*==================================================*/
 
-	function register_menus()
-	{
+	function register_menus() {
 		register_nav_menus(
 			array(
 				'top_menu'		=> __( 'Top Menu', TANGERINE_TEXTDOMAIN ),
@@ -308,66 +288,65 @@
 		);
 	}
 
-	function add_extra_menu_classes( $objects )
-	{
-	    $objects[1]->classes[] = 'first';
-	    $objects[count( $objects )]->classes[] = 'last';
+	function add_extra_menu_classes( $objects ) {
+		$objects[1]->classes[] = 'first';
+		$objects[count( $objects )]->classes[] = 'last';
 
-	    return $objects;
+		return $objects;
 	}
 
-	function tangerine_top_menu_bar() {
+	function tangerine_top_menu() {
 		wp_nav_menu(array(
-		    'container' => false,
-		    'container_class' => '',
-		    'menu' => 'top-menu',
-		    'menu_class' => 'right',
-		    'theme_location' => 'top_menu',
-		    'before' => '',
-		    'after' => '',
-		    'link_before' => '',
-		    'link_after' => '',
-		    'depth' => 3,
-		    'fallback_cb' => 'tangerine_top_bar_fallback',
-		    'walker' => new tangerine_top_menu()
+			'container' 		=> false,
+			'container_class' 	=> '',
+			'menu' 				=> 'top-menu',
+			'menu_class' 		=> 'right',
+			'theme_location' 	=> 'top_menu',
+			'before' 			=> '',
+			'after' 			=> '',
+			'link_before' 		=> '',
+			'link_after' 		=> '',
+			'depth' 			=> 3,
+			'fallback_cb' 		=> 'top_menu_fallback',
+			'walker' 			=> new top_menu_walker()
 		));
 	}
 
-	function tangerine_main_menu_bar() {
+	function tangerine_main_menu() {
 		wp_nav_menu(array(
-		    'container' => false,
-		    'container_class' => '',
-		    'menu' => 'main-menu',
-		    'menu_class' => 'left',
-		    'theme_location' => 'main_menu',
-		    'before' => '',
-		    'after' => '',
-		    'link_before' => '',
-		    'link_after' => '',
-		    'depth' => 3,
-		    'fallback_cb' => 'tangerine_main_bar_fallback',
-		    'walker' => new tangerine_general_menu()
+			'container' 		=> false,
+			'container_class' 	=> '',
+			'menu' 				=> 'main-menu',
+			'menu_class' 		=> 'left',
+			'theme_location'	=> 'main_menu',
+			'before' 			=> '',
+			'after' 			=> '',
+			'link_before'		=> '',
+			'link_after' 		=> '',
+			'depth' 			=> 3,
+			'fallback_cb'		=> 'main_menu_fallback',
+			'walker' 			=> new general_menu_walker()
 		));
 	}
 
-	function tangerine_footer_menu_bar() {
+	function tangerine_footer_menu() {
 		wp_nav_menu(array(
-		    'container' => false,
-		    'container_class' => '',
-		    'menu' => 'footer-menu',
-		    'menu_class' => 'left',
-		    'theme_location' => 'footer_menu',
-		    'before' => '',
-		    'after' => '',
-		    'link_before' => '',
-		    'link_after' => '',
-		    'depth' => 1,
-		    'fallback_cb' => 'tangerine_footer_bar_fallback',
-		    'walker' => new tangerine_general_menu()
+			'container' 		=> false,
+			'container_class'	=> '',
+			'menu'			 	=> 'footer-menu',
+			'menu_class'	 	=> 'left',
+			'theme_location' 	=> 'footer_menu',
+			'before' 	  	 	=> '',
+			'after' 	 	 	=> '',
+			'link_before'	 	=> '',
+			'link_after' 	 	=> '',
+			'depth'		 	 	=> 1,
+			'fallback_cb'	 	=> 'footer_menu_fallback',
+			'walker' 	 	 	=> new general_menu_walker()
 		));
 	}
 
-	function tangerine_top_bar_fallback() {
+	function top_menu_fallback() {
 		echo '<ul class="right">';
 		wp_list_pages(array(
 			'depth'        => 3,
@@ -380,14 +359,14 @@
 			'sort_column'  => 'menu_order, post_title',
 			'link_before'  => '',
 			'link_after'   => '',
-			'walker'       => new tangerine_fallback_menu(),
+			'walker'       => new fallback_menu(),
 			'post_type'    => 'page',
 			'post_status'  => 'publish'
 		));
 		echo '</ul>';
 	}
 
-	function tangerine_main_bar_fallback() {
+	function main_menu_fallback() {
 		echo '<ul class="left">';
 		wp_list_pages(array(
 			'depth'        => 3,
@@ -400,14 +379,14 @@
 			'sort_column'  => 'menu_order, post_title',
 			'link_before'  => '',
 			'link_after'   => '',
-			'walker'       => new tangerine_fallback_menu(),
+			'walker'       => new fallback_menu(),
 			'post_type'    => 'page',
 			'post_status'  => 'publish'
 		));
 		echo '</ul>';
 	}
 
-	function tangerine_footer_bar_fallback() {
+	function footer_menu_fallback() {
 		echo '<ul class="left">';
 		wp_list_pages(array(
 			'depth'        => 1,
@@ -420,7 +399,7 @@
 			'sort_column'  => 'menu_order, post_title',
 			'link_before'  => '',
 			'link_after'   => '',
-			'walker'       => new tangerine_fallback_menu(),
+			'walker'       => new fallback_menu(),
 			'post_type'    => 'page',
 			'post_status'  => 'publish'
 		));
@@ -432,7 +411,7 @@
 /*  Slider
 /*==================================================*/
 
-	function tangerine_orbit_register_cpt() {
+	function tangerine_orbit_cpt() {
 
 		$labels = array(
 			'name'                 => __( 'Slides', 'tangerine-orbit' ),
@@ -468,20 +447,19 @@
 
 		register_post_type( 'slides', $args );
 	}
-	add_action( 'init', 'tangerine_orbit_register_cpt' );
+
+	add_action( 'init', 'tangerine_orbit_cpt' );
 
 
 /*==================================================*/
 /* Excerpt
 /*==================================================*/
 
-	function excerpt_length( $length )
-	{
+	function excerpt_length( $length ) {
 		return 55;
 	}
 
-	function excerpt_more( $more )
-	{
+	function excerpt_more( $more ) {
 		return '<div class="small-12 columns read-more"><a class="button tiny secondary right" href="'. get_permalink() .'">'. __( 'Read More...', TANGERINE_TEXTDOMAIN ) .'</a></div>';
 	}
 
@@ -490,8 +468,7 @@
 /* Sidebars, widgets
 /*==================================================*/
 
-	function register_extra_sidebars()
-	{
+	function register_extra_sidebars() {
 		register_sidebar( array(
 			'name' 			=> 'Home Sidebar',
 			'id'			=> 'home-sidebar',
@@ -524,8 +501,7 @@
 	}
 
 	// Register widgets
-	function register_widgets()
-	{
+	function register_widgets() {
 		// register_widget( 'Widget' );
 	}
 
@@ -534,18 +510,15 @@
 /* Dashboard widgets
 /*==================================================*/
 
-	function add_dashboard_widgets()
-	{
+	function add_dashboard_widgets() {
 		//wp_add_dashboard_widget( 'dashboard_widget', 'Dashboard Widget', 'dashboard_widget' );
 	}
 
-	function dashboard_widget()
-	{
+	function dashboard_widget() {
 		// echo '';
 	}
 
-	function remove_dashboard_widgets()
-	{
+	function remove_dashboard_widgets() {
 		// Core
 		//remove_meta_box( 'dashboard_right_now', 'dashboard', 'core' );
 		//remove_meta_box( 'dashboard_quick_press', 'dashboard', 'core' );
@@ -565,8 +538,7 @@
 /* User
 /*==================================================*/
 
-	function edit_contactmethods( $methods )
-	{
+	function edit_contactmethods( $methods ) {
 		unset( $methods['aim'] );
 		unset( $methods['jabber'] );
 		unset( $methods['yim'] );
@@ -579,8 +551,7 @@
 /* Title
 /*==================================================*/
 
-	function tangerine_title()
-	{
+	function tangerine_title() {
 		global $page, $paged;
 
 		wp_title( '|', true, 'right' );
@@ -596,8 +567,7 @@
 /* Breadcrumbs
 /*==================================================*/
 
-	function breadcrumbs()
-	{
+	function breadcrumbs() {
 		if ( ! is_front_page() )
 		{
 			echo '<ul class="breadcrumbs hide-for-small"><li><a href="';
@@ -631,40 +601,34 @@
 /* Pagination
 /*==================================================*/
 
-	function pagination( $pages = '', $range = 2 )
-	{
-	     $showitems = ( $range * 2 ) + 1;
+	function pagination( $pages = '', $range = 2 ) {
+		$showitems = ( $range * 2 ) + 1;
 
-	     global $paged;
-	     if( empty( $paged ) ) $paged = 1;
+		global $paged;
+		if( empty( $paged ) ) $paged = 1;
 
-	     if( $pages == '' )
-	     {
-	         global $wp_query;
-	         $pages = $wp_query->max_num_pages;
-	         if( ! $pages )
-	         {
-	             $pages = 1;
-	         }
-	     }
+		if( $pages == '' ) {
+			global $wp_query;
+			$pages = $wp_query->max_num_pages;
+			if( ! $pages ) {
+				$pages = 1;
+			}
+		}
 
-	     if( 1 != $pages )
-	     {
-	         echo '<ul class="pagination">';
-	         echo '<li><a href="' . get_pagenum_link( 1 ) . '">&laquo;</a></li>';
+		if( 1 != $pages ) {
+			echo '<ul class="pagination">';
+			echo '<li><a href="' . get_pagenum_link( 1 ) . '">&laquo;</a></li>';
 
-	         for ( $i = 1; $i <= $pages; $i++ )
-	         {
-	             if ( 1 != $pages && ( ! ( $i >= $paged + $range + 1 || $i <= $paged - $range - 1 ) || $pages <= $showitems ))
-	             {
-	                 echo ( $paged == $i ) ? '<li class="current unavailable"><a href="#" onclick="event.preventDefault();">' . $i . '</a></li>'
+			for ( $i = 1; $i <= $pages; $i++ ) {
+				if ( 1 != $pages && ( ! ( $i >= $paged + $range + 1 || $i <= $paged - $range - 1 ) || $pages <= $showitems )) {
+					echo ( $paged == $i ) ? '<li class="current unavailable"><a href="#" onclick="event.preventDefault();">' . $i . '</a></li>'
 						: '<li><a href="' . get_pagenum_link( $i ) . '">' . $i . '</a></li>';
-	             }
-	         }
+				}
+			}
 
-			 echo '<li><a href="' . get_pagenum_link($pages) . '">&raquo;</a></li>';
-	         echo '</ul>';
-	     }
+			echo '<li><a href="' . get_pagenum_link($pages) . '">&raquo;</a></li>';
+			echo '</ul>';
+		}
 	}
 
 ?>

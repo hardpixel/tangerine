@@ -1,4 +1,4 @@
-<?php function dynamic_styles(){ echo '<style type="text/css">'; ?>
+<?php if( !function_exists( 'dynamic_styles' ) ) { function dynamic_styles() { echo '<style type="text/css">'; ?>
 
 body {
 	background: <?php echo get_theme_mod('tangerine_wrapper_bg'); ?>;
@@ -33,6 +33,4 @@ h1, h2, h3, h4, h5, h6 {
 	background: <?php echo get_theme_mod('tangerine_credits_bg'); ?>;
 }
 
-<?php echo get_theme_mod('tangerine_custom_css'); ?>
-
-<?php echo '</style>'; } ?>
+<?php echo get_theme_mod('tangerine_custom_css'); ?><?php echo '</style>'; } } ?>

@@ -21,28 +21,23 @@
 /* Tangerine
 /*==================================================*/
 
-	class Tangerine
-	{
-		function __construct()
-		{
+	class Tangerine	{
+		function __construct() {
 			add_action( 'after_setup_theme', array( &$this, 'after_theme_setup' ) );
 
 			add_action( 'admin_menu', array( &$this, 'admin_menu' ) );
 			add_action( 'customize_register', array( &$this, 'customize_register' ) );
 		}
 
-		function after_theme_setup()
-		{
+		function after_theme_setup() {
 			// set_theme_mod( 'tangerine_sidebar', 'sidebar-none' );
 		}
 
-		function admin_menu()
-		{
+		function admin_menu() {
 			add_theme_page( __( 'Customize' ), __( 'Customize' ), 'edit_theme_options', 'customize.php' );
 		}
 
-		function customize_register( $customize )
-		{
+		function customize_register( $customize ) {
 			$customizer = new Tangerine_Customizer( $customize );
 		}
 	}

@@ -1,14 +1,12 @@
 <?php
 
-class Comment_Walker extends Walker_Comment
-{
-	function start_el( &$output, $comment, $depth, $args, $id = 0 ) 
-	{
+class Comment_Walker extends Walker_Comment {
+
+	function start_el( &$output, $comment, $depth, $args, $id = 0 ) {
 		$depth++;
 		$GLOBALS['comment_depth'] = $depth;
 
-		if( ! empty($args['callback'] ) ) 
-		{
+		if( ! empty($args['callback'] ) ) {
 			call_user_func( $args['callback'], $comment, $args, $depth );
 			return;
 		}
@@ -16,24 +14,22 @@ class Comment_Walker extends Walker_Comment
 		$GLOBALS['comment'] = $comment;
 		extract( $args, EXTR_SKIP );
 
-		if ( 'div' == $args['style'] ) 
-		{
+		if ( 'div' == $args['style'] ) {
 			$tag = 'div';
 			$add_below = 'comment';
-		} 
-		else 
-		{
+		}
+		else {
 			$tag = 'li';
 			$add_below = 'div-comment';
 		}
 		?>
-		
+
 		<<?php echo $tag ?> <?php comment_class(empty( $args['has_children'] ) ? '' : 'parent') ?> id="comment-<?php comment_ID() ?>">
-		
+
 		<?php if ( 'div' != $args['style'] ) : ?>
 			<div id="div-comment-<?php comment_ID() ?>" class="comment-body">
 		<?php endif; ?>
-		
+
 		<div class="comment-author vcard">
 			<?php if ($args['avatar_size'] != 0) echo get_avatar( $comment, $args['avatar_size'] ); ?>
 			<?php printf( __('<cite class="fn">%s</cite> <span class="says">says:</span>'), get_comment_author_link() ) ?>
@@ -56,16 +52,14 @@ class Comment_Walker extends Walker_Comment
 		<div class="reply">
 			<?php comment_reply_link(array_merge( $args, array('add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
 		</div>
-		
+
 		<?php if( 'div' != $args['style'] ) : ?>
 			</div>
 		<?php endif;
 	}
 
-	function end_el( &$output, $comment, $depth = 0, $args = array() ) 
-	{
-		if( ! empty( $args['end-callback'] ) ) 
-		{
+	function end_el( &$output, $comment, $depth = 0, $args = array() ) {
+		if( ! empty( $args['end-callback'] ) ) {
 			call_user_func( $args['end-callback'], $comment, $args, $depth );
 			return;
 		}

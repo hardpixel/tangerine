@@ -1,6 +1,8 @@
 <?php
 
-	function top_menu() { ?>
+if( !function_exists( 'get_top_menu' ) ) {
+
+	function get_top_menu() { ?>
 
 		<?php if( get_theme_mod( 'show_top_menu' ) == '1' || get_theme_mod( 'show_main_menu' ) == '1' ): ?>
 			<div id="top-area" <?php if ( get_theme_mod('show_top_menu') == '') { echo 'class="show-for-small"'; } ?>>
@@ -20,13 +22,13 @@
 
 					<?php if( get_theme_mod( 'show_top_menu' ) == '1' ): ?>
 						<section class="top-bar-section">
-							<?php tangerine_top_menu_bar(); ?>
+							<?php tangerine_top_menu(); ?>
 						</section>
 					<?php endif; ?>
 
 					<?php if( get_theme_mod( 'show_main_menu' ) == '1' ): ?>
 						<section class="main-bar-section show-for-small">
-							<?php tangerine_main_menu_bar(); ?>
+							<?php tangerine_main_menu(); ?>
 						</section>
 					<?php endif; ?>
 
@@ -36,13 +38,17 @@
 
 	<?php }
 
-	function main_menu() { ?>
+}
+
+if( !function_exists( 'get_main_menu' ) ) {
+
+	function get_main_menu() { ?>
 
 		<?php if( get_theme_mod( 'show_main_menu' ) == '1' ): ?>
 			<div id="main-menu" class="hide-for-small">
 				<nav class="main-bar">
 					<section class="main-bar-section">
-						<?php tangerine_main_menu_bar(); ?>
+						<?php tangerine_main_menu(); ?>
 					</section>
 				</nav>
 			</div>
@@ -50,14 +56,18 @@
 
 	<?php }
 
-	function footer_menu() { ?>
+}
+
+if( !function_exists( 'get_footer_menu' ) ) {
+
+	function get_footer_menu() { ?>
 
 		<?php if( get_theme_mod( 'show_footer_menu' ) == '1' ): ?>
 			<div id="footer-menu">
 				<div class="footer-menu-inner">
 					<nav class="footer-bar">
 						<section class="footer-bar-section">
-							<?php tangerine_footer_menu_bar(); ?>
+							<?php tangerine_footer_menu(); ?>
 						</section>
 					</nav>
 				</div>
@@ -66,4 +76,4 @@
 
 	<?php }
 
-?>
+} ?>

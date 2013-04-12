@@ -3,7 +3,7 @@
 	<!-- BEGIN #content -->
 	<section id="content" class="small-12 <?php if( get_theme_mod('tangerine_sidebar') != 'sidebar-none' ) { echo 'large-8'; } ?> <?php if( get_theme_mod( 'tangerine_sidebar' ) == 'sidebar-left') { echo 'push-4'; } ?> columns">
 
-		<?php if( is_page() && get_theme_mod('show_breadcrumbs') == '1' ): ?>
+		<?php if( !is_front_page() && is_page() && get_theme_mod('show_breadcrumbs') == '1' ): ?>
 			<?php breadcrumbs(); ?>
 		<?php endif; ?>
 

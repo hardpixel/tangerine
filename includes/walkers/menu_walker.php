@@ -1,6 +1,6 @@
 <?php
 
-class tangerine_top_menu extends Walker_Nav_Menu {
+class top_menu_walker extends Walker_Nav_Menu {
 
     function display_element($element, &$children_elements, $max_depth, $depth=0, $args, &$output) {
         $element->has_children = !empty($children_elements[$element->ID]);
@@ -23,9 +23,9 @@ class tangerine_top_menu extends Walker_Nav_Menu {
         $output .= "\n<ul class=\"sub-menu dropdown\">\n";
     }
 
-} // end top bar walker
+} // end top menu walker
 
-class tangerine_general_menu extends Walker_Nav_Menu {
+class general_menu_walker extends Walker_Nav_Menu {
 
     function display_element($element, &$children_elements, $max_depth, $depth=0, $args, &$output) {
         $element->has_children = !empty($children_elements[$element->ID]);
@@ -48,9 +48,9 @@ class tangerine_general_menu extends Walker_Nav_Menu {
         $output .= "\n<ul class=\"sub-menu dropdown\">\n";
     }
 
-} // end general bar walker
+} // end general menu walker
 
-class tangerine_fallback_menu extends Walker_Page {
+class fallback_menu extends Walker_Page {
 
     function start_el(&$output, $page, $depth, $args, $current_page) {
         $item_html = '';
@@ -77,6 +77,6 @@ class tangerine_fallback_menu extends Walker_Page {
         $output .= "\n<ul class=\"sub-menu dropdown\">\n";
     }
 
-} // end fallback walker
+} // end fallback menu walker
 
 ?>

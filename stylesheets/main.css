@@ -4760,7 +4760,7 @@ p[style*="justify"] {
 #wrapper.narrow-content {
   min-width: 100%;
 }
-#wrapper.narrow-content .top-bar, #wrapper.narrow-content .main-bar, #wrapper.narrow-content #main-area, #wrapper.narrow-content #footer-widgets, #wrapper.narrow-content .footer-menu-inner, #wrapper.narrow-content .credits-inner {
+#wrapper.narrow-content .top-bar, #wrapper.narrow-content .main-bar, #wrapper.narrow-content .header-inner, #wrapper.narrow-content #main-area, #wrapper.narrow-content #footer-widgets, #wrapper.narrow-content .footer-menu-inner, #wrapper.narrow-content .credits-inner {
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
