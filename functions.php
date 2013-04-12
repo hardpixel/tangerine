@@ -46,8 +46,8 @@
 	//add_image_size( 'name', width, height, true );
 	//add_image_size( 'name', width, height, true );
 
-	add_image_size( 'slider-large-thumbnail', get_theme_mod('tangerine_slider_width', '1000'), get_theme_mod('tangerine_slider_height', '400'), true );
-	add_image_size( 'slider-medium-thumbnail', get_theme_mod('tangerine_slider_width', '1000') * 0.5 - 40, get_theme_mod('tangerine_slider_height', '400') - 40, true );
+	add_image_size( 'slider-large-thumbnail', get_theme_mod('set_slider_width', '1000'), get_theme_mod('set_slider_height', '400'), true );
+	add_image_size( 'slider-medium-thumbnail', get_theme_mod('set_slider_width', '1000') * 0.5 - 40, get_theme_mod('set_slider_height', '400') - 40, true );
 
 
 /*==================================================*/
@@ -186,9 +186,9 @@
 
 	// Add specific styles
 	function webfont_styles() {
-		$body_font = get_theme_mod('tangerine_body_font');
-		$heading_font = get_theme_mod('tangerine_heading_font');
-		$title_font = get_theme_mod('tangerine_title_font');
+		$body_font = get_theme_mod('set_body_font');
+		$heading_font = get_theme_mod('set_heading_font');
+		$title_font = get_theme_mod('set_title_font');
 
 		// Body & heading fonts
 		if ( $body_font == 'Ubuntu' || $heading_font == 'Ubuntu' || $title_font == 'Ubuntu' ) { echo '<link href="http://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" />'; }
@@ -408,50 +408,6 @@
 
 
 /*==================================================*/
-/*  Slider
-/*==================================================*/
-
-	function tangerine_orbit_cpt() {
-
-		$labels = array(
-			'name'                 => __( 'Slides', 'tangerine-orbit' ),
-			'singular_name'        => __( 'Slide', 'tangerine-orbit' ),
-			'all_items'            => __( 'All Slides', 'tangerine-orbit' ),
-			'add_new'              => __( 'Add New', 'tangerine-orbit' ),
-			'add_new_item'         => __( 'Add New', 'tangerine-orbit' ),
-			'edit_item'            => __( 'Edit Slide', 'tangerine-orbit' ),
-			'new_item'             => __( 'New Slide', 'tangerine-orbit' ),
-			'view_item'            => __( 'View Slide', 'tangerine-orbit' ),
-			'search_items'         => __( 'Search Slides', 'tangerine-orbit' ),
-			'not_found'            => __( 'No Slide found', 'tangerine-orbit' ),
-			'not_found_in_trash'   => __( 'No Slide found in Trash', 'tangerine-orbit' ),
-			'parent_item_colon'    => ''
-		);
-
-		$args = array(
-			'labels'               => $labels,
-			'public'               => true,
-			'publicly_queryable'   => true,
-			'_builtin'             => false,
-			'show_ui'              => true,
-			'query_var'            => true,
-			'rewrite'              => array( "slug" => "slides" ),
-			'capability_type'      => 'post',
-			'hierarchical'         => false,
-			'menu_position'        => 20,
-			'supports'             => array( 'title','thumbnail', 'page-attributes' ),
-			'taxonomies'           => array(),
-			'has_archive'          => true,
-			'show_in_nav_menus'    => false
-		);
-
-		register_post_type( 'slides', $args );
-	}
-
-	add_action( 'init', 'tangerine_orbit_cpt' );
-
-
-/*==================================================*/
 /* Excerpt
 /*==================================================*/
 
@@ -498,6 +454,27 @@
 			'before_title'  =>  '<h3 class="widgettitle">',
 			'after_title'   =>  '</h3>'
 		) );
+	}
+
+	// Sidebar & Content Sizes
+	function dynamic_content_styles() {
+		if( get_theme_mod('set_sidebar_pos') == 'sidebar-left' || get_theme_mod( 'set_sidebar_pos' ) == 'sidebar-right' ) {
+			echo 'large-8';
+		}
+
+		if( get_theme_mod('set_sidebar_pos') == 'sidebar-left-right' ) {
+			echo 'large-6';
+		}
+	}
+
+	function dynamic_sidebar_styles() {
+		if( get_theme_mod('set_sidebar_pos') == 'sidebar-left' || get_theme_mod( 'set_sidebar_pos' ) == 'sidebar-right' ) {
+			echo 'large-4';
+		}
+
+		if( get_theme_mod('set_sidebar_pos') == 'sidebar-left-right' ) {
+			echo 'large-3';
+		}
 	}
 
 	// Register widgets

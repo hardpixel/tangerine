@@ -4728,11 +4728,15 @@ table tfoot tr td {
   padding: 0;
 }
 
-#top-area, #main-area, #footer-area {
+#top-area, #main-area, #main-slider, #footer-area {
   display: table;
 }
 
-#header, #main-slider, #main, #footer-area {
+#header, #main-slider, #main {
+  padding-top: 20px;
+}
+
+#main, #footer-area {
   margin-top: 20px;
 }
 
@@ -4751,7 +4755,7 @@ p[style*="justify"] {
 #wrapper.hybrid-width {
   min-width: 100%;
 }
-#wrapper.hybrid-width #main-area {
+#wrapper.hybrid-width #main-area, #wrapper.hybrid-width .header-inner {
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
@@ -4775,14 +4779,14 @@ p[style*="justify"] {
   margin-right: auto;
   float: none;
 }
-#wrapper.full-slider .home-slider, #wrapper.full-slider .header-inner {
+#wrapper.contained-header .home-slider, #wrapper.contained-header .header-inner {
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
   float: none;
 }
-#wrapper.full-slider .home-slider {
-  margin-bottom: 30px;
+#wrapper.contained-header #header, #wrapper.contained-header #main-slider, #wrapper.contained-header #main-menu {
+  background: #eee;
 }
 
 #top-area {
@@ -4877,9 +4881,6 @@ p[style*="justify"] {
 #orbit-slider.no-numbers .orbit-slide-number {
   display: none;
 }
-#orbit-slider .orbit-bullets {
-  margin: 0 auto;
-}
 #orbit-slider .orbit-bullets li {
   background: #dfdfdf;
   border: none;
@@ -4919,32 +4920,4 @@ p[style*="justify"] {
   padding: 0 10px;
   position: absolute;
   right: 14px;
-}
-
-.widget_latest_posts_slider .orbit-container .orbit-timer, .widget_latest_posts_slider .orbit-container .orbit-slide-number {
-  display: none;
-}
-.widget_latest_posts_slider .orbit-container .orbit-prev, .widget_latest_posts_slider .orbit-container .orbit-next {
-  bottom: 0;
-  top: auto;
-  background: #111;
-  width: 30px;
-  height: 42px;
-}
-.widget_latest_posts_slider .orbit-container .orbit-prev span, .widget_latest_posts_slider .orbit-container .orbit-next span {
-  margin-top: -11px;
-  border-width: 12px;
-  margin-left: -4px;
-}
-.widget_latest_posts_slider .orbit-container .orbit-prev {
-  left: 0;
-}
-.widget_latest_posts_slider .orbit-container .orbit-next {
-  right: 0;
-}
-.widget_latest_posts_slider .orbit-container .orbit-caption {
-  padding: 5px 0;
-}
-.widget_latest_posts_slider .orbit-container .orbit-caption h5 {
-  line-height: 1.625em;
 }

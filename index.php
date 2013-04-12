@@ -1,7 +1,9 @@
 <?php get_header(); ?>
 
 	<!-- BEGIN #content -->
-	<section id="content" class="small-12 <?php if( get_theme_mod('tangerine_sidebar') != 'sidebar-none' ) { echo 'large-8'; } ?> <?php if( get_theme_mod( 'tangerine_sidebar' ) == 'sidebar-left') { echo 'push-4'; } ?> columns">
+	<?php get_sidebar(); ?>
+
+	<section id="content" class="small-12 <?php dynamic_content_styles(); ?> columns">
 
 		<?php if( !is_front_page() && is_page() && get_theme_mod('show_breadcrumbs') == '1' ): ?>
 			<?php breadcrumbs(); ?>
@@ -41,6 +43,6 @@
 	</section>
 	<!-- END #content -->
 
-	<?php get_sidebar(); ?>
+	<?php get_sidebar( 'right' ); ?>
 
 <?php get_footer(); ?>

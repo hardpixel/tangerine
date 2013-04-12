@@ -74,11 +74,15 @@
 	padding: 0;
 }
 
-#top-area, #main-area, #footer-area {
+#top-area, #main-area, #main-slider, #footer-area {
 	display: table;
 }
 
-#header, #main-slider, #main, #footer-area {
+#header, #main-slider, #main {
+	padding-top: 20px;
+}
+
+#main, #footer-area {
 	margin-top: 20px;
 }
 
@@ -97,7 +101,7 @@ p[style*="justify"] {
 	&.hybrid-width {
 		min-width: 100%;
 
-		#main-area {
+		#main-area, .header-inner {
 			max-width: $row-width;
 			margin-left: auto;
 			margin-right: auto;
@@ -127,7 +131,7 @@ p[style*="justify"] {
 		}
 	}
 
-	&.full-slider {
+	&.contained-header {
 
 		.home-slider, .header-inner {
 			max-width: $row-width;
@@ -136,9 +140,10 @@ p[style*="justify"] {
 			float: none;
 		}
 
-		.home-slider {
-			margin-bottom: 30px;
+		#header, #main-slider, #main-menu {
+			background: #eee;
 		}
+
 	}
 }
 
@@ -280,7 +285,6 @@ p[style*="justify"] {
 	}
 
 	.orbit-bullets {
-		margin: 0 auto;
 
 		li {
 			background: $orbit-bullets-bg;
@@ -325,47 +329,5 @@ p[style*="justify"] {
 		padding: 0 10px;
 		position: absolute;
 		right: 14px;
-	}
-}
-
-// LATEST POSTS WIDGET
-
-.widget_latest_posts_slider {
-
-	.orbit-container {
-
-		.orbit-timer, .orbit-slide-number {
-			display: none;
-		}
-
-		.orbit-prev, .orbit-next {
-			bottom: 0;
-			top: auto;
-			background: #111;
-			width: 30px;
-			height: 42px;
-
-			span {
-				margin-top: -11px;
-				border-width: 12px;
-				margin-left: -4px;
-			}
-		}
-
-		.orbit-prev {
-			left: 0;
-		}
-
-		.orbit-next {
-			right: 0;
-		}
-
-		.orbit-caption {
-			padding: 5px 0;
-
-			h5 {
-				line-height: emCalc(26px);
-			}
-		}
 	}
 }

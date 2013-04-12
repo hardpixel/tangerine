@@ -17,7 +17,7 @@
 <body <?php body_class(); ?>>
 
 	<!-- BEGIN #wrapper -->
-	<div id="wrapper" class="row <?php echo get_theme_mod('tangerine_page_width'); ?> <?php echo get_theme_mod('tangerine_sidebar'); ?> <?php echo get_theme_mod( 'tangerine_slider_mode' ); ?>">
+	<div id="wrapper" class="row <?php echo get_theme_mod('set_page_width'); ?> <?php echo get_theme_mod('set_sidebar'); ?> <?php echo get_theme_mod( 'set_header_mode' ); ?>">
 
 		<?php get_tangerine_header(); ?>
 

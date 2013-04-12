@@ -5,7 +5,7 @@ if ( !function_exists( 'tangerine_footer_widgets' ) ) {
 	function tangerine_footer_widgets() {
 	if ( is_active_sidebar( 'footer-area' ) ) { ?>
 		<div id="footer-widgets">
-			<ul class="widgets small-block-grid-2 large-<?php echo get_theme_mod('tangerine_footer_widgets'); ?>">
+			<ul class="widgets small-block-grid-2 large-<?php echo get_theme_mod('set_footer_widgets'); ?>">
 				<?php dynamic_sidebar( 'footer-area' ); ?>
 			</ul>
 		</div>
