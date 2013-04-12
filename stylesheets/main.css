@@ -2836,7 +2836,7 @@ form.custom .custom.disabled {
 /* Wrapped around .top-bar to contain to grid width */
 .contain-to-grid {
   width: 100%;
-  background: #111111;
+  background: #f57900;
 }
 
 .fixed {
@@ -2852,7 +2852,7 @@ form.custom .custom.disabled {
   height: 45px;
   line-height: 45px;
   position: relative;
-  background: #111111;
+  background: #f57900;
   margin-bottom: 0;
 }
 .top-bar ul, .main-bar ul {
@@ -2939,7 +2939,7 @@ form.custom .custom.disabled {
   background: transparent;
 }
 .top-bar.expanded .title-area, .expanded.main-bar .title-area {
-  background: #111111;
+  background: #f57900;
 }
 .top-bar.expanded .toggle-topbar a, .expanded.main-bar .toggle-topbar a {
   color: #888888;
@@ -3081,7 +3081,7 @@ form.custom .custom.disabled {
 
 @media only screen and (min-width: 58.75em) {
   .top-bar, .main-bar {
-    background: #111111;
+    background: #f57900;
     *zoom: 1;
     overflow: visible;
   }
@@ -3112,7 +3112,7 @@ form.custom .custom.disabled {
     top: 8px;
   }
   .top-bar.expanded, .expanded.main-bar {
-    background: #111111;
+    background: #f57900;
   }
 
   .contain-to-grid .top-bar, .contain-to-grid .main-bar {
@@ -3140,7 +3140,7 @@ form.custom .custom.disabled {
   .top-bar-section li a:not(.button), .main-bar-section li a:not(.button) {
     padding: 0 15px;
     line-height: 45px;
-    background: #111111;
+    background: #f57900;
   }
   .top-bar-section li a:not(.button):hover, .main-bar-section li a:not(.button):hover {
     background: black;
@@ -3183,11 +3183,11 @@ form.custom .custom.disabled {
     line-height: 1;
     white-space: nowrap;
     padding: 7px 15px;
-    background: #1e1e1e;
+    background: #ff8610;
   }
   .top-bar-section .dropdown li label, .main-bar-section .dropdown li label {
     white-space: nowrap;
-    background: #1e1e1e;
+    background: #ff8610;
   }
   .top-bar-section .dropdown li .dropdown, .main-bar-section .dropdown li .dropdown {
     left: 100%;
@@ -3196,14 +3196,14 @@ form.custom .custom.disabled {
   .top-bar-section > ul > .divider, .main-bar-section > ul > .divider {
     border-bottom: none;
     border-top: none;
-    border-right: solid 1px #2b2b2b;
-    border-left: solid 1px black;
+    border-right: solid 1px #ff9329;
+    border-left: solid 1px #c26000;
     clear: none;
     height: 45px;
     width: 0px;
   }
   .top-bar-section .has-form, .main-bar-section .has-form {
-    background: #111111;
+    background: #f57900;
     padding: 0 15px;
     height: 45px;
   }
@@ -3239,7 +3239,7 @@ form.custom .custom.disabled {
   position: absolute;
   bottom: 0;
   background-color: black;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.3);
   color: #fff;
   width: 100%;
   padding: 10px 14px;
@@ -3267,7 +3267,7 @@ form.custom .custom.disabled {
 .orbit-container .orbit-timer .orbit-progress {
   height: 100%;
   background-color: black;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(255, 255, 255, 0.3);
   display: block;
   width: 0%;
 }
@@ -3299,7 +3299,7 @@ form.custom .custom.disabled {
   top: 50%;
   margin-top: -25px;
   background-color: black;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.3);
   width: 50px;
   height: 60px;
   line-height: 50px;
@@ -4706,6 +4706,38 @@ table tfoot tr td {
   line-height: 30px;
 }
 
+.top-bar-section li a:hover:not(.button), .main-bar-section li a:hover:not(.button) {
+  background: #dc6c00;
+}
+
+.top-bar-section ul li.active a, .main-bar-section ul li.active a {
+  background: #dc6c00;
+}
+
+.main-bar-section li a:hover:not(.button) {
+  background: #dc6c00;
+}
+
+.main-bar-section ul li.active a {
+  background: #dc6c00;
+}
+
+.top-bar-section ul li > a, .main-bar-section ul li > a, .main-bar-section ul li > a {
+  background: none;
+}
+
+.top-bar-section ul, .main-bar-section ul, .main-bar-section ul {
+  background: none;
+}
+
+.top-bar.expanded .toggle-topbar a, .expanded.main-bar .toggle-topbar a, .expanded.main-bar .toggle-topbar a {
+  color: #d16700;
+}
+
+.top-bar.expanded .toggle-topbar a span, .expanded.main-bar .toggle-topbar a span, .expanded.main-bar .toggle-topbar a span {
+  box-shadow: 0 10px 0 1px #d16700, 0 16px 0 1px #d16700, 0 22px 0 1px #d16700;
+}
+
 #orbit-slider .slide-thumbnail {
   width: 100%;
 }
@@ -4734,6 +4766,16 @@ table tfoot tr td {
 
 #header, #main-slider, #main {
   padding-top: 20px;
+}
+
+#header .name, #header .logo {
+  float: left;
+}
+#header .logo {
+  padding: 0 15px 15px 0;
+}
+#header .name small {
+  margin-left: 10px;
 }
 
 #main, #footer-area {
@@ -4790,19 +4832,19 @@ p[style*="justify"] {
 }
 
 #top-area {
-  background: #111111;
+  background: #f57900;
 }
 
 .top-bar, .main-bar {
   background: none;
 }
 
-.top-bar-section ul, .main-bar-section ul {
+.top-bar-section, .main-bar-section {
   background: none;
 }
 
 .main-bar {
-  background: #111111;
+  background: #f57900;
 }
 
 .main-bar-section ul {
@@ -4821,9 +4863,6 @@ p[style*="justify"] {
 
 #footer-area {
   background: rgba(0, 0, 0, 0.1);
-  -webkit-box-shadow: 0 1px 4px -2px rgba(0, 0, 0, 0.2) inset;
-  -moz-box-shadow: 0 1px 4px -2px rgba(0, 0, 0, 0.2) inset;
-  box-shadow: 0 1px 4px -2px rgba(0, 0, 0, 0.2) inset;
   color: #999999;
 }
 #footer-area .widgets {
@@ -4889,14 +4928,20 @@ p[style*="justify"] {
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
   border-radius: 50%;
-  -webkit-box-shadow: inset 0 -1px 1px rgba(0, 0, 0, 0.1), 0 1px rgba(255, 255, 255, 0.5);
-  -moz-box-shadow: inset 0 -1px 1px rgba(0, 0, 0, 0.1), 0 1px rgba(255, 255, 255, 0.5);
-  box-shadow: inset 0 -1px 1px rgba(0, 0, 0, 0.1), 0 1px rgba(255, 255, 255, 0.5);
   height: 14px;
   width: 14px;
 }
 #orbit-slider .orbit-bullets li.active {
-  background: #84e984;
+  background: #cccccc;
+}
+#orbit-slider .orbit-caption {
+  font-size: 1em;
+}
+#orbit-slider .orbit-caption h4 {
+  margin: 0;
+}
+#orbit-slider .orbit-caption p {
+  margin: 5px 0 0;
 }
 
 .gallery ul li {

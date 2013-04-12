@@ -125,25 +125,15 @@ class Tangerine_Customizer {
 		) );
 
 		// Colors
-		$customize->add_setting( 'set_wrapper_bg', array(
-			'default'		=> '#f6f6f6'
-		) );
+		$customize->add_setting( 'set_wrapper_bg' );
 
-		$customize->add_setting( 'set_top_bar_bg', array(
-			'default'		=> '#111111'
-		) );
+		$customize->add_setting( 'set_top_bar_bg' );
 
-		$customize->add_setting( 'set_footer_bg', array(
-			'default'		=> '#353535'
-		) );
+		$customize->add_setting( 'set_footer_bg' );
 
-		$customize->add_setting( 'set_footer_menu_bg', array(
-			'default'		=> '#222222'
-		) );
+		$customize->add_setting( 'set_footer_menu_bg' );
 
-		$customize->add_setting( 'set_credits_bg', array(
-			'default'		=> '#111111'
-		) );
+		$customize->add_setting( 'set_credits_bg' );
 
 		// Slider
 		$customize->add_setting( 'show_home_slider', array(

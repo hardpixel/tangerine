@@ -254,7 +254,7 @@ if( !function_exists( 'tangerine_home_slider' ) ) {
 
 									<?php if( get_theme_mod('show_slider_caption') == '1') : ?>
 										<div id="caption-<?php the_ID(); ?>" class="orbit-caption">
-											<h5><?php the_title(); ?></h5>
+											<h4><?php the_title(); ?></h4>
 											<p><?php echo get_post_meta( $post->ID, '_slide_caption', true ); ?></p>
 										</div>
 									<?php endif; ?>
@@ -273,13 +273,13 @@ if( !function_exists( 'tangerine_home_slider' ) ) {
 
 									<?php if( get_theme_mod('show_slider_caption') == '1') : ?>
 										<div id="caption-<?php the_ID(); ?>" class="orbit-caption show-for-small">
-											<h5><a href="<?php echo get_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h5>
+											<h4><a href="<?php echo get_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h4>
 											<p><?php the_excerpt(); ?></p>
 										</div>
 									<?php endif; ?>
 
 									<div id="excerpt-<?php the_ID(); ?>" class="orbit-excerpt small-6 columns hide-for-small">
-										<h5><?php the_title(); ?></h5>
+										<h4><?php the_title(); ?></h4>
 										<p><?php the_excerpt(); ?></p>
 									</div>
 

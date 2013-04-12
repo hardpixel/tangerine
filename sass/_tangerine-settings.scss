@@ -4,15 +4,25 @@
 // Tangerine Framework Variables
 //
 
-$top-area-bg: #111;
-$main-menu-bg: #111;
+// Top bar
+$top-area-bg: #f57900;
+$topbar-bg: #f57900;
+$top-menu-active-bg: #f57900;
+
+// Main menu
+$main-menu-bg: #f57900;
+$main-menu-active-bg: #f57900;
+
+// Footer area
 $footer-area-bg: rgba(black,.1);
 $footer-area-color: #999;
 $footer-menu-bg: #333;
 $footer-menu-color: #f6f6f6;
 $credits-bg: #111;
 
-$widgettitle-color: #999;
-
+// Home slider
 $orbit-bullets-bg: #dfdfdf;
-$orbit-bullets-active-bg: #84E984;
+$orbit-bullets-active-bg: #ccc;
+
+// Widgets
+$widgettitle-color: #999;

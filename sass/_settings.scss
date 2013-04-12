@@ -610,16 +610,16 @@
  $orbit-container-bg: none;
 // $orbit-caption-bg-old-browser: #000;
 // $orbit-caption-bg-old: rgb(0,0,0);
-// $orbit-caption-bg: rgba(0,0,0,0.6);
+ $orbit-caption-bg: rgba(0,0,0,0.3);
 // $orbit-caption-font-color: #fff;
 
 // We use these to control the left/right nav styles
 // $orbit-nav-bg-old: rgb(0,0,0);
-// $orbit-nav-bg: rgba(0,0,0,0.6);
+ $orbit-nav-bg: rgba(0,0,0,0.3);
 
 // We use these to control the timer styles
 // $orbit-timer-bg-old: rgb(0,0,0);
-// $orbit-timer-bg: rgba(0,0,0,0.6);
+ $orbit-timer-bg: rgba(255,255,255,0.3);
 
 // We use these to control the bullet nav styles
 // $orbit-bullet-nav-color: #999;
