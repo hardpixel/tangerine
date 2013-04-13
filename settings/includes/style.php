@@ -11,7 +11,7 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: <?php echo get_theme_mod('set_heading_font_weight'); ?>;
 }
 
-#top-area, .top-bar-section li a:not(.button), .main-bar-section li a:not(.button) {
+#top-area, .top-bar {
 	background: <?php echo get_theme_mod('set_top_bar_bg'); ?>;
 }
 
