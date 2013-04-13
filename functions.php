@@ -197,7 +197,7 @@
 		if ( $body_font == 'Dosis' || $heading_font == 'Dosis' || $title_font == 'Dosis' ) { echo '<link href="http://fonts.googleapis.com/css?family=Dosis" rel="stylesheet" />'; }
 
 		// Heading & title fonts
-		if ( $title_font == 'Caesar Dressing' || $heading_font == 'Caesar Dressing' ) { echo '<link href="http://fonts.googleapis.com/css?family=Caesar+Dressing" rel="stylesheet />"'; }
+		if ( $title_font == 'Caesar Dressing' || $heading_font == 'Caesar Dressing' ) { echo '<link href="http://fonts.googleapis.com/css?family=Caesar+Dressing" rel="stylesheet" />'; }
 		if ( $title_font == 'Oleo Script' || $heading_font == 'Oleo Script' ) { echo '<link href="http://fonts.googleapis.com/css?family=Oleo+Script" rel="stylesheet" />'; }
 		if ( $title_font == 'Codystar' || $heading_font == 'Codystar' ) { echo '<link href="http://fonts.googleapis.com/css?family=Codystar" rel="stylesheet" />'; }
 		if ( $title_font == 'Dosis' || $heading_font == 'Dosis' ) { echo '<link href="http://fonts.googleapis.com/css?family=Dosis" rel="stylesheet" />'; }
