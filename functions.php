@@ -72,6 +72,16 @@
 		add_action( 'wp_enqueue_scripts', 'register_scripts' );
 		add_action( 'wp_enqueue_scripts', 'enqueue_scripts' );
 
+		// Child Theme Styles
+		if( function_exists( 'tangerine_child_styles' ) ) {
+			add_action( 'wp_footer', 'tangerine_child_styles' );
+		}
+
+		// Child Theme Scripts
+		if( function_exists( 'tangerine_child_scripts' ) ) {
+			add_action( 'wp_enqueue_scripts', 'tangerine_child_scripts' );
+		}
+
 		// Login styles
 		add_action( 'login_head', 'register_login_styles' );
 
