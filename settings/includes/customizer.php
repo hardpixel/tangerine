@@ -103,6 +103,9 @@ class Tangerine_Customizer {
 			'default'		=> '2.85'
 		) );
 
+		// Static Front Page
+		$customize->add_setting( 'show_front_page_title' );
+
 		// Layout
 		$customize->add_setting( 'set_page_width', array(
 			'default'		=> 'hybrid-width'
@@ -251,6 +254,15 @@ class Tangerine_Customizer {
 			'label'    => __( 'Show Breadcrumbs', TANGERINE_TEXTDOMAIN ),
 			'type'     => 'checkbox',
 			'priority' => 18
+		) );
+
+		// Static Front Page
+		$customize->add_control( 'show_front_page_title', array(
+			'section'		=> 'static_front_page',
+			'settings' => 'show_front_page_title',
+			'label'    => __( 'Show front page title', TANGERINE_TEXTDOMAIN ),
+			'type'     => 'checkbox',
+			'priority' => 19
 		) );
 
 		// Layout
@@ -587,7 +599,8 @@ class Tangerine_Customizer {
 				'label'   		=> 'Powered by',
 				'description'	=> __( 'Change default credits.', TANGERINE_TEXTDOMAIN ),
 				'section' 		=> 'tangerine_tweaks',
-				'settings'   	=> 'set_powered_by'
+				'settings'   	=> 'set_powered_by',
+				'width'			=> '95'
 		) ) );
 
 		// Advanced Settings

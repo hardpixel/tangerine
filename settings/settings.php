@@ -66,13 +66,14 @@
 
 	public $description = '';
 	public $extra = '';
+	public $width = '45';
 
 	function render_content() {
 		?>
 			<label>
 			<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-			<span style="color: #bbb; width:100%; display: inline-block;"><img src="<?php echo get_template_directory_uri().'/settings/images/info.png' ?>" style="margin-right: 5px; vertical-align: text-bottom;" /><?php echo esc_html( $this->description ); ?></span>
-			<input style="margin-top: 10px; width: 50%; float: left;" <?php $this->link(); ?> value="<?php echo esc_attr( $this->value() ); ?>" />
+			<span style="color: #bbb; width: 100%; display: inline-block;"><img src="<?php echo get_template_directory_uri().'/settings/images/info.png' ?>" style="margin-right: 5px; vertical-align: text-bottom;" /><?php echo esc_html( $this->description ); ?></span>
+			<input style="margin-top: 10px; width: <?php echo esc_html( $this->width ); ?>%; float: left;" <?php $this->link(); ?> value="<?php echo esc_attr( $this->value() ); ?>" />
 			<span style="float: left; margin: 14px 10px 0;"> <?php echo esc_html( $this->extra ); ?> </span>
 			</label>
 		<?php

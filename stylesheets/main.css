@@ -4706,38 +4706,6 @@ table tfoot tr td {
   line-height: 30px;
 }
 
-.top-bar-section li a:hover:not(.button), .main-bar-section li a:hover:not(.button) {
-  background: #dc6c00;
-}
-
-.top-bar-section ul li.active a, .main-bar-section ul li.active a {
-  background: #dc6c00;
-}
-
-.main-bar-section li a:hover:not(.button) {
-  background: #dc6c00;
-}
-
-.main-bar-section ul li.active a {
-  background: #dc6c00;
-}
-
-.top-bar-section ul li > a, .main-bar-section ul li > a, .main-bar-section ul li > a {
-  background: none;
-}
-
-.top-bar-section ul, .main-bar-section ul, .main-bar-section ul {
-  background: none;
-}
-
-.top-bar.expanded .toggle-topbar a, .expanded.main-bar .toggle-topbar a, .expanded.main-bar .toggle-topbar a {
-  color: #d16700;
-}
-
-.top-bar.expanded .toggle-topbar a span, .expanded.main-bar .toggle-topbar a span, .expanded.main-bar .toggle-topbar a span {
-  box-shadow: 0 10px 0 1px #d16700, 0 16px 0 1px #d16700, 0 22px 0 1px #d16700;
-}
-
 #orbit-slider .slide-thumbnail {
   width: 100%;
 }
@@ -4764,7 +4732,7 @@ table tfoot tr td {
   display: table;
 }
 
-#header, #main-slider, #main {
+#header, #main {
   padding-top: 20px;
 }
 
@@ -4772,7 +4740,7 @@ table tfoot tr td {
   float: left;
 }
 #header .logo {
-  padding: 0 15px 15px 0;
+  padding: 0 15px 0 0;
 }
 #header .name small {
   margin-left: 10px;
@@ -4827,28 +4795,60 @@ p[style*="justify"] {
   margin-right: auto;
   float: none;
 }
-#wrapper.contained-header #header, #wrapper.contained-header #main-slider, #wrapper.contained-header #main-menu {
-  background: #eee;
+#wrapper.contained-header #header, #wrapper.contained-header #main-slider {
+  background: #252525;
 }
 
 #top-area {
   background: #f57900;
 }
-
-.top-bar, .main-bar {
+#top-area .top-bar-section ul, #top-area .main-bar-section ul {
   background: none;
 }
-
-.top-bar-section, .main-bar-section {
+#top-area .top-bar-section li.active a:not(.button), #top-area .main-bar-section li.active a:not(.button) {
+  background: #ae5600;
+}
+#top-area .top-bar-section li .dropdown a:not(.button), #top-area .main-bar-section li .dropdown a:not(.button) {
+  background: #d66a00;
+}
+#top-area .top-bar-section li a:not(.button), #top-area .main-bar-section li a:not(.button) {
+  background: #f57900;
+}
+#top-area .top-bar-section li a:not(.button):hover, #top-area .main-bar-section li a:not(.button):hover {
+  background: #c26000;
+}
+#top-area .expanded .toggle-topbar a {
+  color: #d16700;
+}
+#top-area .expanded .toggle-topbar a:hover {
   background: none;
+}
+#top-area .expanded .toggle-topbar span {
+  box-shadow: 0 10px 0 1px #d16700, 0 16px 0 1px #d16700, 0 22px 0 1px #d16700;
 }
 
 .main-bar {
-  background: #f57900;
+  background: #7f3f58;
 }
 
 .main-bar-section ul {
   background: none;
+}
+
+#main-menu {
+  background: #7f3f58;
+}
+#main-menu .main-bar-section li.active a:not(.button) {
+  background: #4f2737;
+}
+#main-menu .main-bar-section li .dropdown a:not(.button) {
+  background: #6b354a;
+}
+#main-menu .main-bar-section li a:not(.button) {
+  background: #7f3f58;
+}
+#main-menu .main-bar-section li a:not(.button):hover {
+  background: #5d2e40;
 }
 
 .widgets {
@@ -4877,7 +4877,7 @@ p[style*="justify"] {
 }
 
 #footer-menu {
-  background: #333333;
+  background: #f57900;
 }
 
 .footer-bar-section ul {
@@ -4898,7 +4898,7 @@ p[style*="justify"] {
 }
 
 #credits {
-  background: #111111;
+  background: #252525;
   font-size: 0.75em;
   line-height: 3.125em;
 }

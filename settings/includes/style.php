@@ -33,4 +33,13 @@ h1, h2, h3, h4, h5, h6 {
 	background: <?php echo get_theme_mod('set_credits_bg'); ?>;
 }
 
+<?php if( get_theme_mod( 'show_front_page_title' ) == '' ) {
+?>
+.home article.page h2 {
+	display: none;
+}
+
+<?php
+} ?>
+
 <?php echo get_theme_mod('tangerine_custom_css'); ?><?php echo '</style>'; } } ?>
