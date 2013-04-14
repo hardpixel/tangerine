@@ -49,83 +49,47 @@ class Tangerine_Customizer {
 		// Site title
 		$customize->add_setting( 'set_header_image' );
 
-		$customize->add_setting( 'set_header_title', array(
-			'default'		=> '1'
-		) );
+		$customize->add_setting( 'set_header_title' );
 
-		$customize->add_setting( 'set_top_bar_title', array(
-			'default'		=> '1'
-		) );
+		$customize->add_setting( 'set_top_bar_title' );
 
 		// Navigation
-		$customize->add_setting( 'show_top_menu', array(
-			'default'		=> '1'
-		) );
+		$customize->add_setting( 'show_top_menu' );
 
-		$customize->add_setting( 'show_main_menu', array(
-			'default'		=> '1'
-		) );
+		$customize->add_setting( 'show_main_menu' );
 
-		$customize->add_setting( 'show_footer_menu', array(
-			'default'		=> '1'
-		) );
+		$customize->add_setting( 'show_footer_menu' );
 
-		$customize->add_setting( 'show_breadcrumbs', array(
-			'default'		=> '1'
-		) );
+		$customize->add_setting( 'show_breadcrumbs' );
 
 		// Typography
-		$customize->add_setting( 'set_body_font', array(
-			'default'		=> 'Ubuntu'
-		) );
+		$customize->add_setting( 'set_body_font' );
 
-		$customize->add_setting( 'set_body_font_size', array(
-			'default'		=> '0.875'
-		) );
+		$customize->add_setting( 'set_body_font_size' );
 
-		$customize->add_setting( 'set_heading_font', array(
-			'default'		=> 'Oleo Script'
-		) );
+		$customize->add_setting( 'set_heading_font' );
 
-		$customize->add_setting( 'set_heading_font_weight', array(
-			'default'		=> '400'
-		) );
+		$customize->add_setting( 'set_heading_font_weight' );
 
-		$customize->add_setting( 'set_title_font', array(
-			'default'		=> 'Oleo Script'
-		) );
+		$customize->add_setting( 'set_title_font' );
 
-		$customize->add_setting( 'set_title_font_weight', array(
-			'default'		=> '400'
-		) );
+		$customize->add_setting( 'set_title_font_weight' );
 
-		$customize->add_setting( 'set_title_font_size', array(
-			'default'		=> '2.85'
-		) );
+		$customize->add_setting( 'set_title_font_size' );
 
 		// Static Front Page
 		$customize->add_setting( 'show_front_page_title' );
 
 		// Layout
-		$customize->add_setting( 'set_page_width', array(
-			'default'		=> 'hybrid-width'
-		) );
+		$customize->add_setting( 'set_page_width' );
 
-		$customize->add_setting( 'set_sidebar_pos', array(
-			'default'		=> 'sidebar-right'
-		) );
+		$customize->add_setting( 'set_sidebar_pos' );
 
-		$customize->add_setting( 'set_header_mode', array(
-			'default'		=> 'contained-header'
-		) );
+		$customize->add_setting( 'set_header_mode' );
 
-		$customize->add_setting( 'set_footer_widgets', array(
-			'default'		=> 'block-grid-3'
-		) );
+		$customize->add_setting( 'set_footer_widgets' );
 
-		$customize->add_setting( 'set_main_menu_pos', array(
-			'default'		=> 'above-slider'
-		) );
+		$customize->add_setting( 'set_main_menu_pos' );
 
 		// Colors
 		$customize->add_setting( 'set_wrapper_bg' );
@@ -139,53 +103,29 @@ class Tangerine_Customizer {
 		$customize->add_setting( 'set_credits_bg' );
 
 		// Slider
-		$customize->add_setting( 'show_home_slider', array(
-			'default'		=> '1'
-		) );
+		$customize->add_setting( 'show_home_slider' );
 
-		$customize->add_setting( 'set_slider_category', array(
-			'default'		=> 'slider'
-		) );
+		$customize->add_setting( 'set_slider_category' );
 
-		$customize->add_setting( 'set_slider_slides', array(
-			'default'		=> '3'
-		) );
+		$customize->add_setting( 'set_slider_slides' );
 
-		$customize->add_setting( 'set_slider_width', array(
-			'default'		=> '1000'
-		) );
+		$customize->add_setting( 'set_slider_width' );
 
-		$customize->add_setting( 'set_slider_height', array(
-			'default'		=> '300'
-		) );
+		$customize->add_setting( 'set_slider_height' );
 
-		$customize->add_setting( 'set_slider_timerspeed', array(
-			'default'		=> '4500'
-		) );
+		$customize->add_setting( 'set_slider_timerspeed' );
 
-		$customize->add_setting( 'set_slider_animationspeed', array(
-			'default'		=> '500'
-		) );
+		$customize->add_setting( 'set_slider_animationspeed' );
 
-		$customize->add_setting( 'show_slider_bullets', array(
-			'default'		=> '1'
-		) );
+		$customize->add_setting( 'show_slider_bullets' );
 
-		$customize->add_setting( 'show_slider_navbuttons', array(
-			'default'		=> '1'
-		) );
+		$customize->add_setting( 'show_slider_navbuttons' );
 
-		$customize->add_setting( 'show_slider_caption', array(
-			'default'		=> '1'
-		) );
+		$customize->add_setting( 'show_slider_caption' );
 
-		$customize->add_setting( 'show_slider_timer', array(
-			'default'		=> '1'
-		) );
+		$customize->add_setting( 'show_slider_timer' );
 
-		$customize->add_setting( 'show_slider_numbers', array(
-			'default'		=> '1'
-		) );
+		$customize->add_setting( 'show_slider_numbers' );
 
 		$customize->add_setting( 'set_slider_pauseonhover' );
 
@@ -482,7 +422,7 @@ class Tangerine_Customizer {
 				'settings'   	=> 'set_slider_category',
 				'type'			=> 'option',
 				'choices'  		=> get_post_types(array( 'publicly_queryable' => true, 'capability_type' => 'post' )),
-				'priority'		=> 1
+				'priority'		=> 2
 		) ) );
 
 		$customize->add_control(
@@ -493,7 +433,7 @@ class Tangerine_Customizer {
 				'label'    		=> __( 'Number of slides', TANGERINE_TEXTDOMAIN ),
 				'description'	=> __( 'Use 0 for unlimited slides.', TANGERINE_TEXTDOMAIN ),
 				'type'     		=> 'text',
-				'priority'		=> 2
+				'priority'		=> 3
 			)
 		) );
 
@@ -504,7 +444,7 @@ class Tangerine_Customizer {
 				'section' 		=> 'tangerine_slider',
 				'settings'   	=> 'set_slider_width',
 				'type'			=> 'text',
-				'priority'		=> 3
+				'priority'		=> 4
 		) ) );
 
 		$customize->add_control( new WP_Customize_Text_Control( $customize, 'set_slider_height', array(
@@ -514,7 +454,7 @@ class Tangerine_Customizer {
 				'section' 		=> 'tangerine_slider',
 				'settings'   	=> 'set_slider_height',
 				'type'			=> 'text',
-				'priority'		=> 4
+				'priority'		=> 5
 		) ) );
 
 		$customize->add_control( new WP_Customize_Text_Control(
@@ -525,7 +465,7 @@ class Tangerine_Customizer {
 				'description'   => __( 'Time for slide to be shown.', TANGERINE_TEXTDOMAIN ),
 				'extra'    		=> __( 'ms', TANGERINE_TEXTDOMAIN ),
 				'type'     		=> 'text',
-				'priority'		=> 1
+				'priority'		=> 6
 		) ) );
 
 		$customize->add_control( new WP_Customize_Text_Control( $customize, 'set_slider_animationspeed', array(
@@ -535,7 +475,7 @@ class Tangerine_Customizer {
 				'description'   => __( 'Time for slide effect.', TANGERINE_TEXTDOMAIN ),
 				'extra'    		=> __( 'ms', TANGERINE_TEXTDOMAIN ),
 				'type'     		=> 'text',
-				'priority'		=> 2
+				'priority'		=> 7
 		) ) );
 
 		$customize->add_control( 'show_slider_bullets', array(
@@ -543,7 +483,7 @@ class Tangerine_Customizer {
 			'settings' 		=> 'show_slider_bullets',
 			'label'    		=> __( 'Show bullets', TANGERINE_TEXTDOMAIN ),
 			'type'     		=> 'checkbox',
-			'priority'		=> 3
+			'priority'		=> 8
 		) );
 
 		$customize->add_control( 'show_slider_caption', array(
@@ -551,7 +491,7 @@ class Tangerine_Customizer {
 			'settings' 		=> 'show_slider_caption',
 			'label'    		=> __( 'Show caption', TANGERINE_TEXTDOMAIN ),
 			'type'     		=> 'checkbox',
-			'priority'		=> 4
+			'priority'		=> 9
 		) );
 
 		$customize->add_control( 'show_slider_navbuttons', array(
@@ -559,7 +499,7 @@ class Tangerine_Customizer {
 			'settings' 		=> 'show_slider_navbuttons',
 			'label'    		=> __( 'Show navigation buttons', TANGERINE_TEXTDOMAIN ),
 			'type'     		=> 'checkbox',
-			'priority'		=> 5
+			'priority'		=> 10
 		) );
 
 		$customize->add_control( 'show_slider_timer', array(
@@ -567,7 +507,7 @@ class Tangerine_Customizer {
 			'settings' 		=> 'show_slider_timer',
 			'label'    		=> __( 'Show timer', TANGERINE_TEXTDOMAIN ),
 			'type'     		=> 'checkbox',
-			'priority'		=> 6
+			'priority'		=> 11
 		) );
 
 		$customize->add_control( 'show_slider_numbers', array(
@@ -575,7 +515,7 @@ class Tangerine_Customizer {
 			'settings' 		=> 'show_slider_numbers',
 			'label'    		=> __( 'Show numbering', TANGERINE_TEXTDOMAIN ),
 			'type'     		=> 'checkbox',
-			'priority'		=> 7
+			'priority'		=> 12
 		) );
 
 		$customize->add_control( 'set_slider_pauseonhover', array(
@@ -583,7 +523,7 @@ class Tangerine_Customizer {
 			'settings' 		=> 'set_slider_pauseonhover',
 			'label'    		=> __( 'Pause on hover', TANGERINE_TEXTDOMAIN ),
 			'type'     		=> 'checkbox',
-			'priority'		=> 8
+			'priority'		=> 13
 		) );
 
 		$customize->add_control( 'set_slider_keynav', array(
@@ -591,7 +531,7 @@ class Tangerine_Customizer {
 			'settings' 		=> 'set_slider_keynav',
 			'label'    		=> __( 'Keyboard navigation', TANGERINE_TEXTDOMAIN ),
 			'type'     		=> 'checkbox',
-			'priority'		=> 9
+			'priority'		=> 14
 		) );
 
 		// Various Tweaks
