@@ -105,6 +105,8 @@ class Tangerine_Customizer {
 		// Slider
 		$customize->add_setting( 'show_home_slider' );
 
+		$customize->add_setting( 'show_slider_always' );
+
 		$customize->add_setting( 'set_slider_category' );
 
 		$customize->add_setting( 'set_slider_slides' );
@@ -408,9 +410,17 @@ class Tangerine_Customizer {
 
 		// Slider
 		$customize->add_control( 'show_home_slider', array(
-				'label'   	 => 'Show slider on home page',
+				'label'   	 => 'Show slider',
 				'section' 	 => 'tangerine_slider',
 				'settings'   => 'show_home_slider',
+				'type'		 => 'checkbox',
+				'priority'	 => 1
+		) );
+
+		$customize->add_control( 'show_slider_always', array(
+				'label'   	 => 'Show slider on all pages',
+				'section' 	 => 'tangerine_slider',
+				'settings'   => 'show_slider_always',
 				'type'		 => 'checkbox',
 				'priority'	 => 1
 		) );

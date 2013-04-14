@@ -34,7 +34,7 @@ if( !function_exists( 'get_tangerine_header' ) ) {
 		tangerine_header();
 		if( $header_mode == 'auto-header' ) { echo '<div id="main-area">'; }
 		if( $mm_pos == 'above-slider' ) { get_main_menu(); }
-		if( is_front_page() ) { tangerine_home_slider(); }
+		if( is_front_page() || get_theme_mod( 'show_slider_always' ) == '1' ) { tangerine_home_slider(); }
 		if( $mm_pos == 'below-slider' ) { get_main_menu(); }
 		if( $header_mode == 'contained-header' ) { echo '<div id="main-area">'; }
 	}
