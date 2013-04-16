@@ -49,9 +49,9 @@ class Tangerine_Customizer {
 		// Site title
 		$customize->add_setting( 'set_header_image' );
 
-		$customize->add_setting( 'set_header_title' );
+		$customize->add_setting( 'show_header_title' );
 
-		$customize->add_setting( 'set_top_bar_title' );
+		$customize->add_setting( 'show_top_bar_title' );
 
 		// Navigation
 		$customize->add_setting( 'show_top_menu' );
@@ -149,19 +149,19 @@ class Tangerine_Customizer {
 			'priority'		=> 5
 		) ) );
 
-		$customize->add_control( 'set_header_title', array(
+		$customize->add_control( 'show_header_title', array(
 			'section'		=> 'title_tagline',
 			'type'			=> 'checkbox',
-			'settings'		=> 'set_header_title',
-			'label'			=> __( 'Header Title', TANGERINE_TEXTDOMAIN ),
+			'settings'		=> 'show_header_title',
+			'label'			=> __( 'Show Header Title', TANGERINE_TEXTDOMAIN ),
 			'priority'		=> 15
 		) );
 
-		$customize->add_control( 'set_top_bar_title', array(
+		$customize->add_control( 'show_top_bar_title', array(
 			'section'		=> 'title_tagline',
 			'type'			=> 'checkbox',
-			'settings'		=> 'set_top_bar_title',
-			'label'			=> __( 'Top Bar Title', TANGERINE_TEXTDOMAIN ),
+			'settings'		=> 'show_top_bar_title',
+			'label'			=> __( 'Show Top Bar Title', TANGERINE_TEXTDOMAIN ),
 			'priority'		=> 16
 		) );
 

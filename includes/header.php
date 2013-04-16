@@ -4,7 +4,7 @@ if( !function_exists( 'tangerine_header' ) ) {
 
 	function tangerine_header() { ?>
 
-		<?php if( get_theme_mod( 'set_header_image' ) != '' || get_theme_mod('set_header_title') == '1' ): ?>
+		<?php if( get_theme_mod( 'set_header_image' ) != '' || get_theme_mod('show_header_title') == '1' ): ?>
 			<div id="header">
 
 				<div class="header-inner">
@@ -12,7 +12,7 @@ if( !function_exists( 'tangerine_header' ) ) {
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo"><img src="<?php echo get_theme_mod('set_header_image'); ?>" alt="" /></a>
 					<?php endif; ?>
 
-					<?php if( get_theme_mod('set_header_title') == '1' ): ?>
+					<?php if( get_theme_mod('show_header_title') == '1' ): ?>
 						<h1 class="name"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="name"><?php bloginfo( 'name' ); ?></a> <small class="description"><?php bloginfo( 'description' ); ?></small></h1>
 					<?php endif; ?>
 				</div>

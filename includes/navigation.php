@@ -10,7 +10,7 @@ if( !function_exists( 'get_top_menu' ) ) {
 					<ul class="title-area">
 						<!-- Title Area -->
 						<li class="name">
-							<?php if( get_theme_mod('top_bar_title') == '1' ): ?>
+							<?php if( get_theme_mod('show_top_bar_title') == '1' ): ?>
 								<h1 id="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
 							<?php endif; ?>
 						</li>
