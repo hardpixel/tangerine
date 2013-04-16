@@ -5,9 +5,7 @@
 
 	<section id="content" class="small-12 <?php dynamic_content_styles(); ?> columns">
 
-		<?php if( !is_front_page() && is_page() && get_theme_mod('show_breadcrumbs') == '1' ): ?>
-			<?php breadcrumbs(); ?>
-		<?php endif; ?>
+		<?php if( !is_front_page() && is_page() && get_theme_mod('show_breadcrumbs') == '1' ) { breadcrumbs(); } ?>
 
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
@@ -33,12 +31,11 @@
 				<?php endif; ?>
 
 			</article>
+		<?php if( is_single() ) { echo '<hr>'; } ?>
 
 		<?php endwhile; endif; ?>
 
-		<?php if( !is_single() && !is_page() ): ?>
-			<?php pagination(); ?>
-		<?php endif; ?>
+		<?php if( !is_single() && !is_page() ) { pagination(); } ?>
 
 	</section>
 	<!-- END #content -->

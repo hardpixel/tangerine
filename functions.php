@@ -74,7 +74,7 @@
 
 		// Child Theme Styles
 		if( function_exists( 'tangerine_child_styles' ) ) {
-			add_action( 'wp_footer', 'tangerine_child_styles' );
+			add_action( 'wp_enqueue_scripts', 'tangerine_child_styles' );
 		}
 
 		// Child Theme Scripts
@@ -421,8 +421,10 @@
 /* Excerpt
 /*==================================================*/
 
-	function excerpt_length( $length ) {
-		return 55;
+	if( !function_exists( 'excerpt_length' ) ) {
+		function excerpt_length( $length ) {
+			return 55;
+		}
 	}
 
 	function excerpt_more( $more ) {
@@ -488,8 +490,10 @@
 	}
 
 	// Register widgets
-	function register_widgets() {
-		// register_widget( 'Widget' );
+	if( !function_exists( 'register_widgets' ) ) {
+		function register_widgets() {
+			// register_widget( 'Widget' );
+		}
 	}
 
 
