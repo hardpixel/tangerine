@@ -15,9 +15,9 @@
 // $em-base: 16px;
 
 // We use these to control various global styles
- $body-bg: #f6f6f6;
- $body-font-color: #333;
- $body-font-family: "Ubuntu", Arial, sans-serif;
+// $body-bg: #f6f6f6;
+// $body-font-color: #333;
+// $body-font-family: "Ubuntu", Arial, sans-serif;
 // $body-font-weight: normal;
 // $body-font-style: normal;
 
@@ -28,7 +28,7 @@
 // $text-direction: ltr;
 
 // We use these as default colors throughout
- $primary-color: #f57900;
+// $primary-color: #f57900;
 // $secondary-color: #e9e9e9;
 // $alert-color: #c60f13;
 // $success-color: #5da423;
@@ -65,8 +65,8 @@
 // Grid Variables
 //
 
- $row-width: 100%;
- $column-gutter: 20px;
+// $row-width: 100%;
+// $column-gutter: 20px;
 // $total-columns: 12;
 
 //
@@ -85,7 +85,7 @@
 //
 
 // We use these to control header font styles
- $header-font-family: "Ubuntu", Arial, sans-serif;
+// $header-font-family: "Ubuntu", Arial, sans-serif;
 // $header-font-weight: bold;
 // $header-font-style: normal;
 // $header-font-color: #222;
@@ -116,7 +116,7 @@
 // We use these to style paragraphs
 // $paragraph-font-family: inherit;
 // $paragraph-font-weight: normal;
- $paragraph-font-size: emCalc(14px);
+// $paragraph-font-size: emCalc(14px);
 // $paragraph-line-height: 1.6;
 // $paragraph-margin-bottom: emCalc(20px);
 // $paragraph-aside-font-size: emCalc(14px);
@@ -256,7 +256,7 @@
 // $button-font-align: center;
 
 // We use these to control various hover effects.
- $button-function-factor: 5%;
+// $button-function-factor: 5%;
 
 // We use these to control button border styles.
 // $button-border-width: 1px;
@@ -607,19 +607,19 @@
 //
 
 // We use these to control the caption styles
- $orbit-container-bg: none;
+// $orbit-container-bg: none;
 // $orbit-caption-bg-old-browser: #000;
 // $orbit-caption-bg-old: rgb(0,0,0);
- $orbit-caption-bg: rgba(0,0,0,0.3);
+// $orbit-caption-bg: rgba(0,0,0,0.3);
 // $orbit-caption-font-color: #fff;
 
 // We use these to control the left/right nav styles
 // $orbit-nav-bg-old: rgb(0,0,0);
- $orbit-nav-bg: rgba(0,0,0,0.3);
+// $orbit-nav-bg: rgba(0,0,0,0.3);
 
 // We use these to control the timer styles
 // $orbit-timer-bg-old: rgb(0,0,0);
- $orbit-timer-bg: rgba(255,255,255,0.3);
+// $orbit-timer-bg: rgba(255,255,255,0.3);
 
 // We use these to control the bullet nav styles
 // $orbit-bullet-nav-color: #999;
@@ -971,8 +971,8 @@
 // $topbar-bg: #111;
 
 // Height and margin
- $topbar-height: 45px;
- $topbar-margin-bottom: 0;
+// $topbar-height: 45px;
+// $topbar-margin-bottom: 0;
 
 // Control Input height for top bar
 // $topbar-input-height: 2.45em;

@@ -6,11 +6,17 @@
 
 // General
 $page-width: 1000px;
+$row-width: 100%;
+$column-gutter: 20px;
+$primary-color: #f57900;
+$body-bg: #f6f6f6;
 
 // Top bar
 $top-area-bg: #f57900;
 $topbar-bg: #f57900;
 $top-menu-active-bg: #f57900;
+$topbar-height: 45px;
+$topbar-margin-bottom: 0;
 
 // Main menu
 $main-menu-bg: #7f3f58;
@@ -26,6 +32,16 @@ $credits-bg: #252525;
 // Home slider
 $orbit-bullets-bg: #dfdfdf;
 $orbit-bullets-active-bg: #ccc;
+$orbit-container-bg: none;
+$orbit-caption-bg: rgba(0,0,0,0.3);
+$orbit-nav-bg: rgba(0,0,0,0.3);
+$orbit-timer-bg: rgba(255,255,255,0.3);
 
 // Widgets
 $widgettitle-color: #999;
+
+// Typography
+$header-font-family: "Ubuntu", Arial, sans-serif;
+$paragraph-font-size: emCalc(14px);
+$body-font-color: #333;
+$body-font-family: "Ubuntu", Arial, sans-serif;

@@ -1,7 +1,1 @@
-// Admin
-
-jQuery(document).ready(function($){
-
-	$('textarea#custom-css').snippet('css');
-
-});
+jQuery(document).ready(function(a){a("textarea#custom-css").snippet("css")});

@@ -20,28 +20,47 @@ class Tangerine_Customizer {
 			'priority'		=> 131
 		) );
 
-		// Colors
-		$customize->add_section( 'tangerine_colors', array(
-			'title'			=> __( 'Colors', TANGERINE_TEXTDOMAIN ),
+		// Basic Colors
+		$customize->add_section( 'tangerine_basic_colors', array(
+			'title'			=> __( 'Basic Colors', TANGERINE_TEXTDOMAIN ),
 			'priority'		=> 132
+		) );
+
+
+		// Top Bar Colors
+		$customize->add_section( 'tangerine_topbar_colors', array(
+			'title'			=> __( 'Top Bar Colors', TANGERINE_TEXTDOMAIN ),
+			'priority'		=> 133
+		) );
+
+		// Main Menu Colors
+		$customize->add_section( 'tangerine_mmenu_colors', array(
+			'title'			=> __( 'Main Menu Colors', TANGERINE_TEXTDOMAIN ),
+			'priority'		=> 134
+		) );
+
+		// Footer Colors
+		$customize->add_section( 'tangerine_footer_colors', array(
+			'title'			=> __( 'Footer Area Colors', TANGERINE_TEXTDOMAIN ),
+			'priority'		=> 135
 		) );
 
 		// Slider
 		$customize->add_section( 'tangerine_slider', array(
 			'title'			=> __( 'Slider', TANGERINE_TEXTDOMAIN ),
-			'priority'		=> 133
+			'priority'		=> 136
 		) );
 
 		// Various Tweaks
 		$customize->add_section( 'tangerine_tweaks', array(
 			'title'			=> __( 'Various Tweaks', TANGERINE_TEXTDOMAIN ),
-			'priority'		=> 149
+			'priority'		=> 137
 		) );
 
 		// Advanced Settings
 		$customize->add_section( 'tangerine_advanced', array(
 			'title'			=> __( 'Advanced Settings', TANGERINE_TEXTDOMAIN ),
-			'priority'		=> 150
+			'priority'		=> 138
 		) );
 	}
 
@@ -139,15 +158,24 @@ class Tangerine_Customizer {
 			'default' => 'below-slider'
 		) );
 
-		// Colors
+		// Basic Colors
 		$customize->add_setting( 'set_wrapper_bg' );
+		$customize->add_setting( 'set_primary_color' );
+		$customize->add_setting( 'set_text_color' );
 
-		$customize->add_setting( 'set_top_bar_bg' );
+		// Top Bar Colors
+		$customize->add_setting( 'set_topbar_bg' );
+		$customize->add_setting( 'set_topbar_active' );
+		$customize->add_setting( 'set_topbar_hover' );
 
+		// Main Menu Colors
+		$customize->add_setting( 'set_mmenu_bg' );
+		$customize->add_setting( 'set_mmenu_active' );
+		$customize->add_setting( 'set_mmenu_hover' );
+
+		// Footer Area Colors
 		$customize->add_setting( 'set_footer_bg' );
-
 		$customize->add_setting( 'set_footer_menu_bg' );
-
 		$customize->add_setting( 'set_credits_bg' );
 
 		// Slider
@@ -465,35 +493,85 @@ class Tangerine_Customizer {
 				'priority'		=> 8
 		) ) );
 
-		// Colors
+		// Basic Colors
 		$customize->add_control( new WP_Customize_Color_Control( $customize, 'set_wrapper_bg', array(
-				'label'      => __( 'Background Color', TANGERINE_TEXTDOMAIN ),
-				'section'    => 'tangerine_colors',
+				'label'      => __( 'Background', TANGERINE_TEXTDOMAIN ),
+				'section'    => 'tangerine_basic_colors',
 				'settings'   => 'set_wrapper_bg'
 		) ) );
 
-		$customize->add_control( new WP_Customize_Color_Control(
-			$customize, 'set_top_bar_bg', array(
-				'label'      => __( 'Top Bar Background', TANGERINE_TEXTDOMAIN ),
-				'section'    => 'tangerine_colors',
-				'settings'   => 'set_top_bar_bg'
+		$customize->add_control( new WP_Customize_Color_Control( $customize, 'set_primary_color', array(
+				'label'      => __( 'Primary Color', TANGERINE_TEXTDOMAIN ),
+				'section'    => 'tangerine_basic_colors',
+				'settings'   => 'set_primary_color'
 		) ) );
 
+		$customize->add_control( new WP_Customize_Color_Control( $customize, 'set_text_color', array(
+				'label'      => __( 'Text Color', TANGERINE_TEXTDOMAIN ),
+				'section'    => 'tangerine_basic_colors',
+				'settings'   => 'set_text_color'
+		) ) );
+
+		// Top Bar Colors
+		$customize->add_control( new WP_Customize_Color_Control(
+			$customize, 'set_topbar_bg', array(
+				'label'      => __( 'Background', TANGERINE_TEXTDOMAIN ),
+				'section'    => 'tangerine_topbar_colors',
+				'settings'   => 'set_topbar_bg'
+		) ) );
+
+		$customize->add_control( new WP_Customize_Color_Control(
+			$customize, 'set_topbar_active', array(
+				'label'      => __( 'Active Item Background', TANGERINE_TEXTDOMAIN ),
+				'section'    => 'tangerine_topbar_colors',
+				'settings'   => 'set_topbar_active'
+		) ) );
+
+		$customize->add_control( new WP_Customize_Color_Control(
+			$customize, 'set_topbar_hover', array(
+				'label'      => __( 'Hover Item Background', TANGERINE_TEXTDOMAIN ),
+				'section'    => 'tangerine_topbar_colors',
+				'settings'   => 'set_topbar_hover'
+		) ) );
+
+		// Main Menu Colors
+		$customize->add_control( new WP_Customize_Color_Control(
+			$customize, 'set_mmenu_bg', array(
+				'label'      => __( 'Background', TANGERINE_TEXTDOMAIN ),
+				'section'    => 'tangerine_mmenu_colors',
+				'settings'   => 'set_mmenu_bg'
+		) ) );
+
+		$customize->add_control( new WP_Customize_Color_Control(
+			$customize, 'set_mmenu_active', array(
+				'label'      => __( 'Active Item Background', TANGERINE_TEXTDOMAIN ),
+				'section'    => 'tangerine_mmenu_colors',
+				'settings'   => 'set_mmenu_active'
+		) ) );
+
+		$customize->add_control( new WP_Customize_Color_Control(
+			$customize, 'set_mmenu_hover', array(
+				'label'      => __( 'Hover Item Background', TANGERINE_TEXTDOMAIN ),
+				'section'    => 'tangerine_mmenu_colors',
+				'settings'   => 'set_mmenu_hover'
+		) ) );
+
+		// Footer Area Colors
 		$customize->add_control( new WP_Customize_Color_Control( $customize, 'set_footer_bg', array(
-				'label'      => __( 'Footer Background', TANGERINE_TEXTDOMAIN ),
-				'section'    => 'tangerine_colors',
+				'label'      => __( 'Widget Area Background', TANGERINE_TEXTDOMAIN ),
+				'section'    => 'tangerine_footer_colors',
 				'settings'   => 'set_footer_bg'
 		) ) );
 
 		$customize->add_control( new WP_Customize_Color_Control( $customize, 'set_footer_menu_bg', array(
-				'label'      => __( 'Footer Menu Background', TANGERINE_TEXTDOMAIN ),
-				'section'    => 'tangerine_colors',
+				'label'      => __( 'Menu Background', TANGERINE_TEXTDOMAIN ),
+				'section'    => 'tangerine_footer_colors',
 				'settings'   => 'set_footer_menu_bg'
 		) ) );
 
 		$customize->add_control( new WP_Customize_Color_Control( $customize, 'set_credits_bg', array(
 				'label'      => __( 'Credits Background', TANGERINE_TEXTDOMAIN ),
-				'section'    => 'tangerine_colors',
+				'section'    => 'tangerine_footer_colors',
 				'settings'   => 'set_credits_bg'
 		) ) );
 

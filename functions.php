@@ -196,19 +196,8 @@
 
 	// Add specific styles
 	function webfont_styles() {
-		$body_font = get_theme_mod('set_body_font');
-		$heading_font = get_theme_mod('set_heading_font');
-		$title_font = get_theme_mod('set_title_font');
 
-		// Body, heading & title fonts
-		if ( $body_font == 'Ubuntu' || $heading_font == 'Ubuntu' || $title_font == 'Ubuntu' ) { echo '<link href="http://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" />'; }
-		if ( $body_font == 'Open Sans' || $heading_font == 'Open Sans' || $title_font == 'Open Sans' ) { echo '<link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />'; }
-		if ( $body_font == 'Autour One' || $heading_font == 'Autour One' || $title_font == 'Autour One' ) { echo '<link href="http://fonts.googleapis.com/css?family=Autour+One" rel="stylesheet" />'; }
-		if ( $body_font == 'Dosis' || $heading_font == 'Dosis' || $title_font == 'Dosis' ) { echo '<link href="http://fonts.googleapis.com/css?family=Dosis" rel="stylesheet" />'; }
-
-		// Heading & title fonts
-		if ( $title_font == 'Oleo Script' || $heading_font == 'Oleo Script' ) { echo '<link href="http://fonts.googleapis.com/css?family=Oleo+Script" rel="stylesheet" />'; }
-		if ( $title_font == 'Codystar' || $heading_font == 'Codystar' ) { echo '<link href="http://fonts.googleapis.com/css?family=Codystar" rel="stylesheet" />'; }
+		echo '<link href="http://fonts.googleapis.com/css?family=Ubuntu|Open+Sans|Autour+One|Dosis|Oleo+Script|Codystar" rel="stylesheet" />';
 	}
 
 
