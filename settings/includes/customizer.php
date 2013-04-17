@@ -47,49 +47,97 @@ class Tangerine_Customizer {
 
 	function add_settings( $customize )	{
 		// Site title
-		$customize->add_setting( 'set_header_image' );
+		$customize->add_setting( 'set_header_image', array(
+			'default' => get_template_directory_uri() .'/images/tangerine-logo.png'
+		) );
 
-		$customize->add_setting( 'show_header_title' );
+		$customize->add_setting( 'show_header', array(
+			'default' => '1'
+		) );
 
-		$customize->add_setting( 'show_top_bar_title' );
+		$customize->add_setting( 'show_header_image', array(
+			'default' => '1'
+		) );
+
+		$customize->add_setting( 'show_header_title', array(
+			'default' => '1'
+		) );
+
+		$customize->add_setting( 'show_top_bar_title', array(
+			'default' => '1'
+		) );
 
 		// Navigation
-		$customize->add_setting( 'show_top_menu' );
+		$customize->add_setting( 'show_top_menu', array(
+			'default' => '1'
+		) );
 
-		$customize->add_setting( 'show_main_menu' );
+		$customize->add_setting( 'show_main_menu', array(
+			'default' => '1'
+		) );
 
-		$customize->add_setting( 'show_footer_menu' );
+		$customize->add_setting( 'show_footer_menu', array(
+			'default' => '1'
+		) );
 
-		$customize->add_setting( 'show_breadcrumbs' );
+		$customize->add_setting( 'show_breadcrumbs', array(
+			'default' => '1'
+		) );
 
 		// Typography
-		$customize->add_setting( 'set_body_font' );
+		$customize->add_setting( 'set_body_font', array(
+			'default' => 'Ubuntu'
+		) );
 
-		$customize->add_setting( 'set_body_font_size' );
+		$customize->add_setting( 'set_body_font_size', array(
+			'default' => '0.875'
+		) );
 
-		$customize->add_setting( 'set_heading_font' );
+		$customize->add_setting( 'set_heading_font', array(
+			'default' => 'Dosis'
+		) );
 
-		$customize->add_setting( 'set_heading_font_weight' );
+		$customize->add_setting( 'set_heading_font_weight', array(
+			'default' => 'normal'
+		) );
 
-		$customize->add_setting( 'set_title_font' );
+		$customize->add_setting( 'set_title_font', array(
+			'default' => 'Oleo Script'
+		) );
 
-		$customize->add_setting( 'set_title_font_weight' );
+		$customize->add_setting( 'set_title_font_weight', array(
+			'default' => 'normal'
+		) );
 
-		$customize->add_setting( 'set_title_font_size' );
+		$customize->add_setting( 'set_title_font_size', array(
+			'default' => '3.775'
+		) );
 
 		// Static Front Page
-		$customize->add_setting( 'show_front_page_title' );
+		$customize->add_setting( 'show_front_page_title', array(
+			'default' => '1'
+		) );
 
 		// Layout
-		$customize->add_setting( 'set_page_width' );
+		$customize->add_setting( 'set_page_width', array(
+			'default' => 'narrow-content'
+		) );
 
-		$customize->add_setting( 'set_sidebar_pos' );
+		$customize->add_setting( 'set_sidebar_pos', array(
+			'default' => 'sidebar-left-right'
+		) );
 
-		$customize->add_setting( 'set_header_mode' );
+		$customize->add_setting( 'set_header_mode', array(
+			'default' => 'contained-header'
+		) );
 
-		$customize->add_setting( 'set_footer_widgets' );
+		$customize->add_setting( 'set_footer_widgets', array(
+			'default' => '3'
+		) );
 
-		$customize->add_setting( 'set_main_menu_pos' );
+		$customize->add_setting( 'set_main_menu_pos', array(
+			'default' => 'below-slider'
+		) );
 
 		// Colors
 		$customize->add_setting( 'set_wrapper_bg' );
@@ -103,31 +151,55 @@ class Tangerine_Customizer {
 		$customize->add_setting( 'set_credits_bg' );
 
 		// Slider
-		$customize->add_setting( 'show_home_slider' );
+		$customize->add_setting( 'show_home_slider', array(
+			'default' => '1'
+		) );
 
 		$customize->add_setting( 'show_slider_always' );
 
-		$customize->add_setting( 'set_slider_category' );
+		$customize->add_setting( 'set_slider_category', array(
+			'default' => 'slides'
+		) );
 
-		$customize->add_setting( 'set_slider_slides' );
+		$customize->add_setting( 'set_slider_slides', array(
+			'default' => '3'
+		) );
 
-		$customize->add_setting( 'set_slider_width' );
+		$customize->add_setting( 'set_slider_width', array(
+			'default' => '1000'
+		) );
 
-		$customize->add_setting( 'set_slider_height' );
+		$customize->add_setting( 'set_slider_height', array(
+			'default' => '300'
+		) );
 
-		$customize->add_setting( 'set_slider_timerspeed' );
+		$customize->add_setting( 'set_slider_timerspeed', array(
+			'default' => '4500'
+		) );
 
-		$customize->add_setting( 'set_slider_animationspeed' );
+		$customize->add_setting( 'set_slider_animationspeed', array(
+			'default' => '500'
+		) );
 
-		$customize->add_setting( 'show_slider_bullets' );
+		$customize->add_setting( 'show_slider_bullets', array(
+			'default' => '1'
+		) );
 
-		$customize->add_setting( 'show_slider_navbuttons' );
+		$customize->add_setting( 'show_slider_navbuttons', array(
+			'default' => '1'
+		) );
 
-		$customize->add_setting( 'show_slider_caption' );
+		$customize->add_setting( 'show_slider_caption', array(
+			'default' => '1'
+		) );
 
-		$customize->add_setting( 'show_slider_timer' );
+		$customize->add_setting( 'show_slider_timer', array(
+			'default' => '1'
+		) );
 
-		$customize->add_setting( 'show_slider_numbers' );
+		$customize->add_setting( 'show_slider_numbers', array(
+			'default' => '1'
+		) );
 
 		$customize->add_setting( 'set_slider_pauseonhover' );
 
@@ -149,12 +221,20 @@ class Tangerine_Customizer {
 			'priority'		=> 5
 		) ) );
 
+		$customize->add_control( 'show_header', array(
+			'section'		=> 'title_tagline',
+			'type'			=> 'checkbox',
+			'settings'		=> 'show_header',
+			'label'			=> __( 'Show Header', TANGERINE_TEXTDOMAIN ),
+			'priority'		=> 15
+		) );
+
 		$customize->add_control( 'show_header_title', array(
 			'section'		=> 'title_tagline',
 			'type'			=> 'checkbox',
 			'settings'		=> 'show_header_title',
 			'label'			=> __( 'Show Header Title', TANGERINE_TEXTDOMAIN ),
-			'priority'		=> 15
+			'priority'		=> 16
 		) );
 
 		$customize->add_control( 'show_top_bar_title', array(
@@ -162,7 +242,15 @@ class Tangerine_Customizer {
 			'type'			=> 'checkbox',
 			'settings'		=> 'show_top_bar_title',
 			'label'			=> __( 'Show Top Bar Title', TANGERINE_TEXTDOMAIN ),
-			'priority'		=> 16
+			'priority'		=> 14
+		) );
+
+		$customize->add_control( 'show_header_image', array(
+			'section'		=> 'title_tagline',
+			'type'			=> 'checkbox',
+			'settings'		=> 'show_header_image',
+			'label'			=> __( 'Show Site Logo', TANGERINE_TEXTDOMAIN ),
+			'priority'		=> 17
 		) );
 
 		// Navigation
@@ -286,6 +374,7 @@ class Tangerine_Customizer {
 				'type'			=> 'select',
 				'priority'		=> 1,
 				'choices'		=> array(
+					'Inherit'		=> '',
 					'Ubuntu'		=> 'Ubuntu',
 					'Open Sans'		=> 'Open Sans',
 					'Autour One' 	=> 'Autour One',
@@ -312,9 +401,9 @@ class Tangerine_Customizer {
 				'type'			=> 'select',
 				'priority'		=> 3,
 				'choices'		=> array(
+					'Inherit'		=> '',
 					'Ubuntu'			=> 'Ubuntu',
 					'Open Sans'			=> 'Open Sans',
-					'Caesar Dressing' 	=> 'Caesar Dressing',
 					'Autour One' 		=> 'Autour One',
 					'Oleo Script' 		=> 'Oleo Script',
 					'Codystar' 			=> 'Codystar',
@@ -343,9 +432,9 @@ class Tangerine_Customizer {
 				'type'			=> 'select',
 				'priority'		=> 6,
 				'choices'		=> array(
+					'Inherit'			=> '',
 					'Ubuntu'			=> 'Ubuntu',
 					'Open Sans'			=> 'Open Sans',
-					'Caesar Dressing' 	=> 'Caesar Dressing',
 					'Autour One' 		=> 'Autour One',
 					'Oleo Script' 		=> 'Oleo Script',
 					'Codystar' 			=> 'Codystar',
