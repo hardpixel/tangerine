@@ -3,7 +3,7 @@
 	<!-- BEGIN #content -->
 	<?php get_sidebar(); ?>
 
-	<section id="content" class="small-12 <?php dynamic_content_styles(); ?> columns" role="content">
+	<section id="content" class="small-12 <?php dynamic_content_styles(); ?> columns">
 
 		<?php if( !is_front_page() && is_page() && get_theme_mod('show_breadcrumbs') == '1' ) { breadcrumbs(); } ?>
 

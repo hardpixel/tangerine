@@ -163,8 +163,8 @@
 	// Register styles
 	function register_styles() {
 		wp_register_style( 'normalize', get_template_directory_uri() . '/stylesheets/normalize.css', '', '', 'screen' );
-		wp_register_style( 'main', get_template_directory_uri() . '/stylesheets/main.css', '', '', 'screen' );
-		wp_register_style( 'style', get_template_directory_uri() . '/style.css', '', '', 'screen' );
+		wp_register_style( 'tangerine', get_template_directory_uri() . '/stylesheets/tangerine.css', '', '', 'screen' );
+		wp_register_style( 'custom', get_stylesheet_directory_uri() . '/style.css', '', '', 'screen' );
 	}
 
 	// Deregister styles
@@ -175,8 +175,8 @@
 	// Enqueue styles
 	function enqueue_styles() {
 		wp_enqueue_style( 'normalize' );
-		wp_enqueue_style( 'main' );
-		wp_enqueue_style( 'style' );
+		wp_enqueue_style( 'tangerine' );
+		wp_enqueue_style( 'custom' );
 	}
 
 	// Login screen styles
@@ -209,8 +209,6 @@
 		// Heading & title fonts
 		if ( $title_font == 'Oleo Script' || $heading_font == 'Oleo Script' ) { echo '<link href="http://fonts.googleapis.com/css?family=Oleo+Script" rel="stylesheet" />'; }
 		if ( $title_font == 'Codystar' || $heading_font == 'Codystar' ) { echo '<link href="http://fonts.googleapis.com/css?family=Codystar" rel="stylesheet" />'; }
-		if ( $title_font == 'Dosis' || $heading_font == 'Dosis' ) { echo '<link href="http://fonts.googleapis.com/css?family=Dosis" rel="stylesheet" />'; }
-		if ( $title_font == 'Autour One' || $heading_font == 'Autour One' ) { echo '<link href="http://fonts.googleapis.com/css?family=Autour+One" rel="stylesheet" />'; }
 	}
 
 
@@ -240,7 +238,7 @@
 		wp_register_script( 'section', get_template_directory_uri() . '/javascripts/foundation/foundation.section.js', array( 'jquery' ), '', true );
 		wp_register_script( 'joyride', get_template_directory_uri() . '/javascripts/foundation/foundation.joyride.js', array( 'jquery' ), '', true );
 		wp_register_script( 'tooltips', get_template_directory_uri() . '/javascripts/foundation/foundation.tooltips.js', array( 'jquery' ), '', true );
-		wp_register_script( 'functions', get_template_directory_uri() . '/javascripts/functions.js', array( 'jquery', 'jquery-ui-core' ), '', true);
+		wp_register_script( 'tangerine', get_template_directory_uri() . '/javascripts/tangerine.js', array( 'jquery', 'jquery-ui-core' ), '', true);
 	}
 
 	// Enqueue scripts
@@ -259,7 +257,7 @@
 		wp_enqueue_script( 'section' );
 		wp_enqueue_script( 'joyride' );
 		wp_enqueue_script( 'tooltips' );
-		wp_enqueue_script( 'functions' );
+		wp_enqueue_script( 'tangerine' );
 	}
 
 	function register_admin_scripts() {
@@ -437,9 +435,9 @@
 
 	function register_extra_sidebars() {
 		register_sidebar( array(
-			'name' 			=> 'Home Sidebar',
-			'id'			=> 'home-sidebar',
-			'description'	=> __( 'Sidebar used on home page', TANGERINE_TEXTDOMAIN ),
+			'name' 			=> 'Left Sidebar',
+			'id'			=> 'sidebar',
+			'description'	=> __( 'Left sidebar used on all pages', TANGERINE_TEXTDOMAIN ),
 			'before_widget' =>  '<li id="%1$s2" class="widget %2$s">',
 			'after_widget'  =>  '</li>',
 			'before_title'  =>  '<h3 class="widgettitle">',
@@ -447,9 +445,29 @@
 		) );
 
 		register_sidebar( array(
-			'name' 			=> 'Main Sidebar',
-			'id'			=> 'sidebar',
-			'description'	=> __( 'Sidebar used on all pages', TANGERINE_TEXTDOMAIN ),
+			'name' 			=> 'Right Sidebar',
+			'id'			=> 'sidebar-right',
+			'description'	=> __( 'Right sidebar used on all pages', TANGERINE_TEXTDOMAIN ),
+			'before_widget' =>  '<li id="%1$s2" class="widget %2$s">',
+			'after_widget'  =>  '</li>',
+			'before_title'  =>  '<h3 class="widgettitle">',
+			'after_title'   =>  '</h3>'
+		) );
+
+		register_sidebar( array(
+			'name' 			=> 'Left Home Sidebar',
+			'id'			=> 'home-sidebar',
+			'description'	=> __( 'Left sidebar used on home page', TANGERINE_TEXTDOMAIN ),
+			'before_widget' =>  '<li id="%1$s2" class="widget %2$s">',
+			'after_widget'  =>  '</li>',
+			'before_title'  =>  '<h3 class="widgettitle">',
+			'after_title'   =>  '</h3>'
+		) );
+
+		register_sidebar( array(
+			'name' 			=> 'Right Home Sidebar',
+			'id'			=> 'home-sidebar-right',
+			'description'	=> __( 'Right sidebar used on home page', TANGERINE_TEXTDOMAIN ),
 			'before_widget' =>  '<li id="%1$s2" class="widget %2$s">',
 			'after_widget'  =>  '</li>',
 			'before_title'  =>  '<h3 class="widgettitle">',
