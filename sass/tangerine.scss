@@ -64,12 +64,13 @@
 
 // BASE
 
-.header-container, .header-bar, #main, #footer-area, #footer-widgets, .footer-bar, .credits-bar {
+.header-bar, #main-slider, #main, #footer-area, #footer-widgets, .footer-bar, .credits-bar {
 	@include grid-row();
 }
 
-#header, #main {
+.header-bar, #main {
 	padding-top: 20px;
+	padding-bottom: 20px;
 }
 
 #main, #footer-area {
@@ -83,11 +84,15 @@
 	}
 
 	.logo, .name {
-		margin-left: $column-gutter/2;
+		margin: 0 0 0 $column-gutter/2;
 	}
 
 	.name small {
 		margin-left: 10px;
+	}
+
+	+ #main-slider {
+		padding-top: 0;
 	}
 }
 
@@ -222,6 +227,10 @@ p[style*="justify"] {
 
 #main-menu {
 	background: $main-menu-bg;
+
+	+ #main-slider {
+		padding-top: 20px;
+	}
 
 	.main-bar-section {
 

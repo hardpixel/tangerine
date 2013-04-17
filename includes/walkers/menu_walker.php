@@ -11,7 +11,14 @@ class top_menu_walker extends Walker_Nav_Menu {
     }
 
     function start_el(&$output, $item, $depth, $args) {
-        $item_html = '';
+
+        if( $depth == 0 ) {
+        	$divider = '<li class="divider"></li>';
+        } else {
+        	$divider = '';
+        }
+
+        $item_html = $divider;
         parent::start_el($item_html, $item, $depth, $args);
 
         $classes = empty($item->classes) ? array() : (array) $item->classes;
@@ -36,7 +43,14 @@ class general_menu_walker extends Walker_Nav_Menu {
     }
 
     function start_el(&$output, $item, $depth, $args) {
-        $item_html = '';
+
+        if( $depth == 0 ) {
+        	$divider = '<li class="divider"></li>';
+        } else {
+        	$divider = '';
+        }
+
+        $item_html = $divider;
         parent::start_el($item_html, $item, $depth, $args);
 
         $classes = empty($item->classes) ? array() : (array) $item->classes;
@@ -53,7 +67,14 @@ class general_menu_walker extends Walker_Nav_Menu {
 class fallback_menu extends Walker_Page {
 
     function start_el(&$output, $page, $depth, $args, $current_page) {
-        $item_html = '';
+
+        if( $depth == 0 ) {
+        	$divider = '<li class="divider"></li>';
+        } else {
+        	$divider = '';
+        }
+
+        $item_html = $divider;
     	parent::start_el($item_html, $page, $depth, $args, $current_page);
 
     	$css_class = array('page_item', 'page-item-'.$page->ID);
@@ -68,7 +89,7 @@ class fallback_menu extends Walker_Page {
 
         $css_class = implode( ' ', apply_filters( 'page_css_class', $css_class, $page, $depth, $args, $current_page ) );
 
-        $item_html = '<li class="' . $css_class . '"><a href="' . get_permalink($page->ID) . '">' . apply_filters( 'the_title', $page->post_title, $page->ID ) . '</a>';
+        $item_html = $divider . '<li class="' . $css_class . '"><a href="' . get_permalink($page->ID) . '">' . apply_filters( 'the_title', $page->post_title, $page->ID ) . '</a>';
 
         $output .= $item_html;
     }
