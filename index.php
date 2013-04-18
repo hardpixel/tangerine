@@ -5,16 +5,16 @@
 
 	<section id="content" class="small-12 <?php dynamic_content_styles(); ?> columns">
 
-		<?php if( !is_front_page() && is_page() && get_theme_mod('show_breadcrumbs') == '1' ) { breadcrumbs(); } ?>
+		<?php if ( !is_front_page() && is_page() && get_theme_mod( 'show_breadcrumbs' ) == '1' ) { breadcrumbs(); } ?>
 
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
 			<article class="<?php echo get_post_type( $post ); ?>">
 
-				<?php if( is_single() || is_page() ): ?>
+				<?php if ( is_single() || is_page() ): ?>
 					<h2><?php the_title(); ?></h2>
 
-					<?php if( is_single() ): ?>
+					<?php if ( is_single() ): ?>
 						<p class="date round secondary label">Posted on: <span class="time"><?php echo get_the_date(); ?></span> by: <span class="author"><?php echo get_the_author(); ?></span></p>
 					<?php endif; ?>
 
@@ -35,11 +35,13 @@
 					</div>
 				<?php endif; ?>
 
+				<?php if ( is_single() ) { comments_template(); } ?>
+
 			</article>
 
 		<?php endwhile; endif; ?>
 
-		<?php if( !is_single() && !is_page() ) { echo '<hr>'; pagination(); } ?>
+		<?php if ( !is_single() && !is_page() ) { echo '<hr>'; pagination(); } ?>
 
 	</section>
 	<!-- END #content -->

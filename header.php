@@ -4,6 +4,8 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width" />
+	<meta name="description" content="<?php echo get_theme_mod( 'seo_meta_desc' ); ?>" />
+	<meta name="keywords" content="<?php echo get_theme_mod( 'seo_meta_key' ); ?>" />
 
 	<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.png" />
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
@@ -18,7 +20,7 @@
 <body <?php body_class(); ?>>
 
 	<!-- BEGIN #wrapper -->
-	<div id="wrapper" class="row <?php echo get_theme_mod('set_page_width'); ?> <?php echo get_theme_mod('set_sidebar'); ?> <?php echo get_theme_mod( 'set_header_mode' ); ?>">
+	<div id="wrapper" class="row <?php echo get_theme_mod( 'set_page_width' ); ?> <?php echo get_theme_mod( 'set_sidebar' ); ?> <?php echo get_theme_mod( 'set_header_mode' ); ?>">
 
 		<!-- BEGIN #main-area -->
 		<?php get_tangerine_header(); ?>

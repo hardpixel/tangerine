@@ -16,7 +16,7 @@ add_action( 'save_post', 'slide_save_meta', 1, 2 );
 add_action( 'admin_head', 'slide_cpt_icon' );
 
 // Edit post editor meta boxes
-add_action('do_meta_boxes', 'slider_edit_metaboxes');
+add_action( 'do_meta_boxes', 'slider_edit_metaboxes' );
 
 // Edit slide columns in 'all_items' view
 add_filter( 'manage_edit-slides_columns', 'slider_columns' );
@@ -55,7 +55,7 @@ function slider_register_cpt() {
 		'capability_type'      => 'post',
 		'hierarchical'         => false,
 		'menu_position'        => 20,
-		'supports'             => array( 'title','thumbnail', 'page-attributes' ),
+		'supports'             => array( 'title', 'thumbnail', 'page-attributes' ),
 		'taxonomies'           => array(),
 		'has_archive'          => true,
 		'show_in_nav_menus'    => false
@@ -145,8 +145,8 @@ function slider_edit_metaboxes() {
 	remove_meta_box( 'post-stylesheets', 'slides', 'side' );
 
 	// Add the previously removed meta boxes - with modified properties
-	add_meta_box('postimagediv', __('Slide Featured Image', TANGERINE_TEXTDOMAIN ), 'post_thumbnail_meta_box', 'slides', 'normal', 'high');
-	add_meta_box('pageparentdiv', __('Slide Order', TANGERINE_TEXTDOMAIN ), 'page_attributes_meta_box', 'slides', 'side', 'low');
+	add_meta_box( 'postimagediv', __( 'Slide Featured Image', TANGERINE_TEXTDOMAIN ), 'post_thumbnail_meta_box', 'slides', 'normal', 'high' );
+	add_meta_box( 'pageparentdiv', __( 'Slide Order', TANGERINE_TEXTDOMAIN ), 'page_attributes_meta_box', 'slides', 'side', 'low' );
 
 }
 
@@ -171,59 +171,59 @@ function slider_add_columns( $column ) {
 
 	// Add column 'Image'
 	if ( $column == 'image' )
-	echo '<a href="' . $edit_link . '" title="' . $post->post_title . '">' . get_the_post_thumbnail( $post->ID, array( 60, 60 ), array( 'title' => trim( strip_tags(  $post->post_title ) ) ) ) . '</a>';
+		echo '<a href="' . $edit_link . '" title="' . $post->post_title . '">' . get_the_post_thumbnail( $post->ID, array( 60, 60 ), array( 'title' => trim( strip_tags(  $post->post_title ) ) ) ) . '</a>';
 
 	// Add column 'Order'
 	if ( $column == 'order' )
-	echo '<a href="' . $edit_link . '">' . $post->menu_order . '</a>';
+		echo '<a href="' . $edit_link . '">' . $post->menu_order . '</a>';
 
 	// Add column 'Caption'
 	if ( $column == 'caption' )
-	echo '<a href="' . get_post_meta( $post->ID, "_slide_caption", true ) . '" target="_blank" >' . get_post_meta( $post->ID, "_slide_caption", true ) . '</a>';
+		echo '<a href="' . get_post_meta( $post->ID, "_slide_caption", true ) . '" target="_blank" >' . get_post_meta( $post->ID, "_slide_caption", true ) . '</a>';
 
 	// Add column 'Link'
 	if ( $column == 'link' )
-	echo '<a href="' . get_post_meta( $post->ID, "_slide_link_url", true ) . '" target="_blank" >' . get_post_meta( $post->ID, "_slide_link_url", true ) . '</a>';
+		echo '<a href="' . get_post_meta( $post->ID, "_slide_link_url", true ) . '" target="_blank" >' . get_post_meta( $post->ID, "_slide_link_url", true ) . '</a>';
 }
 
-function slider_column_order($wp_query) {
-	if( is_admin() ) {
+function slider_column_order( $wp_query ) {
+	if ( is_admin() ) {
 
 		$post_type = $wp_query->query['post_type'];
 
-		if( $post_type == 'slides' ) {
+		if ( $post_type == 'slides' ) {
 			$wp_query->set( 'orderby', 'menu_order' );
 			$wp_query->set( 'order', 'ASC' );
 		}
 	}
 }
 
-if( !function_exists( 'slider_style_opt' ) ) {
+if ( !function_exists( 'slider_style_opt' ) ) {
 
 	function slider_style_opt() {
-		if( get_theme_mod('set_slider_pauseonhover') == '1' ) { echo 'pauseonhover '; }
-		if( get_theme_mod('set_slider_keynav') == '1' ) { echo 'keynav '; }
-		if( get_theme_mod('show_slider_navbuttons') == '' ) { echo 'no-buttons '; }
-		if( get_theme_mod('show_slider_timer') == '' ) { echo 'no-timer '; }
-		if( get_theme_mod('show_slider_numbers') == '' ) { echo 'no-numbers'; }
+		if ( get_theme_mod( 'set_slider_pauseonhover' ) == '1' ) { echo 'pauseonhover '; }
+		if ( get_theme_mod( 'set_slider_keynav' ) == '1' ) { echo 'keynav '; }
+		if ( get_theme_mod( 'show_slider_navbuttons' ) == '' ) { echo 'no-buttons '; }
+		if ( get_theme_mod( 'show_slider_timer' ) == '' ) { echo 'no-timer '; }
+		if ( get_theme_mod( 'show_slider_numbers' ) == '' ) { echo 'no-numbers'; }
 	}
 
 }
 
-if( !function_exists( 'slider_data_opt' ) ) {
+if ( !function_exists( 'slider_data_opt' ) ) {
 
 	function slider_data_opt() {
-		echo 'timer_speed:'. get_theme_mod('set_slider_timerspeed') .';',
-			 'animation_speed:'. get_theme_mod('set_slider_animationspeed') .';';
-			 if( get_theme_mod('show_slider_bullets') == '1' ) { echo 'bullets:true;'; } else { echo 'bullets:false;'; }
+		echo 'timer_speed:'. get_theme_mod( 'set_slider_timerspeed' ) .';',
+		'animation_speed:'. get_theme_mod( 'set_slider_animationspeed' ) .';';
+		if ( get_theme_mod( 'show_slider_bullets' ) == '1' ) { echo 'bullets:true;'; } else { echo 'bullets:false;'; }
 	}
 
 }
 
-if( !function_exists( 'tangerine_home_slider' ) ) {
+if ( !function_exists( 'tangerine_home_slider' ) ) {
 
 	function tangerine_home_slider() {
-	if( get_theme_mod( 'show_home_slider' ) == '1' ) { ?>
+		if ( get_theme_mod( 'show_home_slider' ) == '1' ) { ?>
 
 		<div id="main-slider">
 
@@ -231,28 +231,28 @@ if( !function_exists( 'tangerine_home_slider' ) ) {
 
 				<ul data-orbit data-options="<?php slider_data_opt(); ?>">
 
-					<?php $slides = new WP_Query( array( 'showposts' => get_theme_mod('set_slider_slides'), 'post_type' => get_theme_mod('set_slider_category'), 'order' => 'ASC', 'orderby' => 'menu_order' ) );
+					<?php $slides = new WP_Query( array( 'showposts' => get_theme_mod( 'set_slider_slides' ), 'post_type' => get_theme_mod( 'set_slider_category' ), 'order' => 'ASC', 'orderby' => 'menu_order' ) );
 
-					if ( $slides->have_posts() ) : ?>
+			if ( $slides->have_posts() ) : ?>
 
 						<?php while ( $slides->have_posts() ) : $slides->the_post(); ?>
 							<li class="slide">
 
 								<?php global $post; ?>
 
-								<?php if( get_post_type() == 'slides' ) : ?>
+								<?php if ( get_post_type() == 'slides' ) : ?>
 
 									<?php if ( has_post_thumbnail() ) : ?>
-										<a id="link-<?php the_ID(); ?>" href="<?php $slide_link = get_post_meta( $post->ID, '_slide_link_url', true ); if( $slide_link != '' ) { echo $slide_link; } else { echo '#'; } ?>" title="<?php the_title(); ?>">
-											<?php the_post_thumbnail( 'slider-large-thumbnail', array( 'class'	=> 'slide-thumbnail' ) ); ?>
+										<a id="link-<?php the_ID(); ?>" href="<?php $slide_link = get_post_meta( $post->ID, '_slide_link_url', true ); if ( $slide_link != '' ) { echo $slide_link; } else { echo '#'; } ?>" title="<?php the_title(); ?>">
+											<?php the_post_thumbnail( 'slider-large-thumbnail', array( 'class' => 'slide-thumbnail' ) ); ?>
 										</a>
 									<?php else: ?>
 										<a id="link-<?php the_ID(); ?>" href="#" title="<?php the_title(); ?>">
-											<img src="<?php echo get_template_directory_uri().'/images/image-placeholder.png' ?>" alt="" />
+											<img src="<?php echo get_template_directory_uri().'/images/image-placeholder.png' ?>" alt="<?php the_title(); ?>" />
 										</a>
 									<?php endif; ?>
 
-									<?php if( get_theme_mod('show_slider_caption') == '1') : ?>
+									<?php if ( get_theme_mod( 'show_slider_caption' ) == '1' ) : ?>
 										<div id="caption-<?php the_ID(); ?>" class="orbit-caption">
 											<h4><?php the_title(); ?></h4>
 											<p><?php echo get_post_meta( $post->ID, '_slide_caption', true ); ?></p>
@@ -262,16 +262,16 @@ if( !function_exists( 'tangerine_home_slider' ) ) {
 								<?php else: ?>
 
 									<?php if ( has_post_thumbnail() ) : ?>
-										<a id="link-<?php the_ID(); ?>" class="small-12 large-6 columns" style="padding: 0;" href="<?php $slide_link = get_post_meta( $post->ID, '_slide_link_url', true ); if( $slide_link != '' ) { echo $slide_link; } else { echo '#'; } ?>" title="<?php the_title(); ?>">
-											<?php the_post_thumbnail( 'slider-medium-thumbnail', array( 'class'	=> 'slide-thumbnail medium' ) ); ?>
+										<a id="link-<?php the_ID(); ?>" class="small-12 large-6 columns" style="padding: 0;" href="<?php $slide_link = get_post_meta( $post->ID, '_slide_link_url', true ); if ( $slide_link != '' ) { echo $slide_link; } else { echo '#'; } ?>" title="<?php the_title(); ?>">
+											<?php the_post_thumbnail( 'slider-medium-thumbnail', array( 'class' => 'slide-thumbnail medium' ) ); ?>
 										</a>
 									<?php else: ?>
 										<a id="link-<?php the_ID(); ?>" class="small-12 large-6 columns" style="padding: 0;" href="#" title="<?php the_title(); ?>">
-											<img class="slide-thumbnail medium" src="<?php echo get_template_directory_uri().'/images/image-placeholder-small.png' ?>" alt="" />
+											<img class="slide-thumbnail medium" src="<?php echo get_template_directory_uri().'/images/image-placeholder-small.png' ?>" alt="<?php the_title(); ?>" />
 										</a>
 									<?php endif; ?>
 
-									<?php if( get_theme_mod('show_slider_caption') == '1') : ?>
+									<?php if ( get_theme_mod( 'show_slider_caption' ) == '1' ) : ?>
 										<div id="caption-<?php the_ID(); ?>" class="orbit-caption show-for-small">
 											<h4><a href="<?php echo get_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h4>
 											<p><?php the_excerpt(); ?></p>

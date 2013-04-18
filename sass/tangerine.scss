@@ -165,13 +165,30 @@ p[style*="justify"] {
 		}
 
 		.header-container {
-			background: #252525;
+			background: $header-container-bg;
 		}
 
 	}
 }
 
 // TOP BAR
+.top-bar {
+
+	.name h4 {
+		font-size: 1.0625em;
+	    line-height: 45px;
+	    margin: 0;
+
+		a, a:hover, a:focus {
+			color: #FFFFFF;
+			display: block;
+			font-weight: bold;
+			padding: 0 15px;
+			width: 50%;
+		}
+	}
+}
+
 
 #top-area {
 	background: $top-area-bg;
@@ -183,19 +200,32 @@ p[style*="justify"] {
 		}
 
 		li {
+			background: $top-area-bg;
 
 			&.active {
 
 				a:not(.button) {
-					background: darken($top-area-bg, 14%);
+					background: $medium-tint;
+
+					&:hover {
+						background: $light-tint;
+					}
+				}
+
+				> ul li a:not(.button) {
+					background: none;
+
+					&:hover {
+						background: $light-tint;
+					}
 				}
 			}
 
 			a:not(.button) {
-				background: $top-area-bg;
+				background: none;
 
 				&:hover {
-					background: darken($top-area-bg, 10%);
+					background: $light-tint;
 				}
 			}
 		}
@@ -206,7 +236,7 @@ p[style*="justify"] {
 		.toggle-topbar {
 
 			a {
-				color: rgba(black, .2);
+				color: $dark-tint;
 
 				&:hover {
 					background: none;
@@ -214,7 +244,7 @@ p[style*="justify"] {
 			}
 
 			span {
-				box-shadow: 0 10px 0 1px rgba(black, .2), 0 16px 0 1px rgba(black, .2), 0 22px 0 1px rgba(black, .2);
+				box-shadow: 0 10px 0 1px $dark-tint, 0 16px 0 1px $dark-tint, 0 22px 0 1px $dark-tint;
 			}
 		}
 	}
@@ -228,10 +258,6 @@ p[style*="justify"] {
 
 .main-bar-section {
 	@extend .top-bar-section;
-
-	ul {
-		background: none;
-	}
 }
 
 #main-menu {
@@ -243,20 +269,38 @@ p[style*="justify"] {
 
 	.main-bar-section {
 
+		> ul > li.divider:first-child {
+			display: none;
+		}
+
 		li {
+			background: $main-menu-bg;
+
 
 			&.active {
 
 				a:not(.button) {
-					background: darken($main-menu-bg, 14%);
+					background: $medium-tint;
+
+					&:hover {
+						background: $light-tint;
+					}
+				}
+
+				> ul li a:not(.button) {
+					background: none;
+
+					&:hover {
+						background: $light-tint;
+					}
 				}
 			}
 
 			a:not(.button) {
-				background: $main-menu-bg;
+				background: none;
 
 				&:hover {
-					background: darken($main-menu-bg, 10%);
+					background: $light-tint;
 				}
 			}
 		}
@@ -278,7 +322,7 @@ p[style*="justify"] {
 	}
 
 	.widgettitle {
-
+		color: $widgettitle-color;
 	}
 }
 
@@ -293,7 +337,7 @@ p[style*="justify"] {
 	}
 
 	.widgettitle {
-		color: $widgettitle-color;
+		color: $footer-widgettitle-color;
 	}
 }
 
@@ -413,7 +457,7 @@ p[style*="justify"] {
 	.caption {
 		position: absolute;
 		display: none;
-		background: rgba(black, .5);
+		background: $darker-tint;
 		color: #fff;
 		bottom: 20px;
 		left: 14px;
@@ -433,3 +477,64 @@ p[style*="justify"] {
 		float: left;
 	}
 }
+
+// ELEMENTS
+
+button, .button {
+	border-color: $dark-tint;
+}
+
+.th img {
+	display: block;
+}
+
+// Comments
+input[type="submit"] {
+	@include button-base;
+	@include button-size;
+	@include button-style($dark-tint);
+	@include single-transition;
+	@include inset-shadow($light-tint);
+}
+
+.commentlist {
+	list-style-type: none;
+	font-size: 1em;
+
+	.children {
+		list-style-type: none;
+		margin-left: 5em;
+
+		.comment-author {
+			width: 34px;
+		}
+	}
+}
+
+.comment-content {
+	margin-left: 4.5em;
+
+	.comment-edit-link {
+		@include label;
+		@include border-radius(5px);
+	}
+}
+
+.reply {
+	overflow: hidden;
+		
+	.comment-reply-link {
+		@include button-base;
+		@include button-size($button-sml);
+		@include button-style($secondary-color);
+		@include single-transition;
+		@include inset-shadow($light-tint);
+		float: right;
+	}
+}
+
+#cancel-comment-reply-link {
+		@include label;
+		@include border-radius(5px);
+		background: #DB2020;
+	}

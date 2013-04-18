@@ -10,6 +10,11 @@ $row-width: 100%;
 $column-gutter: 20px;
 $primary-color: #f57900;
 $body-bg: #f6f6f6;
+$header-container-bg: #252525;
+$darker-tint: rgba(black, .5);
+$dark-tint: rgba(black, .2);
+$medium-tint:rgba(black, .07);
+$light-tint: rgba(white, .07);
 
 // Top bar
 $top-area-bg: #f57900;
@@ -28,17 +33,18 @@ $footer-area-color: #999;
 $footer-menu-bg: #F57900;
 $footer-menu-color: #f6f6f6;
 $credits-bg: #252525;
+$footer-widgettitle-color: rgba(black, .5);
 
 // Home slider
-$orbit-bullets-bg: #dfdfdf;
-$orbit-bullets-active-bg: #ccc;
+$orbit-bullets-bg: rgba(black, .2);
+$orbit-bullets-active-bg: rgba(black, .4);
 $orbit-container-bg: none;
 $orbit-caption-bg: rgba(0,0,0,0.3);
 $orbit-nav-bg: rgba(0,0,0,0.3);
 $orbit-timer-bg: rgba(255,255,255,0.3);
 
 // Widgets
-$widgettitle-color: #999;
+$widgettitle-color: rgba(black, .5);
 
 // Typography
 $header-font-family: "Ubuntu", Arial, sans-serif;

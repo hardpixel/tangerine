@@ -2,8 +2,7 @@
 
 class Widget extends WP_Widget {
 
-	public function __construct()
-	{
+	public function __construct() {
 		parent::__construct(
 			'latest_posts_slider', // Base ID
 			'Latest Posts Slider', // Name
@@ -22,18 +21,18 @@ class Widget extends WP_Widget {
 		echo $before_widget;
 		if ( ! empty( $title ) ) echo $before_title . $title . $after_title;
 
-		$postwidget = new WP_Query(array( 'post_type' => $ptype, 'showposts' => $pshow ));
+		$postwidget = new WP_Query( array( 'post_type' => $ptype, 'showposts' => $pshow ) );
 
-		if( $postwidget->have_posts() ) :
-		?>
+		if ( $postwidget->have_posts() ) :
+?>
 
-			<div class="posts-slider <?php if( $caption == '') { echo 'no-caption'; } ?>" data-orbit data-options="timer_speed:<?php echo esc_attr( $animation ); ?>; bullets:false;">
-				<?php while($postwidget->have_posts()) : $postwidget->the_post(); ?>
+			<div class="posts-slider <?php if ( $caption == '' ) { echo 'no-caption'; } ?>" data-orbit data-options="timer_speed:<?php echo esc_attr( $animation ); ?>; bullets:false;">
+				<?php while ( $postwidget->have_posts() ) : $postwidget->the_post(); ?>
 
 					<div id="post-slide-<?php the_ID(); ?>" class="post-slide">
 						<?php if ( has_post_thumbnail() ) : ?>
 							<a id="link-<?php the_ID(); ?>" href="<?php echo get_permalink(); ?>" title="<?php the_title(); ?>">
-								<?php the_post_thumbnail( 'slider-medium-thumbnail', array( 'class'	=> 'slide-thumbnail' ) ); ?>
+								<?php the_post_thumbnail( 'slider-medium-thumbnail', array( 'class' => 'slide-thumbnail' ) ); ?>
 							</a>
 
 						<?php else: ?>
@@ -44,7 +43,7 @@ class Widget extends WP_Widget {
 
 						<?php endif; ?>
 
-						<?php if( $caption != '') : ?>
+						<?php if ( $caption != '' ) : ?>
 							<div id="caption-<?php the_ID(); ?>" class="orbit-caption">
 								<h5 class="small-10 column small-offset-1"><a href="<?php echo get_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h5>
 							</div>
@@ -82,7 +81,7 @@ class Widget extends WP_Widget {
 		$title = isset( $instance[ 'title' ] ) ? $instance[ 'title' ] : __( 'Latest Posts', 'text_domain' );
 		$pshow = isset( $instance[ 'pshow' ] ) ? $instance[ 'pshow' ] : __( '5', 'text_domain' );
 		$animation = isset( $instance[ 'animation' ] ) ? $instance[ 'animation' ] : __( '4000', 'text_domain' );
-		?>
+?>
 
 		<p>
 			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
@@ -102,19 +101,19 @@ class Widget extends WP_Widget {
 		<p>
 			<label for="<?php echo $this->get_field_id( 'ptype' ); ?>"><?php _e( 'Post type:' ); ?></label>
 
-			<?php $ptypes = get_post_types(array( 'publicly_queryable' => true, 'capability_type' => 'post' ));
+			<?php $ptypes = get_post_types( array( 'publicly_queryable' => true, 'capability_type' => 'post' ) );
 
-				echo '<select class="widefat" id="'. $this->get_field_id( 'ptype' ) .'" name="'. $this->get_field_name( 'ptype' ) .'" style="text-transform: capitalize;">';
+		echo '<select class="widefat" id="'. $this->get_field_id( 'ptype' ) .'" name="'. $this->get_field_name( 'ptype' ) .'" style="text-transform: capitalize;">';
 
-				foreach ($ptypes  as $post_type ) {
-					echo '<option '. selected( $instance['ptype'], $post_type ) .'>'. $post_type .'</option>';
-				} echo '</select>';
-			?>
+		foreach ( $ptypes  as $post_type ) {
+			echo '<option '. selected( $instance['ptype'], $post_type ) .'>'. $post_type .'</option>';
+		} echo '</select>';
+?>
 		</p>
 
 		<p>
 			<label for="<?php echo $this->get_field_id( 'caption' ); ?>"><?php _e( 'Show caption:' ); ?></label>
-			<input class="widefat" id="<?php echo $this->get_field_id( 'caption' ); ?>" name="<?php echo $this->get_field_name( 'caption' ); ?>" type="checkbox" <?php if( isset( $instance['caption'] ) ) { checked( $instance['caption'] , 'on' ); } ?> />
+			<input class="widefat" id="<?php echo $this->get_field_id( 'caption' ); ?>" name="<?php echo $this->get_field_name( 'caption' ); ?>" type="checkbox" <?php if ( isset( $instance['caption'] ) ) { checked( $instance['caption'] , 'on' ); } ?> />
 		</p>
 
 		<?php
