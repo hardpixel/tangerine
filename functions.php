@@ -15,7 +15,6 @@ include 'includes/navigation.php';
 include 'includes/slider.php';
 include 'includes/footer.php';
 
-include 'includes/widgets/postslide-widget.php';
 include 'includes/walkers/menu_walker.php';
 include 'includes/walkers/comment_walker.php';
 
