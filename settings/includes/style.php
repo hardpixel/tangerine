@@ -52,6 +52,7 @@ if ( !function_exists( 'dynamic_styles' ) ) {
 
 		// Visibility
 		$fpagetitle  = get_theme_mod( 'show_front_page_title' );
+		$htagline = get_theme_mod( 'show_header_tagline' );
 
 		// Other
 		$customcss  = get_theme_mod( 'tangerine_custom_css' );
@@ -68,6 +69,11 @@ if ( !function_exists( 'dynamic_styles' ) ) {
 		if ( $tfont != 'Inherit' ) { echo 'font-family:"'. $tfont .'";'; }
 		if ( $tfontweight != '' ) { echo 'font-weight:'. $tfontweight .';'; }
 		if ( $tfontsize != '' ) { echo 'font-size:'. $tfontsize .'em;'; }
+
+
+		echo '}#header h1 small{';
+
+		if ( $htagline != '1' ) { echo 'display:none;'; }
 
 
 		echo '}h1,h2,h3,h4,h5,h6{';

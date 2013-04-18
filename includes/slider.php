@@ -244,7 +244,7 @@ if ( !function_exists( 'tangerine_home_slider' ) ) {
 
 									<?php if ( has_post_thumbnail() ) : ?>
 										<a id="link-<?php the_ID(); ?>" href="<?php $slide_link = get_post_meta( $post->ID, '_slide_link_url', true ); if ( $slide_link != '' ) { echo $slide_link; } else { echo '#'; } ?>" title="<?php the_title(); ?>">
-											<?php the_post_thumbnail( 'slider-large-thumbnail', array( 'class' => 'slide-thumbnail' ) ); ?>
+											<?php the_post_thumbnail( 'slider-large', array( 'class' => 'slide-thumbnail' ) ); ?>
 										</a>
 									<?php else: ?>
 										<a id="link-<?php the_ID(); ?>" href="#" title="<?php the_title(); ?>">
@@ -263,7 +263,7 @@ if ( !function_exists( 'tangerine_home_slider' ) ) {
 
 									<?php if ( has_post_thumbnail() ) : ?>
 										<a id="link-<?php the_ID(); ?>" class="small-12 large-6 columns" style="padding: 0;" href="<?php $slide_link = get_post_meta( $post->ID, '_slide_link_url', true ); if ( $slide_link != '' ) { echo $slide_link; } else { echo '#'; } ?>" title="<?php the_title(); ?>">
-											<?php the_post_thumbnail( 'slider-medium-thumbnail', array( 'class' => 'slide-thumbnail medium' ) ); ?>
+											<?php the_post_thumbnail( 'slider-medium', array( 'class' => 'slide-thumbnail medium' ) ); ?>
 										</a>
 									<?php else: ?>
 										<a id="link-<?php the_ID(); ?>" class="small-12 large-6 columns" style="padding: 0;" href="#" title="<?php the_title(); ?>">

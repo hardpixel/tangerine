@@ -9,15 +9,15 @@ if ( !function_exists( 'tangerine_header' ) ) {
 
 				<div class="header-bar">
 					<?php if ( get_theme_mod( 'show_header_image' ) == '1' ): ?>
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo"><img src="<?php echo get_theme_mod( 'set_header_image' ); ?>" alt="<?php bloginfo( 'name' ); ?>" /></a>
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo">
+							<img src="<?php echo get_theme_mod( 'set_header_image' ); ?>" alt="<?php bloginfo( 'name' ); ?>" />
+						</a>
 					<?php endif; ?>
 
 					<?php if ( get_theme_mod( 'show_header_title' ) == '1' ): ?>
 						<h1 class="name">
 							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="name"><?php bloginfo( 'name' ); ?></a>
-							<?php if ( get_theme_mod( 'show_header_tagline' ) == '1' ): ?>
-								<small class="description"> <?php bloginfo( 'description' ); ?></small>
-							<?php endif; ?>
+							<small class="description"> <?php bloginfo( 'description' ); ?></small>
 						</h1>
 					<?php endif; ?>
 				</div>
