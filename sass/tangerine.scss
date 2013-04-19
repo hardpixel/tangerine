@@ -193,6 +193,14 @@ p[style*="justify"] {
 #top-area {
 	background: $top-area-bg;
 
+	.main-bar-section {
+		display: none;
+
+		@media only screen and (max-width: $topbar-breakpoint) {
+			display: block;
+		}
+	}
+
 	.top-bar-section {
 
 		ul {
@@ -262,6 +270,10 @@ p[style*="justify"] {
 
 #main-menu {
 	background: $main-menu-bg;
+
+	@media only screen and (max-width: $topbar-breakpoint) {
+		display: none;
+	}
 
 	+ #main-slider {
 		padding-top: 20px;
@@ -542,6 +554,15 @@ input[type="submit"] {
 		margin-top: 0.5em;
 		color: $darker-tint;
 	}
+
+	cite.fn {
+		font-style: normal;
+		font-weight: bold;
+	}
+
+	#respond {
+		margin-left: 4.5em;
+	}
 }
 
 .reply {
@@ -561,4 +582,5 @@ input[type="submit"] {
 		@include label;
 		@include border-radius(5px);
 		background: #DB2020;
-	}
+}
+

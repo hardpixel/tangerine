@@ -31,7 +31,7 @@ if ( !function_exists( 'get_top_menu' ) ) {
 					<?php endif; ?>
 
 					<?php if ( get_theme_mod( 'show_main_menu' ) == '1' ): ?>
-						<section class="main-bar-section show-for-small">
+						<section class="main-bar-section">
 							<?php tangerine_main_menu(); ?>
 						</section>
 					<?php endif; ?>
@@ -49,7 +49,7 @@ if ( !function_exists( 'get_main_menu' ) ) {
 	function get_main_menu() { ?>
 
 		<?php if ( get_theme_mod( 'show_main_menu' ) == '1' ): ?>
-			<div id="main-menu" class="hide-for-small">
+			<div id="main-menu">
 				<nav class="main-bar">
 					<section class="main-bar-section">
 						<?php tangerine_main_menu(); ?>
