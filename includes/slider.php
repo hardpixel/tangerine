@@ -227,7 +227,7 @@ if ( !function_exists( 'tangerine_home_slider' ) ) {
 
 		<div id="main-slider">
 
-			<div id="orbit-slider" class="home-slider <?php slider_style_opt(); ?>">
+			<div id="orbit-slider" class="home-slider <?php slider_style_opt(); ?> <?php echo get_theme_mod( 'set_slider_category' ); ?>">
 
 				<ul data-orbit data-options="<?php slider_data_opt(); ?>">
 
@@ -279,7 +279,7 @@ if ( !function_exists( 'tangerine_home_slider' ) ) {
 									<?php endif; ?>
 
 									<div id="excerpt-<?php the_ID(); ?>" class="orbit-excerpt small-6 columns hide-for-small">
-										<h4><?php the_title(); ?></h4>
+										<h2><?php the_title(); ?></h2>
 										<p><?php the_excerpt(); ?></p>
 									</div>
 

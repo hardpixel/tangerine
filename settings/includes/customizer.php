@@ -61,9 +61,7 @@ class Tangerine_Customizer {
 
 	function add_settings( $customize ) {
 		// Site title
-		$customize->add_setting( 'set_header_image', array(
-				'default' => get_template_directory_uri() .'/images/tangerine-logo.png'
-			) );
+		$customize->add_setting( 'set_header_image' );
 
 		$customize->add_setting( 'show_header', array(
 				'default' => '1'
@@ -90,9 +88,13 @@ class Tangerine_Customizer {
 				'default' => '1'
 			) );
 
+		$customize->add_setting( 'set_fixed_top_menu' );
+
 		$customize->add_setting( 'show_main_menu', array(
 				'default' => '1'
 			) );
+
+		$customize->add_setting( 'set_sticky_main_menu' );
 
 		$customize->add_setting( 'show_footer_menu', array(
 				'default' => '1'
@@ -298,10 +300,26 @@ class Tangerine_Customizer {
 				'priority'   => 16
 			) );
 
+		$customize->add_control( 'set_fixed_top_menu', array(
+				'section'  => 'nav',
+				'settings'   => 'set_fixed_top_menu',
+				'label'      => __( 'Fixed Top Menu', TANGERINE_TEXTDOMAIN ),
+				'type'       => 'checkbox',
+				'priority'   => 16
+			) );
+
 		$customize->add_control( 'show_main_menu', array(
 				'section'  => 'nav',
 				'settings'   => 'show_main_menu',
 				'label'      => __( 'Show Main Menu', TANGERINE_TEXTDOMAIN ),
+				'type'       => 'checkbox',
+				'priority'   => 15
+			) );
+
+		$customize->add_control( 'set_sticky_main_menu', array(
+				'section'  => 'nav',
+				'settings'   => 'set_sticky_main_menu',
+				'label'      => __( 'Sticky Main Menu', TANGERINE_TEXTDOMAIN ),
 				'type'       => 'checkbox',
 				'priority'   => 15
 			) );

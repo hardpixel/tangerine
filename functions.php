@@ -63,7 +63,6 @@ if ( ! is_admin() ) {
 	add_action( 'wp_enqueue_scripts', 'deregister_styles' );
 	add_action( 'wp_enqueue_scripts', 'register_styles' );
 	add_action( 'wp_enqueue_scripts', 'enqueue_styles' );
-	add_action( 'wp_head', 'webfont_styles' );
 	add_action( 'wp_head', 'dynamic_styles' );
 
 	// Scripts
@@ -164,6 +163,7 @@ function register_styles() {
 	wp_register_style( 'normalize', get_template_directory_uri() . '/stylesheets/normalize.css', '', '', 'screen' );
 	wp_register_style( 'tangerine', get_template_directory_uri() . '/stylesheets/tangerine.css', '', '', 'screen' );
 	wp_register_style( 'custom', get_stylesheet_directory_uri() . '/style.css', '', '', 'screen' );
+	wp_register_style( 'webfonts', 'http://fonts.googleapis.com/css?family=Ubuntu|Open+Sans|Autour+One|Dosis|Oleo+Script|Codystar', '', '', 'screen' );
 }
 
 // Deregister styles
@@ -176,6 +176,7 @@ if ( !function_exists( 'deregister_styles' ) ) {
 // Enqueue styles
 function enqueue_styles() {
 	wp_enqueue_style( 'normalize' );
+	wp_enqueue_style( 'webfonts' );
 	wp_enqueue_style( 'tangerine' );
 	wp_enqueue_style( 'custom' );
 }
@@ -193,12 +194,6 @@ function register_admin_styles() {
 // Enqueue / Print admin styles
 function enqueue_admin_styles() {
 	wp_enqueue_style( 'admin-style' );
-}
-
-// Add specific styles
-function webfont_styles() {
-
-	echo '<link href="http://fonts.googleapis.com/css?family=Ubuntu|Open+Sans|Autour+One|Dosis|Oleo+Script|Codystar" rel="stylesheet" />';
 }
 
 

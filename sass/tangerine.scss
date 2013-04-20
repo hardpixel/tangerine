@@ -93,6 +93,10 @@
 	margin-top: 20px;
 }
 
+#main-slider {
+	padding-top: 20px;
+}
+
 #header {
 
 	.name, .logo {
@@ -193,6 +197,14 @@ p[style*="justify"] {
 #top-area {
 	background: $top-area-bg;
 
+	&.no-top-menu {
+		display: none;
+
+		@media only screen and (max-width: $topbar-breakpoint) {
+			display: block;
+		}		
+	}
+
 	.main-bar-section {
 		display: none;
 
@@ -273,10 +285,6 @@ p[style*="justify"] {
 
 	@media only screen and (max-width: $topbar-breakpoint) {
 		display: none;
-	}
-
-	+ #main-slider {
-		padding-top: 20px;
 	}
 
 	.main-bar-section {
@@ -390,10 +398,18 @@ p[style*="justify"] {
 
 #copyright, #powered-by {
 	@include grid-column(6);
+
+	@media only screen and(max-width:$tiny-screen) {
+		width: 100%;
+	}
 }
 
 #powered-by {
 	text-align: right;
+
+	@media only screen and(max-width:$tiny-screen) {
+		display: none;
+	}
 }
 
 // ORBIT SLIDER
@@ -446,6 +462,31 @@ p[style*="justify"] {
 		p {
 			margin: 5px 0 0;
 		}
+	}
+
+	
+	// Posts Slider
+	&:not(.slides) {
+
+		@media only screen and(min-width: $small-screen) {
+				
+			.slide {
+				padding: 0 emCalc(80px);
+			}
+
+			.orbit-excerpt {
+				padding: 0 0 0 emCalc(30px);
+			}
+		
+			.orbit-slide-number {
+				left: 6.5em;
+			}
+
+			.orbit-timer {
+				right: 6em;
+			}
+		}
+		
 	}
 }
 
@@ -540,6 +581,10 @@ input[type="submit"] {
 			width: 34px;
 		}
 	}
+
+	#respond {
+		margin-left: 4.5em;
+	}
 }
 
 .comment-content {
@@ -558,10 +603,6 @@ input[type="submit"] {
 	cite.fn {
 		font-style: normal;
 		font-weight: bold;
-	}
-
-	#respond {
-		margin-left: 4.5em;
 	}
 }
 

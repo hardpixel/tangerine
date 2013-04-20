@@ -5,7 +5,7 @@ if ( !function_exists( 'get_top_menu' ) ) {
 	function get_top_menu() { ?>
 
 		<?php if ( get_theme_mod( 'show_top_menu' ) == '1' || get_theme_mod( 'show_main_menu' ) == '1' ): ?>
-			<div id="top-area" <?php if ( get_theme_mod( 'show_top_menu' ) == '' ) { echo 'class="show-for-small"'; } ?>>
+			<div id="top-area" class="<?php if ( get_theme_mod( 'show_top_menu' ) == '' ) { echo 'no-top-menu'; } if( get_theme_mod( 'set_fixed_top_menu' ) == '1' ) { echo 'fixed contain-to-grid'; } ?>">
 				<nav id="top-menu" class="top-bar">
 					<ul class="title-area">
 						<!-- Title Area -->
@@ -49,7 +49,7 @@ if ( !function_exists( 'get_main_menu' ) ) {
 	function get_main_menu() { ?>
 
 		<?php if ( get_theme_mod( 'show_main_menu' ) == '1' ): ?>
-			<div id="main-menu">
+			<div id="main-menu" class="<?php if( get_theme_mod( 'set_sticky_main_menu' ) == '1' ) { echo 'sticky contain-to-grid'; } ?>">
 				<nav class="main-bar">
 					<section class="main-bar-section">
 						<?php tangerine_main_menu(); ?>
