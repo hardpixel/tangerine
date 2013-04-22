@@ -10,46 +10,6 @@
 @import "compass/utilities";
 @import "recipes/shape";
 
-// Import specific parts of Foundation by commenting the import "foundation"
-// and uncommenting what you want below. You must uncomment the following if customizing
-
-// @import "foundation/foundation-global"; // *always required
-// @import "foundation/components/global"; // *always required
-// @import "foundation/components/grid";
-// @import "foundation/components/visibility";
-// @import "foundation/components/block-grid";
-// @import "foundation/components/type";
-// @import "foundation/components/buttons";
-// @import "foundation/components/forms"; // *requires components/buttons
-// @import "foundation/components/custom-forms"; // *requires components/buttons, components/forms
-// @import "foundation/components/button-groups"; // *requires components/buttons
-// @import "foundation/components/dropdown-buttons"; // *requires components/buttons
-// @import "foundation/components/split-buttons"; // *requires components/buttons
-// @import "foundation/components/flex-video";
-// @import "foundation/components/section";
-// @import "foundation/components/top-bar";  // *requires components/grid
-// @import "foundation/components/orbit";
-// @import "foundation/components/reveal";
-// @import "foundation/components/joyride";
-// @import "foundation/components/clearing";
-// @import "foundation/components/alert-boxes";
-// @import "foundation/components/breadcrumbs";
-// @import "foundation/components/keystrokes";
-// @import "foundation/components/labels";
-// @import "foundation/components/inline-lists";
-// @import "foundation/components/pagination";
-// @import "foundation/components/panels";
-// @import "foundation/components/pricing-tables";
-// @import "foundation/components/progress-bars";
-// @import "foundation/components/side-nav";
-// @import "foundation/components/sub-nav";
-// @import "foundation/components/switch";
-// @import "foundation/components/magellan";
-// @import "foundation/components/tables";
-// @import "foundation/components/thumbs";
-// @import "foundation/components/tooltips";
-// @import "foundation/components/dropdown";
-
 // FOUNDATION FIXES
 
 .top-bar-section .has-dropdown .dropdown li.has-dropdown > a:after, .main-bar-section .has-dropdown .dropdown li.has-dropdown > a:after {
@@ -78,7 +38,7 @@
 	width: 100%;
 }
 
-// BASE
+// GENERAL
 
 .header-bar, #main-slider, #main, #footer-area, #footer-widgets, .footer-bar, .credits-bar {
 	@include grid-row();
@@ -101,9 +61,6 @@
 
 	.name, .logo {
 		float: left;
-	}
-
-	.logo, .name {
 		margin: 0 0 0 $column-gutter/2;
 	}
 
@@ -176,6 +133,30 @@ p[style*="justify"] {
 }
 
 // TOP BAR
+#top-area {
+	background: $top-area-bg;
+
+	&.no-top-menu {
+		display: block;
+
+		@media only screen and (min-width: $topbar-breakpoint) {
+			display: none;
+		}		
+	}
+
+	.main-bar-section {
+		display: block;
+
+		li.has-dropdown ul.dropdown {
+			background: none !important;
+		}
+
+		@media only screen and (min-width: $topbar-breakpoint) {
+			display: none;
+		}
+	}
+}
+
 .top-bar {
 
 	.name h4 {
@@ -193,55 +174,33 @@ p[style*="justify"] {
 	}
 }
 
+.top-bar-section {
 
-#top-area {
-	background: $top-area-bg;
-
-	&.no-top-menu {
-		display: none;
-
-		@media only screen and (max-width: $topbar-breakpoint) {
-			display: block;
-		}		
+	ul {
+		background: none;
 	}
 
-	.main-bar-section {
-		display: none;
+	li {
 
-		@media only screen and (max-width: $topbar-breakpoint) {
-			display: block;
-		}
-	}
-
-	.top-bar-section {
-
-		ul {
-			background: none;
-		}
-
-		li {
+		&.has-dropdown ul.dropdown {
 			background: $top-area-bg;
 
-			&.active {
+			@media only screen and (max-width: $topbar-breakpoint) {
+				background: none !important;
+			}
+		}
 
-				a:not(.button) {
-					background: $medium-tint;
+		&.active {
 
-					&:hover {
-						background: $light-tint;
-					}
-				}
+			a:not(.button) {
+				background: $medium-tint;
 
-				> ul li a:not(.button) {
-					background: none;
-
-					&:hover {
-						background: $light-tint;
-					}
+				&:hover {
+					background: $light-tint;
 				}
 			}
 
-			a:not(.button) {
+			> ul li a:not(.button) {
 				background: none;
 
 				&:hover {
@@ -249,9 +208,17 @@ p[style*="justify"] {
 				}
 			}
 		}
+
+		a:not(.button) {
+			background: none;
+
+			&:hover {
+				background: $light-tint;
+			}
+		}
 	}
 
-	.expanded {
+	&.expanded {
 
 		.toggle-topbar {
 
@@ -271,6 +238,19 @@ p[style*="justify"] {
 }
 
 // MAIN MENU
+#main-menu {
+	background: $main-menu-bg;
+	display: none;
+
+	@media only screen and (min-width: $topbar-breakpoint) {
+		display: block;
+	}
+
+	.main-bar-section > ul > li.divider:first-child {
+		display: none;
+	}
+}
+
 .main-bar {
 	@extend .top-bar;
 	background: $main-menu-bg;
@@ -278,50 +258,41 @@ p[style*="justify"] {
 
 .main-bar-section {
 	@extend .top-bar-section;
-}
 
-#main-menu {
-	background: $main-menu-bg;
-
-	@media only screen and (max-width: $topbar-breakpoint) {
-		display: none;
+	ul {
+		background: none;
 	}
 
-	.main-bar-section {
+	li {
 
-		> ul > li.divider:first-child {
-			display: none;
+		&.has-dropdown ul.dropdown {
+			background: $main-menu-bg;
 		}
 
-		li {
-			background: $main-menu-bg;
+		&.active {
 
+			a:not(.button) {
+				background: $medium-tint;
 
-			&.active {
-
-				a:not(.button) {
-					background: $medium-tint;
-
-					&:hover {
-						background: $light-tint;
-					}
-				}
-
-				> ul li a:not(.button) {
-					background: none;
-
-					&:hover {
-						background: $light-tint;
-					}
+				&:hover {
+					background: $light-tint;
 				}
 			}
 
-			a:not(.button) {
+			> ul li a:not(.button) {
 				background: none;
 
 				&:hover {
 					background: $light-tint;
 				}
+			}
+		}
+
+		a:not(.button) {
+			background: none;
+
+			&:hover {
+				background: $light-tint;
 			}
 		}
 	}
@@ -338,7 +309,6 @@ p[style*="justify"] {
 		ul {
 			list-style-type: square;
 		}
-
 	}
 
 	.widgettitle {
@@ -397,18 +367,19 @@ p[style*="justify"] {
 }
 
 #copyright, #powered-by {
-	@include grid-column(6);
+	@include grid-column(12);
 
-	@media only screen and(max-width:$tiny-screen) {
-		width: 100%;
+	@media only screen and(min-width:$tiny-screen) {
+		@include grid-column(6);
 	}
 }
 
 #powered-by {
 	text-align: right;
+	display: none;
 
-	@media only screen and(max-width:$tiny-screen) {
-		display: none;
+	@media only screen and(min-width:$tiny-screen) {
+		display: block;
 	}
 }
 
@@ -464,7 +435,6 @@ p[style*="justify"] {
 		}
 	}
 
-	
 	// Posts Slider
 	&:not(.slides) {
 
@@ -486,7 +456,6 @@ p[style*="justify"] {
 				right: 6em;
 			}
 		}
-		
 	}
 }
 
@@ -494,7 +463,7 @@ p[style*="justify"] {
 
 .gallery {
 
-	ul li {
+	li {
 		position: relative;
 
 		a {
@@ -624,4 +593,3 @@ input[type="submit"] {
 		@include border-radius(5px);
 		background: #DB2020;
 }
-

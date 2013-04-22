@@ -65,7 +65,7 @@ if ( !function_exists( 'dynamic_styles' ) ) {
 
 		echo 'body{';
 
-		if ( $style['wrapperbg'] != '' ) { echo 'background:'. $style['wrapperbg'] .';'; }
+		if ( $style['wrapperbg'] != '' ) { echo 'background-color:'. $style['wrapperbg'] .';'; }
 		if ( $style['bfont'] != 'Inherit' ) { echo 'font-family:"'. $style['bfont'] .'";'; }
 		if ( $style['bfontsize'] != '' ) { echo 'font-size:'. $style['bfontsize'] .'em;'; }
 		if ( $style['text'] != '' ) { echo 'color:'. $style['text'] .';'; }
@@ -88,9 +88,9 @@ if ( !function_exists( 'dynamic_styles' ) ) {
 		if ( $style['hfontweight'] != '' ) { echo 'font-weight:'. $style['hfontweight'] .';'; }
 
 
-		echo '}#top-area,.top-bar,#top-area .top-bar-section li,#top-area .main-bar-section li{';
+		echo '}#top-area,.top-bar,.top-bar-section ul li.has-dropdown ul.dropdown{';
 
-		if ( $style['tbarbg'] != '' ) { echo 'background:'. $style['tbarbg'] .';'; }
+		if ( $style['tbarbg'] != '' ) { echo 'background-color:'. $style['tbarbg'] .';'; }
 
 
 		echo '}.top-bar .name h1 a,.top-bar .name h4 a,.top-bar .name h4 a:hover,.top-bar .name h4 a:focus,.top-bar-section ul li > a{';
@@ -98,9 +98,9 @@ if ( !function_exists( 'dynamic_styles' ) ) {
 		if ( $style['tbarcolor'] != '' ) { echo 'color:'. $style['tbarcolor'] .';'; }
 
 
-		echo '}#main-menu,.main-bar,#main-menu .main-bar-section li{';
+		echo '}#main-menu,.main-bar,.main-bar-section ul li.has-dropdown ul.dropdown{';
 
-		if ( $style['mmenubg'] != '' ) { echo 'background:'. $style['mmenubg'] .';'; }
+		if ( $style['mmenubg'] != '' ) { echo 'background-color:'. $style['mmenubg'] .';'; }
 
 
 		echo '}.main-bar-section ul li > a{';
@@ -110,17 +110,17 @@ if ( !function_exists( 'dynamic_styles' ) ) {
 
 		echo '}#wrapper.contained-header .header-container{';
 
-		if ( $style['headerbg'] != '' ) { echo 'background:'. $style['headerbg'] .';'; }
+		if ( $style['headerbg'] != '' ) { echo 'background-color:'. $style['headerbg'] .';'; }
 
 
 		echo '}#footer-area{';
 
-		if ( $style['footerbg'] != '' ) { echo 'background:'. $style['footerbg'] .';'; }
+		if ( $style['footerbg'] != '' ) { echo 'background-color:'. $style['footerbg'] .';'; }
 
 
 		echo '}#footer-menu{';
 
-		if ( $style['fmenubg'] != '' ) { echo 'background:'. $style['fmenubg'] .';'; }
+		if ( $style['fmenubg'] != '' ) { echo 'background-color:'. $style['fmenubg'] .';'; }
 
 
 		echo '}.footer-bar-section ul li a{';
@@ -130,7 +130,7 @@ if ( !function_exists( 'dynamic_styles' ) ) {
 
 		echo '}#credits{';
 
-		if ( $style['creditsbg'] != '' ) { echo 'background:'. $style['creditsbg'] .';'; }
+		if ( $style['creditsbg'] != '' ) { echo 'background-color:'. $style['creditsbg'] .';'; }
 
 
 		echo '}.home article.page h2{';
@@ -145,7 +145,7 @@ if ( !function_exists( 'dynamic_styles' ) ) {
 
 		echo '}button,.button,.pagination li.current a,input[type="submit"]{';
 
-		if ( $style['primary'] != '' ) { echo 'background:'. $style['primary'] .';'; }
+		if ( $style['primary'] != '' ) { echo 'background-color:'. $style['primary'] .';'; }
 
 
 		echo '}a:hover,a:focus{';
@@ -160,7 +160,7 @@ if ( !function_exists( 'dynamic_styles' ) ) {
 
 		echo '}button:hover,button:focus,.button:hover,.button:focus,.pagination li.current a:hover,.pagination li.current a:focus,input[type="submit"]:hover,input[type="submit"]:focus{';
 
-		if ( $style['primary'] != '' ) { echo 'background:'. $darkprimary .';'; }
+		if ( $style['primary'] != '' ) { echo 'background-color:'. $darkprimary .';'; }
 
 
 		echo '}';
@@ -173,4 +173,5 @@ if ( !function_exists( 'dynamic_styles' ) ) {
 	}
 
 }
+
 ?>
