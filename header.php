@@ -18,6 +18,8 @@
 	<?php wp_head(); ?>
 </head>
 
+<?php flush(); ?>
+
 <body <?php body_class(); ?>>
 
 	<!-- BEGIN #wrapper -->
