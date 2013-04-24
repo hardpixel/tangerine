@@ -471,23 +471,27 @@ function register_extra_sidebars() {
 }
 
 // Sidebar & Content Sizes
-function dynamic_content_styles() {
-	if ( get_theme_mod( 'set_sidebar_pos' ) == 'sidebar-left' || get_theme_mod( 'set_sidebar_pos' ) == 'sidebar-right' ) {
-		echo 'large-8';
-	}
+if( !function_exists('dynamic_content_styles') ) {
+	function dynamic_content_styles() {
+		if ( get_theme_mod( 'set_sidebar_pos' ) == 'sidebar-left' || get_theme_mod( 'set_sidebar_pos' ) == 'sidebar-right' ) {
+			echo 'large-8';
+		}
 
-	if ( get_theme_mod( 'set_sidebar_pos' ) == 'sidebar-left-right' ) {
-		echo 'large-6';
+		if ( get_theme_mod( 'set_sidebar_pos' ) == 'sidebar-left-right' ) {
+			echo 'large-6';
+		}
 	}
 }
 
-function dynamic_sidebar_styles() {
-	if ( get_theme_mod( 'set_sidebar_pos' ) == 'sidebar-left' || get_theme_mod( 'set_sidebar_pos' ) == 'sidebar-right' ) {
-		echo 'large-4';
-	}
+if( !function_exists('dynamic_sidebar_styles') ) {
+	function dynamic_sidebar_styles() {
+		if ( get_theme_mod( 'set_sidebar_pos' ) == 'sidebar-left' || get_theme_mod( 'set_sidebar_pos' ) == 'sidebar-right' ) {
+			echo 'large-4';
+		}
 
-	if ( get_theme_mod( 'set_sidebar_pos' ) == 'sidebar-left-right' ) {
-		echo 'large-3';
+		if ( get_theme_mod( 'set_sidebar_pos' ) == 'sidebar-left-right' ) {
+			echo 'large-3';
+		}
 	}
 }
 
