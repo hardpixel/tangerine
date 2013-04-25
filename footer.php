@@ -4,7 +4,9 @@
 		</div>
 		<!-- END #main-area -->
 
-		<div id="footer-area"><?php get_tangerine_footer(); ?></div>
+		<div id="footer-area">
+			<?php get_tangerine_footer(); ?>
+		</div>
 
 	</div>
 	<!-- END #wrapper -->

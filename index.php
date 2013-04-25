@@ -28,10 +28,10 @@
 
 				<article class="<?php echo get_post_type( $post ); ?>">
 
-					<h2><?php the_title(); ?></h2>
-					<p class="date round secondary label">Posted on: <span class="time"><?php echo get_the_date(); ?></span> by: <span class="author"><?php echo get_the_author(); ?></span></p>
-
 					<?php if ( is_single() ): ?>
+
+						<h2><?php the_title(); ?></h2>
+						<p class="date round secondary label">Posted on: <span class="time"><?php echo get_the_date(); ?></span> by: <span class="author"><?php echo get_the_author(); ?></span></p>
 
 						<div class="details">
 							<?php the_content(); ?>
@@ -40,6 +40,9 @@
 						<?php comments_template(); ?>
 
 					<?php else: ?>
+
+						<a href="<?php the_permalink(); ?>"><h2><?php the_title(); ?></h2></a>
+						<p class="date round secondary label">Posted on: <span class="time"><?php echo get_the_date(); ?></span> by: <span class="author"><?php echo get_the_author(); ?></span></p>
 
 						<div class="excerpt">
 							<?php if ( has_post_thumbnail() ) : ?>
@@ -57,8 +60,7 @@
 
 			<?php endwhile; ?>
 
-				<hr>
-				<?php pagination(); ?>
+				<?php if( !is_single() ) { echo '<hr>'; pagination(); } ?>
 
 			<?php else: ?>
 
