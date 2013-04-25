@@ -23,7 +23,7 @@
 <body <?php body_class(); ?>>
 
 	<!-- BEGIN #wrapper -->
-	<div id="wrapper" class="row <?php echo get_theme_mod( 'set_page_width' ); echo get_theme_mod( 'set_header_mode' ); ?>">
+	<div id="wrapper" class="row <?php echo get_theme_mod( 'set_page_width' ); ?> <?php echo get_theme_mod( 'set_header_mode' ); ?>">
 
 		<!--[if lt IE 9]>
 			<div class="chromeframe" data-alert>
