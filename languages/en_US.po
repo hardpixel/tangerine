@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tangerine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-19 00:45+0200\n"
-"PO-Revision-Date: 2013-04-19 00:46+0200\n"
+"POT-Creation-Date: 2013-04-25 18:00+0200\n"
+"PO-Revision-Date: 2013-04-25 18:00+0200\n"
 "Last-Translator: \n"
 "Language-Team: Hardpixel <info@hardpixel.net>\n"
 "Language: \n"
@@ -17,8 +17,12 @@ msgstr ""
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Poedit-SearchPath-0: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk\n"
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/header.php:28
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/header.php:30
 msgid "You are using an <strong>outdated</strong> browser. Please <a href='http://browsehappy.com/'>upgrade your browser</a> or <a href='http://www.google.com/chromeframe/?redirect=true'>activate Google Chrome Frame</a> to improve your experience."
+msgstr ""
+
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/index.php:67
+msgid "Sorry, no posts match your criteria."
 msgstr ""
 
 #: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/comments.php:4
@@ -44,43 +48,43 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/functions.php:282
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/functions.php:278
 msgid "Top Menu"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/functions.php:283
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/functions.php:282
 msgid "Main Menu"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/functions.php:284
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/functions.php:286
 msgid "Footer Menu"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/functions.php:419
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/functions.php:421
 msgid "Read More..."
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/functions.php:431
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/functions.php:438
 msgid "Left sidebar used on all pages"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/functions.php:441
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/functions.php:448
 msgid "Right sidebar used on all pages"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/functions.php:451
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/functions.php:458
 msgid "Left sidebar used on home page"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/functions.php:461
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/functions.php:468
 msgid "Right sidebar used on home page"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/functions.php:471
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/functions.php:478
 msgid "Footer widget area"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/functions.php:561
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/functions.php:574
 #, php-format
 msgid "Page %s"
 msgstr ""
@@ -232,329 +236,337 @@ msgstr ""
 msgid "SEO & Analytics"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:248
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:250
 msgid "Site logo"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:256
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:258
 msgid "Show Header"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:264
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:266
 msgid "Show Site Title"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:272
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:274
 msgid "Show Top Bar Title"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:280
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:282
 msgid "Show Site Logo"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:288
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:290
 msgid "Show Site Tagline"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:296
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:298
 msgid "Show Top Menu"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:304
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:306
+msgid "Fixed Top Menu"
+msgstr ""
+
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:314
 msgid "Show Main Menu"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:312
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:322
+msgid "Sticky Main Menu"
+msgstr ""
+
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:330
 msgid "Show Footer Menu"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:320
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:338
 msgid "Show Breadcrumbs"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:329
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:347
 msgid "Show front page title"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:338
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:356
 msgid "Page"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:339
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:357
 msgid "Select page layout."
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:342
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:360
 msgid "Full Width"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:343
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:361
 msgid "Normal"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:344
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:362
 msgid "Hybrid"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:345
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:363
 msgid "Narrow Content"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:346
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:364
 msgid "Narrow Footer"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:353
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:371
 msgid "Sidebar"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:354
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:372
 msgid "Select sidebar position."
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:357
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:375
 msgid "Sidebar Left"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:358
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:376
 msgid "Sidebar Right"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:359
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:377
 msgid "Sidebar Left & Right"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:360
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:378
 msgid "No Sidebar"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:367
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:385
 msgid "Header Mode"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:368
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:386
 msgid "Select header mode."
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:371
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:389
 msgid "Contained"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:372
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:390
 msgid "Auto Width"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:379
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:397
 msgid "Main Menu Position"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:380
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:398
 msgid "Select the position of main menu."
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:383
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:401
 msgid "Above Slider"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:384
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:402
 msgid "Below Slider"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:391
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:409
 msgid "Footer"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:392
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:410
 msgid "Number of widgets per row."
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:408
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:426
 msgid "Main font"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:409
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:427
 msgid "Font for paragraphs, widgets, menus etc."
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:424
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:442
 msgid "Base font size"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:425
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:443
 msgid "Headings font size is calculated automatically. For decimals use only \".\""
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:435
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:453
 msgid "Headings"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:436
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:454
 msgid "Choose font for your headings."
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:453
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:471
 msgid "Headings font weight"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:454
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:472
 msgid "Normal or bold headings."
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:466
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:484
 msgid "Blog title"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:467
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:485
 msgid "Choose font for your blog title."
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:484
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:502
 msgid "Blog title font weight"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:485
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:503
 msgid "Normal or bold title."
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:497
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:515
 msgid "Blog title font size"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:498
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:516
 msgid "For decimals use only \".\""
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:506
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:524
 msgid "Page Background"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:512
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:530
 msgid "Primary Color"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:518
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:536
 msgid "Text Color"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:524
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:542
 msgid "Header Background"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:530
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:548
 msgid "Footer Background"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:537
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:555
 msgid "Credits Background"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:545
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:563
 msgid "Top Bar Background"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:553
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:571
 msgid "Top Bar Text Color"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:561
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:579
 msgid "Main Menu Background"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:568
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:586
 msgid "Main Menu Text Color"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:574
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:592
 msgid "Footer Menu Background"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:580
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:598
 msgid "Footer Menu Text Color"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:604
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:622
 msgid "Post type for slides content."
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:617
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:635
 msgid "Number of slides"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:618
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:636
 msgid "Use 0 for unlimited slides."
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:626
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:636
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:644
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:654
 msgid "Set before creating any slides. Else you have to regenerate thumbnails."
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:648
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:666
 msgid "Animation Speed"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:649
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:667
 msgid "Time for slide to be shown."
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:650
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:660
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:668
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:678
 msgid "ms"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:658
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:676
 msgid "Transition Speed"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:659
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:677
 msgid "Time for slide effect."
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:668
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:686
 msgid "Show bullets"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:676
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:694
 msgid "Show caption"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:684
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:702
 msgid "Show navigation buttons"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:692
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:710
 msgid "Show timer"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:700
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:718
 msgid "Show numbering"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:708
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:726
 msgid "Pause on hover"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:716
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:734
 msgid "Keyboard navigation"
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:724
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:742
 msgid "Change default credits."
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:733
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:751
 msgid "Add custom styles to your theme."
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:741
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:759
 msgid "Describe your site in less than 160 characters."
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:749
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:767
 msgid "Use \",\" to separate the keywords."
 msgstr ""
 
-#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:757
+#: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:775
 msgid "Tracking ID. e.g. \"UA-23314790-3\"."
 msgstr ""
 
