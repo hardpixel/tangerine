@@ -45,8 +45,10 @@ add_theme_support( 'post-formats', array(
 add_image_size( 'gallery', '300', '200', true );
 
 // Slider Thumbnails
-add_image_size( 'slider-large', get_theme_mod( 'set_slider_width', '1000' ), get_theme_mod( 'set_slider_height', '400' ), true );
-add_image_size( 'slider-medium', get_theme_mod( 'set_slider_width', '1000' ) * 0.5 - 40, get_theme_mod( 'set_slider_height', '400' ) - 40, true );
+if ( get_theme_mod( 'show_home_slider' ) == '1' ) {
+	add_image_size( 'slider-large', get_theme_mod( 'set_slider_width', '1000' ), get_theme_mod( 'set_slider_height', '400' ), true );
+	add_image_size( 'slider-medium', get_theme_mod( 'set_slider_width', '1000' ) * 0.5 - 40, get_theme_mod( 'set_slider_height', '400' ) - 40, true );
+}
 
 
 /*==================================================*/
@@ -271,13 +273,18 @@ function remove_menu_pages() {
 /*==================================================*/
 
 function register_menus() {
-	register_nav_menus(
-		array(
-			'top_menu'  => __( 'Top Menu', TANGERINE_TEXTDOMAIN ),
-			'main_menu'  => __( 'Main Menu', TANGERINE_TEXTDOMAIN ),
-			'footer_menu' => __( 'Footer Menu', TANGERINE_TEXTDOMAIN )
-		)
-	);
+
+	if ( get_theme_mod( 'show_top_menu' ) == '1' ) {
+		register_nav_menu( 'top_menu', __( 'Top Menu', TANGERINE_TEXTDOMAIN ) );
+	}
+
+	if ( get_theme_mod( 'show_main_menu' ) == '1' ) {
+		register_nav_menu( 'main_menu', __( 'Main Menu', TANGERINE_TEXTDOMAIN ) );
+	}
+
+	if ( get_theme_mod( 'show_footer_menu' ) == '1' ) {
+		register_nav_menu( 'footer_menu', __( 'Footer Menu', TANGERINE_TEXTDOMAIN ) );
+	}
 }
 
 function add_extra_menu_classes( $objects ) {
@@ -409,8 +416,10 @@ if ( !function_exists( 'excerpt_length' ) ) {
 	}
 }
 
-function excerpt_more( $more ) {
-	return '<div class="small-12 columns read-more"><a class="button small secondary right" href="'. get_permalink() .'">'. __( 'Read More...', TANGERINE_TEXTDOMAIN ) .'</a></div>';
+if( !function_exists( 'excerpt_more' ) ) {
+	function excerpt_more( $more ) {
+		return '<div class="small-12 columns read-more"><a class="button small secondary right" href="'. get_permalink() .'">'. __( 'Read More...', TANGERINE_TEXTDOMAIN ) .'</a></div>';
+	}
 }
 
 
@@ -418,56 +427,62 @@ function excerpt_more( $more ) {
 /* Sidebars, widgets
 /*==================================================*/
 
-function register_extra_sidebars() {
-	register_sidebar( array(
-			'name'    => 'Left Sidebar',
-			'id'   => 'sidebar',
-			'description' => __( 'Left sidebar used on all pages', TANGERINE_TEXTDOMAIN ),
-			'before_widget' =>  '<li id="%1$s2" class="widget %2$s">',
-			'after_widget'  =>  '</li>',
-			'before_title'  =>  '<h3 class="widgettitle">',
-			'after_title'   =>  '</h3>'
-		) );
+if( !function_exists( 'register_extra_sidebars' ) ) {
+	function register_extra_sidebars() {
+		
+		if( get_theme_mod( 'set_sidebar_pos' ) != 'sidebar-none' ) {
+			
+			register_sidebar( array(
+					'name'    => 'Left Sidebar',
+					'id'   => 'sidebar',
+					'description' => __( 'Left sidebar used on all pages', TANGERINE_TEXTDOMAIN ),
+					'before_widget' =>  '<li id="%1$s2" class="widget %2$s">',
+					'after_widget'  =>  '</li>',
+					'before_title'  =>  '<h3 class="widgettitle">',
+					'after_title'   =>  '</h3>'
+				) );
 
-	register_sidebar( array(
-			'name'    => 'Right Sidebar',
-			'id'   => 'sidebar-right',
-			'description' => __( 'Right sidebar used on all pages', TANGERINE_TEXTDOMAIN ),
-			'before_widget' =>  '<li id="%1$s2" class="widget %2$s">',
-			'after_widget'  =>  '</li>',
-			'before_title'  =>  '<h3 class="widgettitle">',
-			'after_title'   =>  '</h3>'
-		) );
+			register_sidebar( array(
+					'name'    => 'Right Sidebar',
+					'id'   => 'sidebar-right',
+					'description' => __( 'Right sidebar used on all pages', TANGERINE_TEXTDOMAIN ),
+					'before_widget' =>  '<li id="%1$s2" class="widget %2$s">',
+					'after_widget'  =>  '</li>',
+					'before_title'  =>  '<h3 class="widgettitle">',
+					'after_title'   =>  '</h3>'
+				) );
 
-	register_sidebar( array(
-			'name'    => 'Left Home Sidebar',
-			'id'   => 'home-sidebar',
-			'description' => __( 'Left sidebar used on home page', TANGERINE_TEXTDOMAIN ),
-			'before_widget' =>  '<li id="%1$s2" class="widget %2$s">',
-			'after_widget'  =>  '</li>',
-			'before_title'  =>  '<h3 class="widgettitle">',
-			'after_title'   =>  '</h3>'
-		) );
+			register_sidebar( array(
+					'name'    => 'Left Home Sidebar',
+					'id'   => 'home-sidebar',
+					'description' => __( 'Left sidebar used on home page', TANGERINE_TEXTDOMAIN ),
+					'before_widget' =>  '<li id="%1$s2" class="widget %2$s">',
+					'after_widget'  =>  '</li>',
+					'before_title'  =>  '<h3 class="widgettitle">',
+					'after_title'   =>  '</h3>'
+				) );
 
-	register_sidebar( array(
-			'name'    => 'Right Home Sidebar',
-			'id'   => 'home-sidebar-right',
-			'description' => __( 'Right sidebar used on home page', TANGERINE_TEXTDOMAIN ),
-			'before_widget' =>  '<li id="%1$s2" class="widget %2$s">',
-			'after_widget'  =>  '</li>',
-			'before_title'  =>  '<h3 class="widgettitle">',
-			'after_title'   =>  '</h3>'
-		) );
+			register_sidebar( array(
+					'name'    => 'Right Home Sidebar',
+					'id'   => 'home-sidebar-right',
+					'description' => __( 'Right sidebar used on home page', TANGERINE_TEXTDOMAIN ),
+					'before_widget' =>  '<li id="%1$s2" class="widget %2$s">',
+					'after_widget'  =>  '</li>',
+					'before_title'  =>  '<h3 class="widgettitle">',
+					'after_title'   =>  '</h3>'
+				) );
 
-	register_sidebar( array(
-			'name'    => 'Footer Area',
-			'id'   => 'footer-area',
-			'description' => __( 'Footer widget area', TANGERINE_TEXTDOMAIN ),
-			'before_widget' =>  '<li id="%1$s2" class="widget %2$s">',
-			'after_widget'  =>  '</li>',
-			'before_title'  =>  '<h3 class="widgettitle">',
-			'after_title'   =>  '</h3>'
-		) );
+			register_sidebar( array(
+					'name'    => 'Footer Area',
+					'id'   => 'footer-area',
+					'description' => __( 'Footer widget area', TANGERINE_TEXTDOMAIN ),
+					'before_widget' =>  '<li id="%1$s2" class="widget %2$s">',
+					'after_widget'  =>  '</li>',
+					'before_title'  =>  '<h3 class="widgettitle">',
+					'after_title'   =>  '</h3>'
+				) );
+		}
+	}
 }
 
 // Sidebar & Content Sizes
