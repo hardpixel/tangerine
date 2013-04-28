@@ -248,12 +248,10 @@ function enqueue_scripts() {
 }
 
 function register_admin_scripts() {
-	wp_register_script( 'snippet', get_template_directory_uri() . '/javascripts/extras/jquery.snippet.min.js' );
 	wp_register_script( 'admin', get_template_directory_uri() . '/javascripts/admin.js' );
 }
 
 function enqueue_admin_scripts() {
-	wp_enqueue_script( 'snippet' );
 	wp_enqueue_script( 'admin-functions' );
 }
 

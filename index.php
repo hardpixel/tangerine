@@ -52,6 +52,7 @@
 							<?php endif; ?>
 
 							<?php the_excerpt(); ?>
+							
 						</div>
 
 					<?php endif; ?>

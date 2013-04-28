@@ -462,14 +462,56 @@ p[style*="justify"] {
 
 .gallery {
 
+	.clearing-assembled {
+
+		.clearing-container {
+
+			.visible-img {
+				margin-top: 20px;
+
+				img {
+					@include transition-duration(500ms);
+				}
+			}
+
+			.carousel{
+				padding: 15px 20px;
+				margin-top: 15px;
+				background: rgba(black, .5);
+				@include box-shadow(inset 0 0 5px black, 0 0 0 1px rgba(white, .05));
+
+				li {
+					margin: 0 5px;
+					@include transition-duration(500ms);
+					@include transition-property(opacity);
+					border: 4px solid black;
+					@include box-shadow(inset 0 0 3px black);
+					width: 180px;
+
+					&.visible {
+						border-color: rgba(white, .2);
+					}
+
+					img {
+						width: 100%;
+					}
+				}
+
+				.caption {
+					display: none;
+				}
+			}
+		}
+	}
+
 	li {
 		position: relative;
 
 		a {
 			max-width: 100%;
 
-			&:hover + .caption, .caption:hover {
-				display: block;
+			&:hover + .caption {
+				opacity: 1;
 			}
 		}
 	}
@@ -482,15 +524,21 @@ p[style*="justify"] {
 
 	.caption {
 		position: absolute;
-		display: none;
+		opacity: 0;
 		background: $darker-tint;
 		color: #fff;
-		bottom: 20px;
+		bottom: 19px;
 		left: 14px;
-		line-height: 24px;
-		padding: 0 10px;
-		position: absolute;
+		min-height: 24px;
+		padding: 5px 10px;
 		right: 14px;
+		cursor: default;
+		@include transition-duration(500ms);
+		@include transition-property(opacity);
+
+		&:hover {
+			opacity: 1;
+		}
 	}
 }
 
