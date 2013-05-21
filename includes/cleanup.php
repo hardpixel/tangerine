@@ -236,7 +236,7 @@ function tangerine_gallery( $attr ) {
 
 	$i = 0;
 	foreach ( $attachments as $id => $attachment ) {
-		$link = isset( $attr['link'] ) && 'file' == $attr['link'] ? wp_get_attachment_link( $id, 'full', false, false ) : wp_get_attachment_link( $id, 'gallery', false, false );
+		$link = isset( $attr['link'] ) && 'file' == $attr['link'] ? wp_get_attachment_link( $id, 'gallery', false, false ) : wp_get_attachment_link( $id, 'gallery', false, false );
 
 		$output .= '<li>' . $link;
 		if ( trim( $attachment->post_excerpt ) ) {

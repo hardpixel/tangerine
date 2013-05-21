@@ -3,6 +3,7 @@
 class top_menu_walker extends Walker_Nav_Menu {
 
     function display_element( $element, &$children_elements, $max_depth, $depth=0, $args, &$output ) {
+        $element->classes = array();
         $element->has_children = !empty( $children_elements[$element->ID] );
         $element->classes[] = ( $element->current || $element->current_item_ancestor ) ? 'active' : '';
         $element->classes[] = ( $element->has_children ) ? 'has-dropdown' : '';
@@ -35,6 +36,7 @@ class top_menu_walker extends Walker_Nav_Menu {
 class general_menu_walker extends Walker_Nav_Menu {
 
     function display_element( $element, &$children_elements, $max_depth, $depth=0, $args, &$output ) {
+        $element->classes = array();
         $element->has_children = !empty( $children_elements[$element->ID] );
         $element->classes[] = ( $element->current || $element->current_item_ancestor ) ? 'active' : '';
         $element->classes[] = ( $element->has_children ) ? 'has-dropdown' : '';

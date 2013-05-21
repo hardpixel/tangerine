@@ -1,1 +1,6 @@
-jQuery(document).ready(function(a){a("textarea#custom-css").snippet("css")});
+// Admin
+
+jQuery(document).ready(function($){
+
+
+});

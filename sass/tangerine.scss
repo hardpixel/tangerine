@@ -48,10 +48,6 @@
 	padding-bottom: 20px;
 }
 
-#main, #footer-area {
-	margin-top: 20px;
-}
-
 #main-slider {
 	padding-top: 20px;
 }
@@ -169,6 +165,7 @@ p[style*="justify"] {
 			font-weight: bold;
 			padding: 0 15px;
 			width: 50%;
+			white-space: nowrap;
 		}
 	}
 }

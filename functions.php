@@ -88,9 +88,6 @@ if ( ! is_admin() ) {
 	// Excerpt
 	add_filter( 'excerpt_length', 'excerpt_length' );
 	add_filter( 'excerpt_more', 'excerpt_more' );
-
-	// Menu
-	add_filter( 'wp_nav_menu_objects', 'add_extra_menu_classes' );
 }
 else {
 	// Styles
@@ -165,7 +162,9 @@ function register_styles() {
 	wp_register_style( 'normalize', get_template_directory_uri() . '/stylesheets/normalize.css', '', '', 'screen' );
 	wp_register_style( 'tangerine', get_template_directory_uri() . '/stylesheets/tangerine.css', '', '', 'screen' );
 	wp_register_style( 'custom', get_stylesheet_directory_uri() . '/style.css', '', '', 'screen' );
-	wp_register_style( 'webfonts', 'http://fonts.googleapis.com/css?family=Ubuntu|Open+Sans|Autour+One|Dosis|Oleo+Script|Codystar', '', '', 'screen' );
+	wp_register_style( 'webfonts', 'http://fonts.googleapis.com/css?family=Autour+One|Dosis|Oleo+Script|Codystar', '', '', 'screen' );
+	wp_register_style( 'ubuntu', 'http://fonts.googleapis.com/css?family=Ubuntu&subset=latin,greek-ext,greek,cyrillic,latin-ext,cyrillic-ext', '', '', 'screen' );
+	wp_register_style( 'open-sans', 'http://fonts.googleapis.com/css?family=Open+Sans&subset=latin,greek-ext,greek,cyrillic,latin-ext,cyrillic-ext', '', '', 'screen' );
 }
 
 // Deregister styles
@@ -179,6 +178,8 @@ if ( !function_exists( 'deregister_styles' ) ) {
 function enqueue_styles() {
 	wp_enqueue_style( 'normalize' );
 	wp_enqueue_style( 'webfonts' );
+	wp_enqueue_style( 'ubuntu' );
+	wp_enqueue_style( 'open-sans' );
 	wp_enqueue_style( 'tangerine' );
 	wp_enqueue_style( 'custom' );
 }
@@ -198,6 +199,9 @@ function enqueue_admin_styles() {
 	wp_enqueue_style( 'admin-style' );
 }
 
+// Add CSS to Visual Editor
+add_editor_style( 'stylesheets/normalize.css' );
+add_editor_style( 'stylesheets/tangerine.css' );
 
 /*==================================================*/
 /* Scripts
@@ -252,7 +256,7 @@ function register_admin_scripts() {
 }
 
 function enqueue_admin_scripts() {
-	wp_enqueue_script( 'admin-functions' );
+	wp_enqueue_script( 'admin' );
 }
 
 
@@ -283,13 +287,6 @@ function register_menus() {
 	if ( get_theme_mod( 'show_footer_menu' ) == '1' ) {
 		register_nav_menu( 'footer_menu', __( 'Footer Menu', TANGERINE_TEXTDOMAIN ) );
 	}
-}
-
-function add_extra_menu_classes( $objects ) {
-	$objects[1]->classes[] = 'first';
-	$objects[count( $objects )]->classes[] = 'last';
-
-	return $objects;
 }
 
 function tangerine_top_menu() {
