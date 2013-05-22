@@ -163,8 +163,8 @@ function register_styles() {
 	wp_register_style( 'tangerine', get_template_directory_uri() . '/stylesheets/tangerine.css', '', '', 'screen' );
 	wp_register_style( 'custom', get_stylesheet_directory_uri() . '/style.css', '', '', 'screen' );
 	wp_register_style( 'webfonts', 'http://fonts.googleapis.com/css?family=Autour+One|Dosis|Oleo+Script|Codystar', '', '', 'screen' );
-	wp_register_style( 'ubuntu', 'http://fonts.googleapis.com/css?family=Ubuntu&subset=latin,greek-ext,greek,cyrillic,latin-ext,cyrillic-ext', '', '', 'screen' );
-	wp_register_style( 'open-sans', 'http://fonts.googleapis.com/css?family=Open+Sans&subset=latin,greek-ext,greek,cyrillic,latin-ext,cyrillic-ext', '', '', 'screen' );
+	wp_register_style( 'ubuntu', 'http://fonts.googleapis.com/css?family=Ubuntu:400,300,700&subset=latin,greek-ext,greek,cyrillic,latin-ext,cyrillic-ext', '', '', 'screen' );
+	wp_register_style( 'open-sans', 'http://fonts.googleapis.com/css?family=Open+Sans:400,300,700&subset=latin,greek-ext,greek,cyrillic,latin-ext,cyrillic-ext', '', '', 'screen' );
 }
 
 // Deregister styles
@@ -466,17 +466,17 @@ if( !function_exists( 'register_extra_sidebars' ) ) {
 					'before_title'  =>  '<h3 class="widgettitle">',
 					'after_title'   =>  '</h3>'
 				) );
-
-			register_sidebar( array(
-					'name'    => 'Footer Area',
-					'id'   => 'footer-area',
-					'description' => __( 'Footer widget area', TANGERINE_TEXTDOMAIN ),
-					'before_widget' =>  '<li id="%1$s2" class="widget %2$s">',
-					'after_widget'  =>  '</li>',
-					'before_title'  =>  '<h3 class="widgettitle">',
-					'after_title'   =>  '</h3>'
-				) );
 		}
+
+		register_sidebar( array(
+				'name'    => 'Footer Area',
+				'id'   => 'footer-area',
+				'description' => __( 'Footer widget area', TANGERINE_TEXTDOMAIN ),
+				'before_widget' =>  '<li id="%1$s2" class="widget %2$s">',
+				'after_widget'  =>  '</li>',
+				'before_title'  =>  '<h3 class="widgettitle">',
+				'after_title'   =>  '</h3>'
+			) );
 	}
 }
 

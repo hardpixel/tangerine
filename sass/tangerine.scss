@@ -320,6 +320,10 @@ p[style*="justify"] {
 
 	.widget {
 		margin: $column-gutter/2 0;
+
+		@media only screen and(max-width:479px) {
+			width: 100%;
+		}
 	}
 
 	.widgettitle {
