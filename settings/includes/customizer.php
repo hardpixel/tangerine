@@ -8,6 +8,12 @@ class Tangerine_Customizer {
 	}
 
 	function add_sections( $customize ) {
+		// Menus
+		$customize->add_section( 'tangerine_nav_options', array(
+				'title'   => __( 'Navigation Options', TANGERINE_TEXTDOMAIN ),
+				'priority'  => 129
+			) );
+		
 		// Layout
 		$customize->add_section( 'tangerine_layout', array(
 				'title'   => __( 'Layout', TANGERINE_TEXTDOMAIN ),
@@ -83,7 +89,7 @@ class Tangerine_Customizer {
 				'default' => '1'
 			) );
 
-		// Navigation
+		// Navigation Options
 		$customize->add_setting( 'show_top_menu', array(
 				'default' => '1'
 			) );
@@ -293,7 +299,7 @@ class Tangerine_Customizer {
 
 		// Navigation
 		$customize->add_control( 'show_top_menu', array(
-				'section'  => 'nav',
+				'section'  => 'tangerine_nav_options',
 				'settings'   => 'show_top_menu',
 				'label'      => __( 'Show Top Menu', TANGERINE_TEXTDOMAIN ),
 				'type'       => 'checkbox',
@@ -301,7 +307,7 @@ class Tangerine_Customizer {
 			) );
 
 		$customize->add_control( 'set_fixed_top_menu', array(
-				'section'  => 'nav',
+				'section'  => 'tangerine_nav_options',
 				'settings'   => 'set_fixed_top_menu',
 				'label'      => __( 'Fixed Top Menu', TANGERINE_TEXTDOMAIN ),
 				'type'       => 'checkbox',
@@ -309,7 +315,7 @@ class Tangerine_Customizer {
 			) );
 
 		$customize->add_control( 'show_main_menu', array(
-				'section'  => 'nav',
+				'section'  => 'tangerine_nav_options',
 				'settings'   => 'show_main_menu',
 				'label'      => __( 'Show Main Menu', TANGERINE_TEXTDOMAIN ),
 				'type'       => 'checkbox',
@@ -317,7 +323,7 @@ class Tangerine_Customizer {
 			) );
 
 		$customize->add_control( 'set_sticky_main_menu', array(
-				'section'  => 'nav',
+				'section'  => 'tangerine_nav_options',
 				'settings'   => 'set_sticky_main_menu',
 				'label'      => __( 'Sticky Main Menu', TANGERINE_TEXTDOMAIN ),
 				'type'       => 'checkbox',
@@ -325,7 +331,7 @@ class Tangerine_Customizer {
 			) );
 
 		$customize->add_control( 'show_footer_menu', array(
-				'section'  => 'nav',
+				'section'  => 'tangerine_nav_options',
 				'settings'   => 'show_footer_menu',
 				'label'      => __( 'Show Footer Menu', TANGERINE_TEXTDOMAIN ),
 				'type'       => 'checkbox',
@@ -333,7 +339,7 @@ class Tangerine_Customizer {
 			) );
 
 		$customize->add_control( 'show_breadcrumbs', array(
-				'section'  => 'nav',
+				'section'  => 'tangerine_nav_options',
 				'settings' => 'show_breadcrumbs',
 				'label'    => __( 'Show Breadcrumbs', TANGERINE_TEXTDOMAIN ),
 				'type'     => 'checkbox',
