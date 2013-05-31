@@ -8,15 +8,6 @@ jQuery(document).ready(function($) {
 
 	// Orbit Slider
 
-	// Resize bullets container so it appears in the center
-	$.fn.resizeBullets = function() {
-		var $ol = $(this).find('ol.orbit-bullets'),
-			$size = $ol.find('li').outerWidth(true),
-			$lis = $ol.find('li').length;
-
-		$ol.width( $lis * $size );
-	}
-
 	// Extra settings not bundled with Orbit
 	$.fn.orbitSettings = function() {
 		var $orbit = $(this).find('.orbit-container'),
@@ -69,7 +60,6 @@ jQuery(document).ready(function($) {
 
 	// Orbit Slider
 
-	$('#orbit-slider').resizeBullets();
 	$('#orbit-slider').orbitSettings();
 
 });

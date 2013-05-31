@@ -199,6 +199,7 @@ function enqueue_admin_styles() {
 
 // Add CSS to Visual Editor
 add_editor_style( 'stylesheets/tangerine.css' );
+add_editor_style( 'stylesheets/admin.css' );
 
 /*==================================================*/
 /* Scripts

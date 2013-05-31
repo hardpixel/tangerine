@@ -12,9 +12,6 @@
 
 // FOUNDATION FIXES
 
-.top-bar-section .has-dropdown .dropdown li.has-dropdown > a:after, .main-bar-section .has-dropdown .dropdown li.has-dropdown > a:after
-  margin-top: -15px
-
 .top-bar-section .dropdown li a, .main-bar-section .dropdown li a
   line-height: 30px
 
@@ -318,6 +315,7 @@ p[style*="justify"]
       display: none
 
   .orbit-bullets
+    text-align: center
 
     li
       background: $orbit-bullets-bg
@@ -325,6 +323,8 @@ p[style*="justify"]
       +border-radius(50%)
       height: 14px
       width: 14px
+      display: inline-block
+      float: none
 
       &.active
         background: $orbit-bullets-active-bg
