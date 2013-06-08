@@ -8,6 +8,7 @@ if ( !function_exists( 'tangerine_header' ) ) {
 			<div id="header">
 
 				<div class="header-bar">
+
 					<?php if ( get_theme_mod( 'show_header_image' ) == '1' && get_theme_mod( 'set_header_image' ) != '' ): ?>
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo">
 							<img src="<?php echo get_theme_mod( 'set_header_image' ); ?>" alt="<?php bloginfo( 'name' ); ?>" />
@@ -17,9 +18,13 @@ if ( !function_exists( 'tangerine_header' ) ) {
 					<?php if ( get_theme_mod( 'show_header_title' ) == '1' ): ?>
 						<h1 class="name">
 							<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
-							<small class="description"> <?php bloginfo( 'description' ); ?></small>
 						</h1>
 					<?php endif; ?>
+
+					<?php if ( get_theme_mod( 'show_header_tagline' ) == '1' ): ?>
+						<h2 class="description"><small> <?php bloginfo( 'description' ); ?></small></h2>
+					<?php endif; ?>
+
 				</div>
 
 			</div>
@@ -40,7 +45,7 @@ if ( !function_exists( 'get_tangerine_header' ) ) {
 		tangerine_header();
 		if ( $header_mode == 'auto-header' ) { echo '<div id="main-area">'; }
 		if ( $mm_pos == 'above-slider' ) { get_main_menu(); }
-		if ( is_front_page() || get_theme_mod( 'show_slider_always' ) == '1' ) { tangerine_home_slider(); }
+		if ( is_front_page() || get_theme_mod( 'show_slider_always' ) == '1' || is_home() ) { tangerine_home_slider(); }
 		if ( $mm_pos == 'below-slider' ) { get_main_menu(); }
 		if ( $header_mode == 'contained-header' ) { echo '</div><div id="main-area">'; }
 	}

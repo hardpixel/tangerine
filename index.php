@@ -37,8 +37,6 @@
 							<?php the_content(); ?>
 						</div>
 
-						<?php comments_template(); ?>
-
 					<?php else: ?>
 
 						<a href="<?php the_permalink(); ?>"><h2><?php the_title(); ?></h2></a>
@@ -71,7 +69,8 @@
 
 		<?php endif; ?>
 
-
+		<?php if( !is_archive() ) { comments_template(); } ?>
+		
 	</section>
 	<!-- END #content -->
 

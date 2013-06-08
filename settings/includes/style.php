@@ -28,6 +28,7 @@ if ( !function_exists( 'dynamic_styles' ) ) {
 			'primary'  => get_theme_mod( 'set_primary_color' ),
 			'text'   => get_theme_mod( 'set_text_color' ),
 			'headerbg'  => get_theme_mod( 'set_header_bg' ),
+			'sliderbg'  => get_theme_mod( 'set_slider_bg' ),
 			'footerbg'  => get_theme_mod( 'set_footer_bg' ),
 			'creditsbg'  => get_theme_mod( 'set_credits_bg' ),
 
@@ -108,7 +109,12 @@ if ( !function_exists( 'dynamic_styles' ) ) {
 		if ( $style['mmenucolor'] != '' ) { echo 'color:'. $style['mmenucolor'] .';'; }
 
 
-		echo '}#wrapper.contained-header .header-container{';
+		echo '}#main-slider{';
+
+		if ( $style['sliderbg'] != '' ) { echo 'background-color:'. $style['sliderbg'] .';'; }
+
+
+		echo '}#header{';
 
 		if ( $style['headerbg'] != '' ) { echo 'background-color:'. $style['headerbg'] .';'; }
 

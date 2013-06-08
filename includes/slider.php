@@ -231,11 +231,14 @@ if ( !function_exists( 'tangerine_home_slider' ) ) {
 
 				<ul data-orbit data-options="<?php slider_data_opt(); ?>">
 
-					<?php $slides = new WP_Query( array( 'showposts' => get_theme_mod( 'set_slider_slides' ), 'post_type' => get_theme_mod( 'set_slider_category' ), 'order' => 'ASC', 'orderby' => 'menu_order' ) );
+					<?php 
+						$slides = new WP_Query( array( 'showposts' => get_theme_mod( 'set_slider_slides' ), 'post_type' => get_theme_mod( 'set_slider_category' ), 'order' => 'ASC', 'orderby' => 'menu_order' ) );
+					?>
 
-					if ( $slides->have_posts() ) : ?>
+					<?php if ( $slides->have_posts() ) : ?>
 
 						<?php while ( $slides->have_posts() ) : $slides->the_post(); ?>
+						
 							<li class="slide">
 
 								<?php global $post; ?>

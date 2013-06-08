@@ -116,7 +116,6 @@ add_action( 'widgets_init', 'register_widgets' );
 // Menus
 add_action( 'init', 'register_menus' );
 
-
 /*==================================================*/
 /* Headers, footers, body
 /*==================================================*/
@@ -150,7 +149,6 @@ function post_categories_body_class( $classes ) {
 
 	return $classes;
 }
-
 
 
 /*==================================================*/
