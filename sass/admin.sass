@@ -5,7 +5,64 @@
 // Tangerine variables
 @import tangerine-settings
 
+// Variables
+$grey: #ddd
+
 body
 	
 	&#tinymce
 		margin: 10px
+
+// Tangerine Attachments
+
+#tangerine-attachments
+
+	.inside
+		margin: 0
+		padding: 0
+
+	#attachments-container
+		display: table
+		width: 100%
+		padding: 10px 10px 0
+		
+		.attachment-image
+			float: left
+			width: 150px
+			margin-bottom: 10px
+			background: white
+			border: 1px solid $grey
+			padding: 5px
+			margin-right: 10px
+
+			img
+				width: 100%
+				cursor: move
+
+			.attachment-buttons
+				display: inline-block
+				width: 100%
+				padding-top: 5px
+				text-align: center
+				
+				.edit-attachment
+					margin-right: -1px
+					+border-radius(3px 0 0 3px)
+
+				.remove-attachment
+					+border-radius(0 3px 3px 0)
+
+	.attachments-footer
+		display: table
+		width: 100%
+		text-align: center
+		background: $grey
+		padding: 10px 0
+
+	.attachment-placeholder
+		float: left
+		width: 150px
+		height: 195px
+		border: 2px dashed $grey
+		margin-right: 10px
+		position: relative

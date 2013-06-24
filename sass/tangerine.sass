@@ -13,495 +13,501 @@
 // FOUNDATION FIXES
 
 .top-bar-section .dropdown li a, .main-bar-section .dropdown li a
-  line-height: 30px
+	line-height: 30px
 
 .top-bar-section > ul > .divider, .main-bar-section > ul > .divider
-  border-right-color: rgba(white, 0.15)
-  border-left-color: rgba(black, 0.15)
+	border-right-color: rgba(white, 0.15)
+	border-left-color: rgba(black, 0.15)
 
 .top-bar-section .divider, .main-bar-section .divider
-  border-bottom-color: rgba(white, 0.15)
-  border-top-color: rgba(black, 0.15)
+	border-bottom-color: rgba(white, 0.15)
+	border-top-color: rgba(black, 0.15)
 
 .top-bar.expanded .title-area, .expanded.main-bar .title-area
-  background: rgba(black, 0.2)
+	background: rgba(black, 0.2)
 
 #orbit-slider .slide-thumbnail
-  width: 100%
+	width: 100%
 
 // GENERAL
 
+body
+
+	@media only screen and(max-width: $topbar-breakpoint - 1)
+		margin-top: -45px
+		padding-top: 45px !important
+
 .header-bar, #main-slider, #main, #footer-area, #footer-widgets, .footer-bar, .credits-bar
-  +grid-row
+	+grid-row
 
 .header-bar, #main
-  padding-top: 20px
-  padding-bottom: 20px
+	padding-top: 20px
+	padding-bottom: 20px
 
 #main-slider
-  padding-top: 20px
+	padding-top: 20px
 
 #header
 
-  .name, .logo
-    float: left
-    margin: 0 0 0 $column-gutter / 2
+	.name, .logo
+		float: left
+		margin: 0 0 0 $column-gutter / 2
 
-  .name small
-    margin-left: 10px
+	.name small
+		margin-left: 10px
 
-  + #main-slider
-    padding-top: 0
+	+ #main-slider
+		padding-top: 0
 
 p[style*="justify"]
-  +hyphenation
+	+hyphenation
 
 // LAYOUT
 
 #wrapper
-  overflow: hidden
+	overflow: hidden
 
-  &.normal-width
-    max-width: $page-width
+	&.normal-width
+		max-width: $page-width
 
-  &.hybrid-width
+	&.hybrid-width
 
-    #main-area, .header-bar
-      max-width: $page-width
-      margin-left: auto
-      margin-right: auto
-      float: none
+		#main-area, .header-bar
+			max-width: $page-width
+			margin-left: auto
+			margin-right: auto
+			float: none
 
-  &.narrow-content
+	&.narrow-content
 
-    .top-bar, .header-bar, #main-area, #footer-widgets, .footer-bar, .credits-bar
-      max-width: $page-width
-      margin-left: auto
-      margin-right: auto
-      float: none
+		.top-bar, .header-bar, #main-area, #footer-widgets, .footer-bar, .credits-bar
+			max-width: $page-width
+			margin-left: auto
+			margin-right: auto
+			float: none
 
-  &.narrow-footer
+	&.narrow-footer
 
-    .top-bar, .header-bar, #main-area, #footer-area
-      max-width: $page-width
-      margin-left: auto
-      margin-right: auto
-      float: none
+		.top-bar, .header-bar, #main-area, #footer-area
+			max-width: $page-width
+			margin-left: auto
+			margin-right: auto
+			float: none
 
-  &.contained-header
+	&.contained-header
 
-    .home-slider, .header-bar
-      max-width: $page-width
-      margin-left: auto
-      margin-right: auto
-      float: none
+		.home-slider, .header-bar
+			max-width: $page-width
+			margin-left: auto
+			margin-right: auto
+			float: none
 
-    .header-container
-      background: $header-container-bg
+		.header-container
+			background: $header-container-bg
 
 // TOP BAR
 #top-area
-  background: $top-area-bg
+	background: $top-area-bg
 
-  &.no-top-menu
-    display: block
+	&.no-top-menu
+		display: block
 
-    @media only screen and (min-width: $topbar-breakpoint)
-      display: none
+		@media only screen and (min-width: $topbar-breakpoint)
+			display: none
 
-  .main-bar-section
-    display: block
+	.main-bar-section
+		display: block
 
-    li.has-dropdown ul.dropdown
-      background: none !important
+		li.has-dropdown ul.dropdown
+			background: none !important
 
-    @media only screen and (min-width: $topbar-breakpoint)
-      display: none
+		@media only screen and (min-width: $topbar-breakpoint)
+			display: none
 
 .top-bar
 
-  .name h4
-    font-size: 1.0625em
-    line-height: 45px
-    margin: 0
+	.name h4
+		font-size: 1.0625em
+		line-height: 45px
+		margin: 0
 
-    a, a:hover, a:focus
-      color: #FFFFFF
-      display: block
-      font-weight: bold
-      padding: 0 15px
-      width: 50%
-      white-space: nowrap
+		a, a:hover, a:focus
+			color: #FFFFFF
+			display: block
+			font-weight: bold
+			padding: 0 15px
+			width: 50%
+			white-space: nowrap
 
 .top-bar-section
 
-  ul
-    background: none
+	ul
+		background: none
 
-  li
+	li
 
-    &.has-dropdown ul.dropdown
-      background: $top-area-bg
+		&.has-dropdown ul.dropdown
+			background: $top-area-bg
 
-      @media only screen and (max-width: $topbar-breakpoint)
-        background: none !important
+			@media only screen and (max-width: $topbar-breakpoint)
+				background: none !important
 
-    &.active
+		&.active
 
-      a:not(.button)
-        background: $medium-tint
+			a:not(.button)
+				background: $medium-tint
 
-        &:hover
-          background: $light-tint
+				&:hover
+					background: $light-tint
 
-      > ul li a:not(.button)
-        background: none
+			> ul li a:not(.button)
+				background: none
 
-        &:hover
-          background: $light-tint
+				&:hover
+					background: $light-tint
 
-    a:not(.button)
-      background: none
+		a:not(.button)
+			background: none
 
-      &:hover
-        background: $light-tint
+			&:hover
+				background: $light-tint
 
-  &.expanded
+	&.expanded
 
-    .toggle-topbar
+		.toggle-topbar
 
-      a
-        color: $dark-tint
+			a
+				color: $dark-tint
 
-        &:hover
-          background: none
+				&:hover
+					background: none
 
-      span
-        box-shadow: 0 10px 0 1px $dark-tint, 0 16px 0 1px $dark-tint, 0 22px 0 1px $dark-tint
+			span
+				box-shadow: 0 10px 0 1px $dark-tint, 0 16px 0 1px $dark-tint, 0 22px 0 1px $dark-tint
 
 // MAIN MENU
 #main-menu
-  background: $main-menu-bg
-  display: none
+	background: $main-menu-bg
+	display: none
 
-  @media only screen and (min-width: $topbar-breakpoint)
-    display: block
+	@media only screen and (min-width: $topbar-breakpoint)
+		display: block
 
-  .main-bar-section > ul > li.divider:first-child
-    display: none
+	.main-bar-section > ul > li.divider:first-child
+		display: none
 
 .main-bar
-  @extend .top-bar
-  background: $main-menu-bg
+	@extend .top-bar
+	background: $main-menu-bg
 
 .main-bar-section
-  @extend .top-bar-section
+	@extend .top-bar-section
 
-  ul
-    background: none
+	ul
+		background: none
 
-  li
-    &.has-dropdown ul.dropdown
-      background: $main-menu-bg
+	li
+		&.has-dropdown ul.dropdown
+			background: $main-menu-bg
 
-    &.active
+		&.active
 
-      a:not(.button)
-        background: $medium-tint
+			a:not(.button)
+				background: $medium-tint
 
-        &:hover
-          background: $light-tint
+				&:hover
+					background: $light-tint
 
-      > ul li a:not(.button)
-        background: none
+			> ul li a:not(.button)
+				background: none
 
-        &:hover
-          background: $light-tint
+				&:hover
+					background: $light-tint
 
-    a:not(.button)
-      background: none
+		a:not(.button)
+			background: none
 
-      &:hover
-        background: $light-tint
+			&:hover
+				background: $light-tint
 
 // WIDGETS
 
 .widgets
-  list-style-type: none
+	list-style-type: none
 
-  .widget
-    margin-bottom: 20px
+	.widget
+		margin-bottom: 20px
 
-    ul
-      list-style-type: square
+		ul
+			list-style-type: square
 
-  .widgettitle
-    color: $widgettitle-color
+	.widgettitle
+		color: $widgettitle-color
 
 
 // FOOTER
 
 #footer-area
-  background: $footer-area-bg
-  color: $footer-area-color
+	background: $footer-area-bg
+	color: $footer-area-color
 
-  .widget
-    margin: $column-gutter / 2 0
+	.widget
+		margin: $column-gutter / 2 0
 
-    @media only screen and (max-width: 479px)
-      width: 100%
+		@media only screen and (max-width: 479px)
+			width: 100%
 
-  .widgettitle
-    color: $footer-widgettitle-color
+	.widgettitle
+		color: $footer-widgettitle-color
 
 #footer-menu
-  background: $footer-menu-bg
+	background: $footer-menu-bg
 
 .footer-bar-section
 
-  ul
-    list-style-type: none
-    margin: 0
+	ul
+		list-style-type: none
+		margin: 0
 
-    li
-      float: left
+		li
+			float: left
 
-      &.active
-        font-weight: bold
+			&.active
+				font-weight: bold
 
-      a
-        padding: 7px 15px
-        font-size: emCalc(14px)
-        display: inline-block
-        color: $footer-menu-color
+			a
+				padding: 7px 15px
+				font-size: emCalc(14px)
+				display: inline-block
+				color: $footer-menu-color
 
 // CREDITS
 
 #credits
-  background: $credits-bg
-  font-size: emCalc(12px)
-  line-height: emCalc(50px)
+	background: $credits-bg
+	font-size: emCalc(12px)
+	line-height: emCalc(50px)
 
 #copyright, #powered-by
-  +grid-column(12)
+	+grid-column(12)
 
-  @media only screen and (min-width: $tiny-screen)
-    +grid-column(6)
+	@media only screen and (min-width: $tiny-screen)
+		+grid-column(6)
 
 #powered-by
-  text-align: right
-  display: none
+	text-align: right
+	display: none
 
-  @media only screen and (min-width: $tiny-screen)
-    display: block
+	@media only screen and (min-width: $tiny-screen)
+		display: block
 
 // ORBIT SLIDER
 
 #orbit-slider
 
-  &.no-buttons
+	&.no-buttons
 
-    .orbit-prev, .orbit-next
-      display: none
+		.orbit-prev, .orbit-next
+			display: none
 
-  &.no-timer
+	&.no-timer
 
-    .orbit-timer
-      display: none
+		.orbit-timer
+			display: none
 
-  &.no-numbers
+	&.no-numbers
 
-    .orbit-slide-number
-      display: none
+		.orbit-slide-number
+			display: none
 
-  .orbit-bullets
-    text-align: center
+	.orbit-bullets
+		text-align: center
 
-    li
-      background: $orbit-bullets-bg
-      border: none
-      +border-radius(50%)
-      height: 14px
-      width: 14px
-      display: inline-block
-      float: none
+		li
+			background: $orbit-bullets-bg
+			border: none
+			+border-radius(50%)
+			height: 14px
+			width: 14px
+			display: inline-block
+			float: none
 
-      &.active
-        background: $orbit-bullets-active-bg
+			&.active
+				background: $orbit-bullets-active-bg
 
-  .orbit-caption
-    font-size: 1em
+	.orbit-caption
+		font-size: 1em
 
-    h4
-      margin: 0
+		h4
+			margin: 0
 
-    p
-      margin: 5px 0 0
+		p
+			margin: 5px 0 0
 
-  // Posts Slider
-  &:not(.slides)
+	// Posts Slider
+	&:not(.slides)
 
-    @media only screen and (min-width: $small-screen)
+		@media only screen and (min-width: $small-screen)
 
-      .slide
-        padding: 0 emCalc(80px)
+			.slide
+				padding: 0 emCalc(80px)
 
-      .orbit-excerpt
-        padding: 0 0 0 emCalc(30px)
+			.orbit-excerpt
+				padding: 0 0 0 emCalc(30px)
 
-      .orbit-slide-number
-        left: 6.5em
+			.orbit-slide-number
+				left: 6.5em
 
-      .orbit-timer
-        right: 6em
+			.orbit-timer
+				right: 6em
 
 // GALLERY
 
 [data-clearing] li
-  margin: 0
+	margin: 0
 
 .gallery
 
-  .clearing-assembled
+	.clearing-assembled
 
-    .clearing-container
+		.clearing-container
 
-      .visible-img
-        margin-top: 20px
+			.visible-img
+				margin-top: 20px
 
-        img
-          +transition-duration(500ms)
+				img
+					+transition-duration(500ms)
 
-      .carousel
-        padding: 15px 20px
-        margin-top: 15px
-        background: rgba(black, 0.5)
-        +box-shadow(inset 0 0 5px black, 0 0 0 1px rgba(white, 0.05))
+			.carousel
+				padding: 15px 20px
+				margin-top: 15px
+				background: rgba(black, 0.5)
+				+box-shadow(inset 0 0 5px black, 0 0 0 1px rgba(white, 0.05))
 
-        li
-          margin: 0 5px
-          +transition-duration(500ms)
-          +transition-property(opacity)
-          border: 4px solid black
-          +box-shadow(inset 0 0 3px black)
-          width: 180px
+				li
+					margin: 0 5px
+					+transition-duration(500ms)
+					+transition-property(opacity)
+					border: 4px solid black
+					+box-shadow(inset 0 0 3px black)
+					width: 180px
 
-          &.visible
-            border-color: rgba(white, 0.2)
+					&.visible
+						border-color: rgba(white, 0.2)
 
-          img
-            width: 100%
+					img
+						width: 100%
 
-        .caption
-          display: none
+				.caption
+					display: none
 
-  li
-    position: relative
+	li
+		position: relative
 
-    a
-      max-width: 100%
+		a
+			max-width: 100%
 
-      &:hover + .caption
-        opacity: 1
+			&:hover + .caption
+				opacity: 1
 
-  .attachment-thumbnail
-    width: 100%
-    max-width: 100%
-    display: list-item
+	.attachment-thumbnail
+		width: 100%
+		max-width: 100%
+		display: list-item
 
-  .caption
-    position: absolute
-    opacity: 0
-    background: $darker-tint
-    color: #fff
-    bottom: 19px
-    left: 14px
-    min-height: 24px
-    padding: 5px 10px
-    right: 14px
-    cursor: default
-    +transition-duration(500ms)
-    +transition-property(opacity)
+	.caption
+		position: absolute
+		opacity: 0
+		background: $darker-tint
+		color: #fff
+		bottom: 19px
+		left: 14px
+		min-height: 24px
+		padding: 5px 10px
+		right: 14px
+		cursor: default
+		+transition-duration(500ms)
+		+transition-property(opacity)
 
-    &:hover
-      opacity: 1
+		&:hover
+			opacity: 1
 
 // LOOP
 
 .excerpt
 
-  .featured.th
-    margin-right: 20px
-    float: left
+	.featured.th
+		margin-right: 20px
+		float: left
 
 // ELEMENTS
 
 button, .button
-  border-color: $dark-tint
+	border-color: $dark-tint
 
 .th img
-  display: block
+	display: block
 
 .chromeframe
-  +alert(#ffae1a)
-  margin-bottom: 0
-  text-align: center
+	+alert(#ffae1a)
+	margin-bottom: 0
+	text-align: center
 
-  .close
-    margin-left: 15px
+	.close
+		margin-left: 15px
 
-  a
-    color: #CD5108
+	a
+		color: #CD5108
 
 // Comments
 input[type="submit"]
-  +button-base
-  +button-size
-  +button-style($dark-tint)
-  +single-transition
-  +inset-shadow($light-tint)
+	+button-base
+	+button-size
+	+button-style($dark-tint)
+	+single-transition
+	+inset-shadow($light-tint)
 
 .commentlist
-  list-style-type: none
-  font-size: 1em
+	list-style-type: none
+	font-size: 1em
 
-  .children
-    list-style-type: none
-    margin-left: 5em
+	.children
+		list-style-type: none
+		margin-left: 5em
 
-    .comment-author
-      width: 34px
+		.comment-author
+			width: 34px
 
-  #respond
-    margin-left: 4.5em
+	#respond
+		margin-left: 4.5em
 
 .comment-content
-  margin-left: 4.5em
+	margin-left: 4.5em
 
-  .comment-edit-link
-    +label
-    +border-radius(5px)
+	.comment-edit-link
+		+label
+		+border-radius(5px)
 
-  p
-    margin-top: 0.5em
-    color: $darker-tint
+	p
+		margin-top: 0.5em
+		color: $darker-tint
 
-  cite.fn
-    font-style: normal
-    font-weight: bold
+	cite.fn
+		font-style: normal
+		font-weight: bold
 
 .reply
-  overflow: hidden
+	overflow: hidden
 
-  .comment-reply-link
-    +button-base
-    +button-size($button-sml)
-    +button-style($secondary-color)
-    +single-transition
-    +inset-shadow($light-tint)
-    float: right
+	.comment-reply-link
+		+button-base
+		+button-size($button-sml)
+		+button-style($secondary-color)
+		+single-transition
+		+inset-shadow($light-tint)
+		float: right
 
 #cancel-comment-reply-link
-  +label
-  +border-radius(5px)
-  background: #DB2020
+	+label
+	+border-radius(5px)
+	background: #DB2020

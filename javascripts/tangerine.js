@@ -5,6 +5,45 @@ jQuery(document).foundation();
 jQuery(document).ready(function($) {
 
 // REGISTER FUNCTIONS
+	
+	// Browser Class
+	$.fn.addBrowserClass = function () {
+		if( $.browser.mozilla == true ) {
+			$(this).addClass('gecko');
+		}
+
+		if( $.browser.webkit == true ) {
+			$(this).addClass('webkit');
+		}
+
+		if( $.browser.msie == true ) {
+			$(this).addClass('msie');
+		}
+
+		if( $.browser.ipad == true ) {
+			$(this).addClass('ipad');
+		}
+
+		if( $.browser.iphone == true ) {
+			$(this).addClass('iphone');
+		}
+
+		if( $.browser.android == true ) {
+			$(this).addClass('android');
+		}
+	}
+
+	// Fix Sticky Main Menu
+	$.fn.fixStickyMainMenu = function() {
+		var $menu = $('#main-menu'),
+			$viewport = $(window).width();
+
+		$(window).resize(function () {
+			if( $menu.hasClass('sticky') && $viewport > 940 ) {
+				$('body').css('padding-top', '0');
+			}
+		});
+	}
 
 	// Orbit Slider
 
@@ -58,8 +97,14 @@ jQuery(document).ready(function($) {
 
 // INIT FUNCTIONS
 
+	$('html').addBrowserClass();
+
 	// Orbit Slider
 
 	$('#orbit-slider').orbitSettings();
+
+// RESIZE FUNCTIONS
+
+	$(document).fixStickyMainMenu();
 
 });

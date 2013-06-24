@@ -316,12 +316,12 @@ class Tangerine_Customizer {
 					'description' => __( 'Number of widgets per row.', TANGERINE_TEXTDOMAIN ),
 					'type'   => 'select',
 					'choices'  => array(
-						'block-grid-1'  => '1',
-						'block-grid-2'  => '2',
-						'block-grid-3'  => '3',
-						'block-grid-4'  => '4',
-						'block-grid-5'  => '5',
-						'block-grid-6'  => '6'
+						'1'  => '1',
+						'2'  => '2',
+						'3'  => '3',
+						'4'  => '4',
+						'5'  => '5',
+						'6'  => '6'
 					)
 				) ) );
 
@@ -662,7 +662,8 @@ class Tangerine_Customizer {
 					'label'     => 'Custom CSS',
 					'description' => __( 'Add custom styles to your theme.', TANGERINE_TEXTDOMAIN ),
 					'section'   => 'tangerine_advanced',
-					'settings'    => 'tangerine_custom_css'
+					'settings'    => 'tangerine_custom_css',
+					'priority'	=> 2
 				) ) );
 
 		$customize->add_control( new WP_Customize_Ajax_Button_Control( $customize, 'set_default_theme_settings', array(
@@ -672,7 +673,8 @@ class Tangerine_Customizer {
 					'settings'    => 'set_default_theme_settings',
 					'button_text' => 'Reset Settings',
 					'button_id'	=> 'reset-theme-settings',
-					'action'	=>	'reset_theme_defaults'
+					'action'	=>	'reset_theme_defaults',
+					'priority'	=> 1
 				) ) );
 
 		// SEO Settings

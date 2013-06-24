@@ -29,20 +29,7 @@ class Tangerine {
 	}
 
 	function after_theme_setup() {
-		$the_theme_status = get_option( 'theme_setup_status' );
 
-		if ( $the_theme_status !== '1' ) {
-			// Apply default theme settings
-			tangerine_default_theme_settings();
-
-			update_option( 'theme_setup_status', '1' );
-			add_action( 'admin_notices', 'tangerine_switch_theme_notice_default' );
-		}
-
-		elseif ( $the_theme_status === '1' and isset( $_GET['activated'] ) ) {
-			// Show theme re-enabled notice
-		    add_action( 'admin_notices', 'tangerine_switch_theme_notice_custom' );
-		}
 	}
 
 	function admin_menu() {
@@ -140,6 +127,8 @@ function tangerine_default_theme_settings() {
 				die(1);
 }
 
+add_action('wp_ajax_reset_theme_defaults', 'tangerine_default_theme_settings');
+
 // Admin menu notices on theme switch
 function tangerine_switch_theme_notice_default() {
 	?>
@@ -156,8 +145,6 @@ function tangerine_switch_theme_notice_custom() {
 		</div>
 	<?php
 }
-
-add_action('wp_ajax_reset_theme_defaults', 'tangerine_default_theme_settings');
 
 /*==================================================*/
 /* Custom Controls
@@ -273,7 +260,7 @@ class WP_Customize_Ajax_Button_Control extends WP_Customize_Control {
 
 						$.ajax({
 							url: "<?php echo admin_url('admin-ajax.php'); ?>",
-							type: 'GET',
+							type: 'POST',
 							data: { action: '<?php echo esc_html( $this->action ); ?>' }
 						})
 

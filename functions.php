@@ -10,6 +10,7 @@ include 'settings/settings.php';
 include 'settings/includes/style.php';
 
 include 'includes/cleanup.php';
+
 include 'includes/header.php';
 include 'includes/navigation.php';
 include 'includes/slider.php';
@@ -17,6 +18,8 @@ include 'includes/footer.php';
 
 include 'includes/walkers/menu_walker.php';
 include 'includes/walkers/comment_walker.php';
+
+include 'includes/multi-images/multi-images.php';
 
 load_theme_textdomain( TANGERINE_TEXTDOMAIN, get_template_directory() . '/languages' );
 
@@ -58,7 +61,6 @@ if ( get_theme_mod( 'show_home_slider' ) == '1' ) {
 if ( ! is_admin() ) {
 	// Headers, footers, body
 	add_filter( 'the_generator', 'remove_wp_version' );
-	add_filter( 'body_class', 'browser_body_class' );
 	add_filter( 'body_class', 'post_categories_body_class' );
 
 	// Styles
@@ -122,20 +124,6 @@ add_action( 'init', 'register_menus' );
 
 function remove_wp_version() {
 	return '';
-}
-
-// Browser name in body class
-function browser_body_class( $classes ) {
-	global $is_gecko, $is_IE, $is_opera, $is_safari, $is_chrome;
-
-	if ( $is_gecko )       $classes[] = 'gecko';
-	elseif ( $is_opera )   $classes[] = 'opera';
-	elseif ( $is_safari ) $classes[] = 'safari';
-	elseif ( $is_chrome ) $classes[] = 'chrome';
-	elseif ( $is_IE )  $classes[] = 'ie';
-	else                 $classes[] = 'unknown';
-
-	return $classes;
 }
 
 // Post category name in body class
@@ -205,13 +193,14 @@ add_editor_style( 'stylesheets/admin.css' );
 
 // Deregister scripts
 function deregister_scripts() {
-	//wp_deregister_script( 'jquery' );
-	//wp_deregister_script( 'jquery-ui-core' );
+	wp_deregister_script( 'jquery' );
 }
 
 // Register scripts
 function register_scripts() {
-	wp_register_script( 'modernizr', get_template_directory_uri() . '/javascripts/extras/custom.modernizr.js', array( 'jquery' ), '', false );
+	wp_register_script( 'jquery', get_template_directory_uri() . '/javascripts/vendor/jquery.js', '', '', false );
+	wp_register_script( 'jquery-addons', get_template_directory_uri() . '/javascripts/vendor/jquery.addons.js', '', '', true );
+	wp_register_script( 'modernizr', get_template_directory_uri() . '/javascripts/vendor/custom.modernizr.js', '', '', false );
 	wp_register_script( 'foundation', get_template_directory_uri() . '/javascripts/foundation/foundation.js', array( 'jquery' ), '', true );
 	wp_register_script( 'clearing', get_template_directory_uri() . '/javascripts/foundation/foundation.clearing.js', array( 'jquery' ), '', true );
 	wp_register_script( 'orbit', get_template_directory_uri() . '/javascripts/foundation/foundation.orbit.js', array( 'jquery' ), '', true );
@@ -230,6 +219,8 @@ function register_scripts() {
 
 // Enqueue scripts
 function enqueue_scripts() {
+	wp_enqueue_script( 'jquery' );
+	wp_enqueue_script( 'jquery-addons' );
 	wp_enqueue_script( 'modernizr' );
 	wp_enqueue_script( 'foundation' );
 	wp_enqueue_script( 'clearing' );
@@ -302,21 +293,24 @@ function tangerine_top_menu() {
 		) );
 }
 
-function tangerine_main_menu() {
-	wp_nav_menu( array(
-			'container'   => false,
-			'container_class'  => '',
-			'menu'     => 'main-menu',
-			'menu_class'   => 'left',
-			'theme_location' => 'main_menu',
-			'before'    => '',
-			'after'    => '',
-			'link_before'  => '',
-			'link_after'   => '',
-			'depth'    => 3,
-			'fallback_cb'  => 'main_menu_fallback',
-			'walker'    => new general_menu_walker()
-		) );
+if( !function_exists('tangerine_main_menu') ) {
+
+	function tangerine_main_menu() {
+		wp_nav_menu( array(
+				'container'   => false,
+				'container_class'  => '',
+				'menu'     => 'main-menu',
+				'menu_class'   => 'left',
+				'theme_location' => 'main_menu',
+				'before'    => '',
+				'after'    => '',
+				'link_before'  => '',
+				'link_after'   => '',
+				'depth'    => 3,
+				'fallback_cb'  => 'main_menu_fallback',
+				'walker'    => new general_menu_walker()
+			) );
+	}
 }
 
 function tangerine_footer_menu() {
