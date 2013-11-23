@@ -232,7 +232,7 @@ function tangerine_gallery( $attr ) {
 		return $output;
 	}
 
-	$output = '<div class="gallery small-12"><ul class="small-block-grid-3 large-block-grid-'. $columns .'" data-clearing>';
+	$output = '<div class="gallery small-12"><ul class="small-block-grid-'. $columns .'" data-clearing>';
 
 	$i = 0;
 	foreach ( $attachments as $id => $attachment ) {

@@ -40,8 +40,12 @@ function images_link(){
 
 function save_images_link(){
 	global $post;
-	if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE){ return $post->ID; }
-	update_post_meta($post->ID, '_tangerine_attachments', $_POST['tangerine_attachments']);
+	
+	if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ) { 
+		return $post->ID; 
+	}
+	
+	add_post_meta( $post->ID, '_tangerine_attachments', '', true ) || update_post_meta($post->ID, '_tangerine_attachments', $_POST['tangerine_attachments']);
 }
 
 add_action('admin_enqueue_scripts', 'tangerine_attachments_scripts');

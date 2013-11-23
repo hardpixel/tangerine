@@ -118,6 +118,9 @@ add_action( 'widgets_init', 'register_widgets' );
 // Menus
 add_action( 'init', 'register_menus' );
 
+// Shortcode support for widgets
+add_filter('widget_text', 'do_shortcode');
+
 /*==================================================*/
 /* Headers, footers, body
 /*==================================================*/

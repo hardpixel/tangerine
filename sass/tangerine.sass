@@ -31,12 +31,6 @@
 
 // GENERAL
 
-body
-
-	@media only screen and(max-width: $topbar-breakpoint - 1)
-		margin-top: -45px
-		padding-top: 45px !important
-
 .header-bar, #main-slider, #main, #footer-area, #footer-widgets, .footer-bar, .credits-bar
 	+grid-row
 
@@ -229,6 +223,15 @@ p[style*="justify"]
 
 			&:hover
 				background: $light-tint
+
+// SIDEBAR
+
+.sidebar
+	
+	.widget
+
+		@media only screen and (max-width: 479px)
+			width: 100%
 
 // WIDGETS
 

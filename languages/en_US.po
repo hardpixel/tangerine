@@ -1,11 +1,14 @@
+#
+# Hardpixel <translate@hardpixel.net>, 2013.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Tangerine\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-04-25 18:00+0200\n"
-"PO-Revision-Date: 2013-04-25 18:00+0200\n"
-"Last-Translator: \n"
-"Language-Team: Hardpixel <info@hardpixel.net>\n"
+"PO-Revision-Date: 2013-11-23 12:54+0200\n"
+"Last-Translator: Hardpixel <translate@hardpixel.net>\n"
+"Language-Team: English <info@hardpixel.net>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -15,10 +18,16 @@ msgstr ""
 "X-Poedit-Language: English\n"
 "X-Poedit-Country: UNITED STATES\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-SearchPath-0: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk\n"
+"X-Poedit-SearchPath-0: /home/olibia/Projects/WebDevelopment/tangerine-"
+"framework/trunk\n"
+"X-Generator: Gtranslator 2.91.6\n"
 
 #: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/header.php:30
-msgid "You are using an <strong>outdated</strong> browser. Please <a href='http://browsehappy.com/'>upgrade your browser</a> or <a href='http://www.google.com/chromeframe/?redirect=true'>activate Google Chrome Frame</a> to improve your experience."
+msgid ""
+"You are using an <strong>outdated</strong> browser. Please <a href='http://"
+"browsehappy.com/'>upgrade your browser</a> or <a href='http://www.google.com/"
+"chromeframe/?redirect=true'>activate Google Chrome Frame</a> to improve your "
+"experience."
 msgstr ""
 
 #: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/index.php:67
@@ -26,7 +35,8 @@ msgid "Sorry, no posts match your criteria."
 msgstr ""
 
 #: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/comments.php:4
-msgid "This post is password protected. Enter the password to view any comments."
+msgid ""
+"This post is password protected. Enter the password to view any comments."
 msgstr ""
 
 #: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/comments.php:19
@@ -393,7 +403,8 @@ msgid "Base font size"
 msgstr ""
 
 #: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:443
-msgid "Headings font size is calculated automatically. For decimals use only \".\""
+msgid ""
+"Headings font size is calculated automatically. For decimals use only \".\""
 msgstr ""
 
 #: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:453
@@ -569,4 +580,3 @@ msgstr ""
 #: /home/olibia/Projects/WebDevelopment/tangerine-framework/trunk/settings/includes/customizer.php:775
 msgid "Tracking ID. e.g. \"UA-23314790-3\"."
 msgstr ""
-
